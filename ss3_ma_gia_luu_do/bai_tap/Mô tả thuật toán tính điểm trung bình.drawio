@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.2.4">
+  <diagram name="Page-1" id="QjtixR2jRnMbz8gqG0ig">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TrafogFxlDezjPbLHYzG-1" value="Flow-chart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontFamily=Times New Roman;fontSize=24;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
+          <mxGeometry x="142" y="91" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-2" value="Pseudo-code" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontFamily=Times New Roman;fontSize=24;labelPosition=center;verticalLabelPosition=middle;" vertex="1" parent="1">
+          <mxGeometry x="453" y="91" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TrafogFxlDezjPbLHYzG-4" target="TrafogFxlDezjPbLHYzG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-4" value="Begin" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="177" y="161" width="125" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TrafogFxlDezjPbLHYzG-6" target="TrafogFxlDezjPbLHYzG-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-6" value="Input Math, Physics, Chemistry" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="130.5" y="240" width="218" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TrafogFxlDezjPbLHYzG-8" target="TrafogFxlDezjPbLHYzG-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-8" value="Display Average" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="169.25" y="441" width="140.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-9" value="End" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="177" y="541" width="125" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="TrafogFxlDezjPbLHYzG-11" target="TrafogFxlDezjPbLHYzG-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-11" value="Average = (Math + Physics + Chemistry) / 3" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="119.25" y="341" width="240.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TrafogFxlDezjPbLHYzG-12" value="&lt;div&gt;BEGIN&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; INPUT Math, Physics, Chemistry&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; Average = (Math + Physics + Chemistry) / 3&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; DISPLAY Average&lt;/div&gt;&lt;div&gt;END&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Times New Roman;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="478" y="141" width="352" height="119" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
