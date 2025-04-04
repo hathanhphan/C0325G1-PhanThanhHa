@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo form cơ bản</title>
+    <style>
+        body {
+            font-family:  "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+        }
+        .required-field {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Form</h1>
+    <form>
+        <p>What would you like to buy?</p>
+        <select name="drinking" id="drinking">
+            <option value="coffee">Coffee</option>
+            <option value="greentea">Green Tea</option>
+            <option value="lemonjuice">Lemon Juice</option>
+            <option value="milktea">Milk Tea</option>
+        </select>
+        <p>How many would you like to order?</p>
+        <input type="radio" name="quantity" value="1" checked/>1 - $10<br>
+        <input type="radio" name="quantity" value="2" checked/>2 - $20<br>
+        <input type="radio" name="quantity" value="3" checked/>3 - $25<br>
+        <p>Name <span class="required-field">*</span></p>
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+        <p>Email</p>
+        <input type="email" name="email">
+        <p>Phone</p>
+        <input type="tel" name="phone">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
