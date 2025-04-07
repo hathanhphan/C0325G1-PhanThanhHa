@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo form lấy survey khách hàng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+
+        .form-field table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .form-field td, .form-field th {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        .form-field th:not(:first-child) {
+            text-align: center;
+            width: 160px;
+        }
+        .form-field tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="font-primary container mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-blue-800 text-2xl mb-2">Market Search Result</h1>
+        <p class="text-blue-500 mb-2">Please take a few moments to complete this satisfaction survey.</p>
+        <hr class="mb-5">
+        <form action="">
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">What is your age range?</p>
+                <div class="form-field">
+                    <select name="ageRange" class="min-w-100 border border-gray-300 rounded-md">
+                        <option value="between18-24">18 - 24</option>
+                        <option value="between25-34">25 - 34</option>
+                        <option value="between35-50">35 - 50</option>
+                        <option value="50plus">50+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">What is your yearly income range?</p>
+                <div class="form-field">
+                    <select name="incomeRange" class="min-w-100 border border-gray-300 rounded-md">
+                        <option value="between0-25000">$0 - $25,000</option>
+                        <option value="between25000-50000">$25,001 - $50,000</option>
+                        <option value="between50000-100000">$50,001 - $100,000</option>
+                        <option value="100000plus">$100,000+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">Gender Identity</p>
+                <div class="form-field">
+                    <div class="flex items-center mr-4">
+                        <input name="gender" type="radio" value="male" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Male</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="gender" type="radio" value="female" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Female</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="gender" type="radio" value="nonbinary" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Nonbinary</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="gender" type="radio" value="Other" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Other</label>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4"></div>
+                        <input type="text" name="gender" class="font-secondary ms-2 w-full max-w-50 border border-gray-300 rounded-md">
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">Which of the following products have your purchased in the last 2 months. Please check all that apply?</p>
+                <div class="form-field">
+                    <div class="flex items-center">
+                        <input name="products" type="checkbox" value="product1" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Product 1</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="products" type="checkbox" value="product2" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Product 2</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="products" type="checkbox" value="product3" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Product 3</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">How often would you use our new product?</p>
+                <div class="form-field">
+                    <div class="flex items-center mr-4">
+                        <input name="frequency" type="radio" value="daily" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Daily</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="frequency" type="radio" value="weekly" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Weekly</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input name="frequency" type="radio" value="monthly" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                        <label class="ms-2">Monthly</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">What would you pay for the new product?</p>
+                <div class="form-field">
+                    <div class="flex items-top">
+                        <span class="mr-2">$</span>
+                        <div class="flex flex-col">
+                            <input type="text" name="name" class="mr-2 font-secondary w-20 border border-gray-300 rounded-md">
+                            <span class="font-secondary">Dollars</span>
+                        </div>
+                        <span class="mr-2">.</span>
+                        <div class="flex flex-col">
+                            <input type="text" name="name" class="font-secondary w-20 border border-gray-300 rounded-md">
+                            <span class="font-secondary">Cents</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <p class="mb-2">What features would you like to see in the new product?</p>
+                <div class="form-field">
+                    <textarea name="customerRecommend" class="font-secondary min-h-20 w-full border border-gray-300 rounded-md"></textarea>
+                </div>
+            </div>
+            <div class="font-secondary form-wrapper mb-4">
+                <p class="mb-2">Please rate your level of agreement with the following statements.</p>
+                <div class="form-field">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Strongly Disagree</th>
+                            <th>Disagree</th>
+                            <th>Agree</th>
+                            <th>Strongly Agree</th>
+                        </tr>
+                        <tr>
+                            <td>Our products are priced fairly.</td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="pricedFairly" type="radio" value="1" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>1</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="pricedFairly" type="radio" value="2" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>2</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="pricedFairly" type="radio" value="3" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>3</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="pricedFairly" type="radio" value="4" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>4</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Our products are high quality.</td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="highQuality" type="radio" value="1" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>1</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="highQuality" type="radio" value="2" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>2</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="highQuality" type="radio" value="3" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>3</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="highQuality" type="radio" value="4" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>4</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>You would recommend our product to a friend or coworker.</td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="recommendedAbility" type="radio" value="1" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>1</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="recommendedAbility" type="radio" value="2" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>2</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="recommendedAbility" type="radio" value="3" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>3</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-col items-center">
+                                    <input name="recommendedAbility" type="radio" value="4" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                                    <span>4</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="form-wrapper mb-4">
+                <input type="submit" value="Submit" class="w-full mb-2 lg:mb-0 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
