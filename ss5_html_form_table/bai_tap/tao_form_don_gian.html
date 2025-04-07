@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo form đơn giản</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="font-primary container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[800px] mx-auto my-10 border-2 border-b border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8">
+            <h1 class="text-lg text-center">SỞ THÍCH CỦA BẠN</h1>
+            <form action="">
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Họ và tên</div>
+                    <div class="w-60 flex-auto">
+                        <input type="text" name="name" class="w-full border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Email</div>
+                    <div class="w-60 flex-auto">
+                        <input type="email" name="email" class="w-full border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Sở thích</div>
+                    <div class="w-60 flex flex-wrap flex-auto">
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="Thể thao" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Thể thao</label>
+                        </div>
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="music" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Âm nhạc</label>
+                        </div>
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="reading" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Đọc sách</label>
+                        </div>
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="websurfing" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Lướt web</label>
+                        </div>
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="playinggame" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Chơi game</label>
+                        </div>
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="cinema" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Điện ảnh</label>
+                        </div>
+                        <div class="w-1/2 lg:w-1/3 flex items-center mb-4">
+                            <input name="hobby" type="checkbox" value="traveling" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Du lịch</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 justify-center">
+                    <input type="submit" value="Gửi thông tin" class="w-full mb-2 lg:mb-0 lg:w-[200px] mx-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <input type="reset" value="Nhập lại" class="w-full mx-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+    <div class="font-secondary container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[800px] mx-auto my-10 border-2 border-b border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8">
+            <h1 class="text-lg text-center">Đăng ký học viên</h1>
+            <form action="">
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Họ và tên</div>
+                    <div class="w-60 flex-auto">
+                        <input type="text" name="name" class="w-full border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Ngày sinh</div>
+                    <div class="w-60 flex-auto">
+                        <input type="date" name="birthday" class="max-w-min w-full border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Giới tính</div>
+                    <div class="w-60 flex flex-wrap flex-auto">
+                        <div class="flex items-center mr-4">
+                            <input name="gender" type="radio" value="male" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Nam</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input name="gender" type="radio" value="female" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2">
+                            <label class="ms-2">Nữ</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Địa chỉ</div>
+                    <div class="w-60 flex-auto">
+                        <textarea name="address" class="min-h-20 w-full border border-gray-300 rounded-md"></textarea>
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Lớp</div>
+                    <div class="w-60 flex-auto">
+                        <select name="classname" class="w-full border border-gray-300 rounded-md">
+                            <option value="C0325G1">C0325G1</option>
+                            <option value="C0225G1">C0225G1</option>
+                            <option value="C0125G1">C0125G1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Email</div>
+                    <div class="w-60 flex-auto">
+                        <input type="email" name="email" class="w-full border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 lg:justify-center">
+                    <div class="w-40">Điện thoại</div>
+                    <div class="w-60 flex-auto">
+                        <input type="tel" name="phone" class="w-full border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="flex flex-wrap my-5 justify-center">
+                    <input type="submit" value="Đăng ký" class="w-full mb-2 lg:mb-0 lg:w-[200px] mx-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <input type="reset" value="Nhập lại" class="w-full mx-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
