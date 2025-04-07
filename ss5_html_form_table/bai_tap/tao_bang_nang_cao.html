@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo bảng nâng cao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+
+        .chess-table table {
+            border-collapse: collapse;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        .chess-table th:not(:first-child) {
+            text-align: center;
+        }
+        .chess-table tr:nth-child(2), .chess-table tr td:first-child {
+            text-align: center;
+        }
+        .chess-table tr td:not(:first-child) {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #dddddd;
+        }
+        .chess-table td, .chess-table th {
+            padding: 8px;
+        }
+        .chess-table tr:nth-child(even) td:nth-child(even), .chess-table tr:nth-child(odd) td:nth-child(odd):not(:first-child) {
+            background-color: #000;
+        }
+
+        .calendar table {
+            border-collapse: collapse;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        .calendar th, td {
+            text-align: center;
+            padding: 4px;
+        }
+        .calendar tr:not(:first-child):not(:nth-child(2)) td {
+            width: 110px;
+            height: 72px;
+            border: 1px solid #dddddd;
+        }
+        .calendar td:first-child {
+            color: red;
+        }
+        .calendar td:last-child {
+            color: blue;
+        }
+        .calendar th {
+            color: #fff;
+            background-color: orange;
+        }
+        .calendar th:first-child {
+            background-color: red;
+        }
+        .calendar th:last-child {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="font-primary text-blue-800 text-2xl mb-2 text-center">Bàn cờ vua</h1>
+        <div class="font-secondary text-blue-500 flex flex-wrap justify-between">
+            <div class="chess-table w-full mt-4">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+    <div class="container max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="font-primary text-blue-800 text-2xl mb-2 text-center">Tháng 10 - October</h1>
+        <div class="font-secondary flex flex-wrap justify-between">
+            <div class="calendar w-full mt-4">
+                <table>
+                    <tr>
+                        <th>C. Nhật</th>
+                        <th>T. Hai</th>
+                        <th>T. Ba</th>
+                        <th>T. Tư</th>
+                        <th>T. Năm</th>
+                        <th>T. Sáu</th>
+                        <th>T. Bảy</th>
+                    </tr>
+                    <tr>
+                        <td>Sun</td>
+                        <td>Mon</td>
+                        <td>Tue</td>
+                        <td>Web</td>
+                        <td>Thu</td>
+                        <td>Fri</td>
+                        <td>Sat</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">1</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">13</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">2</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">14</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">3</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">15</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">4</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">16</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">5</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">17</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">6</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">18</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">7</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">19</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">8</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">20</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">9</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">21</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">10</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">22</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">11</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">23</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">12</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">24</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">13</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">25</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">14</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">26</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">15</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">27</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">16</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">28</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">17</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">29</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">18</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">1.9</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">19</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">2</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">20</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">3</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">21</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">4</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">22</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">5</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">23</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">6</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">24</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">7</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">25</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">8</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">26</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">9</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">27</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">10</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">28</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">11</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">29</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">12</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">30</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">13</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="relative">
+                                <span class="text-4xl">31</span>
+                                <span class="absolute -bottom-2 right-3 !text-black">14</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+</body>
+</html>
