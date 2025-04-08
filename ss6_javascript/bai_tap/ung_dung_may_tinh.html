@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng máy tính</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .calculator td {
+            border: 1px solid gray;
+            height: 80px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary ex1 text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Tạo một ứng dụng máy tính đơn giản để thực hiện các phép tính đơn giản.</h1>
+        <form>
+            <div class="calculator max-w-[500px]">
+                <div class="calculating-display bg-gray-800 max-w-auto text-2xl text-right text-white pt-4 px-4 overflow-auto h-[48px]"></div>
+                <div class="result-display bg-gray-800 max-w-auto text-6xl text-right text-white p-4 overflow-auto">0</div>
+                <table class="w-full table-fixed">
+                    <tr>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="%">%</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="CE">CE</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="C">C</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="backspace"><i class="fa fa-trash" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="reverse">1/x</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="pow">x^2</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="sqrt">√x</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="/">/</td>
+                    </tr>
+                    <tr>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="7">7</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="8">8</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="9">9</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="*">×</td>
+                    </tr>
+                    <tr>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="4">4</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="5">5</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="6">6</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="-">-</td>
+                    </tr>
+                    <tr>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="1">1</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="2">2</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="3">3</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-700 bg-gray-600 text-white" data-val="+">+</td>
+                    </tr>
+                    <tr>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="add-minus">±</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val="0">0</td>
+                        <td class="hover:cursor-pointer hover:bg-gray-500 bg-gray-400 text-white" data-val=".">.</td>
+                        <td class="hover:cursor-pointer hover:bg-blue-400 bg-blue-300 transition" data-val="=">=</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+    <script>
+        const resultDisplay = document.querySelector('.result-display');
+        const calculatingDisplay = document.querySelector('.calculating-display');
+        const buttons = document.querySelectorAll('.calculator td');
+        var isFirstTimeInputSecondNumber = false;
+        var isSelectedOperator = false;
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.getAttribute('data-val');
+                switch (value) {
+                    case '0':
+                    case '1':
+                    case '2':
+                    case '3':
+                    case '4':
+                    case '5':
+                    case '6':
+                    case '7':
+                    case '8':
+                    case '9':
+                        if (resultDisplay.innerText === '0' || isFirstTimeInputSecondNumber) {
+                            resultDisplay.innerText = value;
+                            isFirstTimeInputSecondNumber = false;
+                        } else {
+                            resultDisplay.innerText += value;
+                        }
+                        break;
+                    case 'backspace':
+                        if (resultDisplay.innerText.length === 1) {
+                            resultDisplay.innerText = '0';
+                            calculatingDisplay.innerText = '';
+                            isFirstTimeInputSecondNumber = false;
+                            isSelectedOperator = false;
+                        } else {
+                            resultDisplay.innerText = resultDisplay.innerText.substring(0, resultDisplay.innerText.length - 1);
+                        }
+                        break;
+                    case '.':
+                        !resultDisplay.innerText.split('').includes('.') ? resultDisplay.innerText += '.' : resultDisplay.innerText;
+                        break;
+                    case 'add-minus':
+                        if (resultDisplay.innerText === '0') {
+                            break;
+                        } else if (resultDisplay.innerText[0] !== '-') {
+                            resultDisplay.innerText = '-' + resultDisplay.innerText;
+                        } else {
+                            resultDisplay.innerText = resultDisplay.innerText.substring(1, resultDisplay.innerText.length);
+                        }
+                        break;
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                    case '%':
+                        if (calculatingDisplay.innerText[calculatingDisplay.innerText.length - 1] === '=') {
+                            calculatingDisplay.innerText = resultDisplay.innerText + ' ' + value + ' ';
+                            isFirstTimeInputSecondNumber = true;
+                            isSelectedOperator = true;
+                        } else if (isSelectedOperator) {
+                            var arr = calculatingDisplay.innerText.split(' ');
+                            var finalResult = fn_calculatingDisplay(parseFloat(arr[0]), parseFloat(resultDisplay.innerText), arr[1]);
+                            resultDisplay.innerText = finalResult;
+                            calculatingDisplay.innerText = resultDisplay.innerText + ' ' + value + ' ';
+                            isFirstTimeInputSecondNumber = true;
+                        } else {
+                            calculatingDisplay.innerText = resultDisplay.innerText + ' ' + value + ' ';
+                            isFirstTimeInputSecondNumber = true;
+                            isSelectedOperator = true;
+                        }
+                        break;
+                    case '=':
+                        console.log(calculatingDisplay.innerText);
+                        if (calculatingDisplay.innerText[calculatingDisplay.innerText.length - 1] === '=') {
+                            var arr = calculatingDisplay.innerText.split(' ');
+                            if (arr.length >= 3) {
+                                finalResult = fn_calculatingDisplay(parseFloat(arr[2]), parseFloat(resultDisplay.innerText), arr[1]);
+                                calculatingDisplay.innerText = resultDisplay.innerText + ' ' + arr[1] + ' ' + arr[2] + ' = ';
+                                resultDisplay.innerText = finalResult;
+                            }
+                        } else if (calculatingDisplay.innerText === '') {
+                            calculatingDisplay.innerText = resultDisplay.innerText + ' = ';
+                        } else {
+                            var arr = calculatingDisplay.innerText.split(' ');
+                            finalResult = fn_calculatingDisplay(parseFloat(arr[0]), parseFloat(resultDisplay.innerText), arr[1]);
+                            calculatingDisplay.innerText = calculatingDisplay.innerText + ' ' + resultDisplay.innerText + ' = ';
+                            resultDisplay.innerText = finalResult;
+                            isFirstTimeInputSecondNumber = true;
+                        }
+                        break;
+                    case 'C':
+                    case 'CE':
+                        isFirstTimeInputSecondNumber = false;
+                        isSelectedOperator = false;
+                        resultDisplay.innerText = '0';
+                        calculatingDisplay.innerText = '';
+                        break;
+                    case 'sqrt':
+                        resultDisplay.innerText = parseFloat(Math.sqrt(parseFloat(resultDisplay.innerText)).toFixed(8));
+                        calculatingDisplay.innerText = '';
+                        isFirstTimeInputSecondNumber = false;
+                        isSelectedOperator = false;
+                        break;
+                    case 'reverse':
+                        resultDisplay.innerText = parseFloat((1 / parseFloat(resultDisplay.innerText)).toFixed(8));
+                        calculatingDisplay.innerText = '';
+                        isFirstTimeInputSecondNumber = false;
+                        isSelectedOperator = false;
+                        break;
+                    case 'pow':
+                        resultDisplay.innerText = parseFloat((parseFloat(resultDisplay.innerText) * parseFloat(resultDisplay.innerText)).toFixed(8));
+                        calculatingDisplay.innerText = '';
+                        isFirstTimeInputSecondNumber = false;
+                        isSelectedOperator = false;
+                        break;
+                }
+            })
+        })
+        function fn_calculatingDisplay (num1, num2, operator) {
+            switch (operator) {
+                case '+':
+                    return parseFloat((num1 + num2).toFixed(8));
+                case '-':
+                    return parseFloat((num1 - num2).toFixed(8));
+                case '*':
+                    return parseFloat((num1 * num2).toFixed(8));
+                case '/':
+                    return parseFloat((num1 / num2).toFixed(8));
+                case '%':
+                    return parseFloat((num1 % num2).toFixed(8));
+                case '=':
+                    return parseFloat(num2.toFixed(8));
+            }
+        }
+    </script>
+</body>
+</html>
