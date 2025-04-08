@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary ex1 text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Ứng dụng chuyển đổi tiền tệ cho phép tính giá trị tiền tệ giữa các đồng tiền khác nhau dựa vào một tỉ giá cho trước.</h1>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Amount</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="amount" min="0" maxlength="255" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">From Currency</div>
+                <div class="w-60 flex-auto">
+                    <select name="fromCurrency" class="w-[120px] border border-gray-300 rounded-md">
+                        <option value="vnd">VND</option>
+                        <option value="usd">USD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">To Currency</div>
+                <div class="w-60 flex-auto">
+                    <select name="toCurrency" class="w-[120px] border border-gray-300 rounded-md">
+                        <option value="usd">USD</option>
+                        <option value="vnd">VND</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả chuyển đổi là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <script>
+        const fromCurrency = document.querySelector('[name="fromCurrency"]');
+        const toCurrency = document.querySelector('[name="toCurrency"]');
+        fromCurrency.addEventListener('change', function(e) {
+            if (toCurrency.value === e.target.value) {
+                toCurrency.querySelector(`option:not([value="${e.target.value}"])`).selected = 'selected';
+            }
+        })
+        toCurrency.addEventListener('change', function(e) {
+            if (fromCurrency.value === e.target.value) {
+                fromCurrency.querySelector(`option:not([value="${e.target.value}"])`).selected = 'selected';
+            }
+        })
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var amount = parseInt(document.querySelector('input[name="amount"]').value);
+            var fromCurrencySelect = fromCurrency.value;
+            var toCurrencySelect = toCurrency.value;
+            var result;
+            if (fromCurrencySelect === 'vnd') {
+                result = amount / 26000;
+            } else if (fromCurrencySelect === 'usd') {
+                result = amount * 26000;
+            } else {
+                result = "Lỗi tính toán";
+            }
+            document.querySelector('.output').textContent = result.toString();
+        })
+
+    </script>
+</body>
+</html>
