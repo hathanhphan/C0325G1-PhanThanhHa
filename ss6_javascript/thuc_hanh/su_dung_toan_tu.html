@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sử dụng toán tử</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Viết một ứng dụng để tính diện tích của hình chữ nhật dựa vào chiều rộng và chiều cao được nhập vào.</h1>
+    </div>
+    <script>
+        var inputWidth = prompt('Nhập chiều rộng:');
+        while (!/^[0-9]+$/.test(inputWidth)) {
+            alert("Bạn cần nhập giá trị kiểu số.");
+            inputWidth = prompt("Nhập chiều rộng:");
+        }
+        var inputHeight = prompt('Nhập chiều cao:');
+        while (!/^[0-9]+$/.test(inputHeight)) {
+            alert("Bạn cần nhập giá trị kiểu số.");
+            inputHeight = prompt("Nhập chiều cao:");
+        }
+        const container = document.querySelector('.container');
+        let area = parseInt(inputWidth) * parseInt(inputHeight);
+        container.insertAdjacentHTML('beforeend', `<p>Diện tích hình chữ nhật ${inputWidth} x ${inputHeight} là ${area}</p>`);
+    </script>
+</body>
+</html>
