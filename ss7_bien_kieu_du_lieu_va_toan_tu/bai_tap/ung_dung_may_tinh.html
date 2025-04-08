@@ -145,11 +145,10 @@
                         }
                         break;
                     case '=':
-                        console.log(calculatingDisplay.innerText);
                         if (calculatingDisplay.innerText[calculatingDisplay.innerText.length - 1] === '=') {
                             var arr = calculatingDisplay.innerText.split(' ');
                             if (arr.length >= 3) {
-                                finalResult = fn_calculatingDisplay(parseFloat(arr[2]), parseFloat(resultDisplay.innerText), arr[1]);
+                                finalResult = fn_calculatingDisplay(parseFloat(resultDisplay.innerText), parseFloat(arr[2]), arr[1]);
                                 calculatingDisplay.innerText = resultDisplay.innerText + ' ' + arr[1] + ' ' + arr[2] + ' = ';
                                 resultDisplay.innerText = finalResult;
                             }
