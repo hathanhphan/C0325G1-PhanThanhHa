@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhúng Javascript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary ex1 text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Bài 1: Khai báo các biến thuộc các kiểu khác nhau, gán giá trị cho chúng và in ra tài liệu HTML.</h1>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+    <div class="p-4 container font-secondary ex2 text-xl">
+        <h2 class="font-primary text-2xl mb-4 text-blue-800">Bài 2: Viết một đoạn mã Javascript, khai báo biến width chứa giá trị độ rộng của hình chữ nhật, biến height chứa giá trị chiều cao của hình chữ nhật. In ra màn hình diện tích của hình chữ nhật đó.</h2>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+    <div class="p-4 container font-secondary ex2 text-xl">
+        <h2 class="font-primary text-2xl mb-4 text-blue-800">Bài 3: Dùng hàm prompt() để nhập 2 số từ bàn phím, lưu vào 2 biến là a và b. Kiểm tra xem a có phải là bội số của b hay không (tức là a có chia hết cho b hay không). Hiển thị kết quả ra màn hình bằng cách sử dụng hàm alert().</h2>
+    </div>
+    <script>
+        // exercise 1
+        let i = 10;
+        let f = 20.5;
+        let b = true;
+        let s = 'Hà Nội';
+        const ex1 = document.querySelector('.ex1');
+        ex1.insertAdjacentHTML('beforeend', `<p>${i}</p>`);
+        ex1.insertAdjacentHTML('beforeend', `<p>${f}</p>`);
+        ex1.insertAdjacentHTML('beforeend', `<p>${b}</p>`);
+        ex1.insertAdjacentHTML('beforeend', `<p>${s}</p>`);
+
+        // exercise 2
+        let width = 20;
+        let height = 10;
+        let area = width * height;
+        const ex2 = document.querySelector('.ex2');
+        ex2.insertAdjacentHTML('beforeend', `<p>Diện tích hình chữ nhật ${width} x ${height} là ${area}</p>`);
+
+        // exercise 3
+        var numberA = prompt('Nhập số a:');
+        while (!/^[0-9]+$/.test(numberA)) {
+            alert("Bạn cần nhập giá trị kiểu số.");
+            numberA = prompt("Nhập số a:");
+        }
+        var numberB = prompt('Nhập số b:');
+        while (!/^[0-9]+$/.test(numberB)) {
+            alert("Bạn cần nhập giá trị kiểu số.");
+            numberB = prompt("Nhập số b:");
+        }
+        isMultiple = parseInt(numberA) % parseInt(numberB) === 0;
+
+        if (isMultiple) {
+            alert(`${numberA} là bội số của ${numberB}`);
+        } else {
+            alert(`${numberA} không phải là bội số của ${numberB}`);
+        }
+    </script>
+</body>
+</html>
