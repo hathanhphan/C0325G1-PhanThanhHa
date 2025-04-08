@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo bảng đơn giản</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+
+        .timetable-wrapper table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .timetable-wrapper td, .timetable-wrapper th {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        .timetable-wrapper th:not(:first-child) {
+            text-align: center;
+        }
+        .timetable-wrapper tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .timetable-wrapper tr:nth-child(2), .timetable-wrapper tr td:first-child {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4">
+        <h1 id="title" class="font-primary text-4xl mb-4">Content will change here!</h1>
+        <button id="btnChangeInnerHtml" class="font-secondary hover:cursor-pointer mb-2 lg:mb-0 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Change text H1</button>
+        <button id="btnDocWrite" class="font-secondary hover:cursor-pointer mb-2 lg:mb-0 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Document Write</button>
+        <button id="btnAlert" class="font-secondary hover:cursor-pointer mb-2 lg:mb-0 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Alert</button>
+        <button id="btnConsoleLog" class="font-secondary hover:cursor-pointer mb-2 lg:mb-0 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Console Log</button>
+    </div>
+    <script>
+        document.getElementById("btnChangeInnerHtml").onclick = function () {
+            document.getElementById("title").innerHTML = "Hello World!";
+        }
+        document.getElementById("btnDocWrite").onclick = function () {
+            document.write("Hello World!");
+        }
+        document.getElementById("btnAlert").onclick = function () {
+            alert("Hello World!");
+        }
+        document.getElementById("btnConsoleLog").onclick = function () {
+            console.log("Hello World!");
+        }
+    </script>
+</body>
+</html>
