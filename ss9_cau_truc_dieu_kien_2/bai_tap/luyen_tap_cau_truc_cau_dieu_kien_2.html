@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập cấu trúc câu điều kiện 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập cấu trúc câu điều kiện 2.</h1>
+        <ul class="my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+            <li>
+                <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: Chuyển từ độ C sang độ F.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Giá trị độ C</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="celsius" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Giá trị độ F tương ứng là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Chuyển từ mét sang feet.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập mét (m)</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="meter" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Giá trị feet (ft) tương ứng là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Tính diện tích hình vuông khi biết cạnh a.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh a</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="aVal" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Diện tích hình vuông là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh a</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="aVal" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh b</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="bVal" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Diện tích hình chữ nhật là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh a</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="aVal" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh b</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="bVal" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Diện tích hình tam giác vuông là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 6 -->
+    <div id="ex6" class="ex6 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 6: Giải phương trình bậc 1.</h2>
+        <form>
+            <div class="flex my-5">
+                <input type="number" name="aVal" maxlength="5" step="0.01" required class="w-[60px] border border-gray-300 rounded-md">
+                <span>&nbsp;x</span>
+                <span>&nbsp;+&nbsp;</span>
+                <input type="number" name="bVal" maxlength="5" step="0.01" required class="w-[60px] border border-gray-300 rounded-md">
+                <span>&nbsp;=&nbsp;0</span>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 7 -->
+    <div id="ex7" class="ex7 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 7: Giải phương trình bậc 2.</h2>
+        <form>
+            <div class="flex my-5">
+                <input type="number" name="aVal" maxlength="5" step="0.01" required class="w-[60px] border border-gray-300 rounded-md">
+                <span>&nbsp;x^2</span>
+                <span>&nbsp;+&nbsp;</span>
+                <input type="number" name="bVal" maxlength="5" step="0.01" required class="w-[60px] border border-gray-300 rounded-md">
+                <span>&nbsp;x&nbsp;+&nbsp;</span>
+                <input type="number" name="cVal" maxlength="5" step="0.01" required class="w-[60px] border border-gray-300 rounded-md">
+                <span>&nbsp;=&nbsp;0</span>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        // Exercise 1
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var celsius = parseFloat(document.querySelector('.ex1 input[name="celsius"]').value);
+            var fahrenheit = (9 * celsius) / 5 + 32;
+            document.querySelector('.ex1 .output').textContent = parseFloat(fahrenheit.toFixed(2)).toString();
+        })
+
+        // Exercise 2
+        document.querySelector('.ex2 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var meter = parseFloat(document.querySelector('.ex2 input[name="meter"]').value);
+            var feet = meter * 3.2808;
+            document.querySelector('.ex2 .output').textContent = parseFloat(feet.toFixed(4)).toString();
+        })
+
+        // Exercise 3
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var aVal = parseFloat(document.querySelector('.ex3 input[name="aVal"]').value);
+            var area = aVal * aVal;
+            document.querySelector('.ex3 .output').textContent = parseFloat(area.toFixed(4)).toString();
+        })
+
+        // Exercise 4
+        document.querySelector('.ex4 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var aVal = parseFloat(document.querySelector('.ex4 input[name="aVal"]').value);
+            var bVal = parseFloat(document.querySelector('.ex4 input[name="bVal"]').value);
+            var area = aVal * bVal;
+            document.querySelector('.ex4 .output').textContent = parseFloat(area.toFixed(4)).toString();
+        })
+
+        // Exercise 5
+        document.querySelector('.ex5 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var aVal = parseFloat(document.querySelector('.ex5 input[name="aVal"]').value);
+            var bVal = parseFloat(document.querySelector('.ex5 input[name="bVal"]').value);
+            var area = aVal * bVal / 2;
+            document.querySelector('.ex5 .output').textContent = parseFloat(area.toFixed(4)).toString();
+        })
+
+        // Exercise 6
+        document.querySelector('.ex6 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var aVal = parseFloat(document.querySelector('.ex6 input[name="aVal"]').value);
+            var bVal = parseFloat(document.querySelector('.ex6 input[name="bVal"]').value);
+            document.querySelector('.ex6 .output').textContent = linearEquation(aVal, bVal);
+        })
+
+        // Exercise 7
+        document.querySelector('.ex7 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var aVal = parseFloat(document.querySelector('.ex7 input[name="aVal"]').value);
+            var bVal = parseFloat(document.querySelector('.ex7 input[name="bVal"]').value);
+            var cVal = parseFloat(document.querySelector('.ex7 input[name="cVal"]').value);
+            if (aVal === 0) {
+                document.querySelector('.ex7 .output').textContent = linearEquation(bVal, cVal);
+            } else {
+                var result = "";
+                var delta = bVal * bVal - 4 * aVal * cVal;
+                if (delta < 0) {
+                    result = "Phương trình vô nghiệm.";
+                } else if (delta === 0) {
+                    result = `Phương trình có nghiệm kép là ${parseFloat((-bVal / 2 * aVal).toFixed(2))}.`;
+                } else {
+                    var x1 = (-bVal + Math.sqrt(delta)) / (2 * aVal);
+                    var x2 = (-bVal - Math.sqrt(delta)) / (2 * aVal);
+                    result = `Phương trình có 2 nghiệm phân biệt là ${parseFloat(x1.toFixed(2))} và ${parseFloat(x2.toFixed(2))}.`;
+                }
+                document.querySelector('.ex7 .output').textContent = result;
+            }
+
+        })
+
+        function linearEquation(a, b) {
+            var result = "";
+            if (a === 0) {
+                if (b !== 0) {
+                    result = "Phương trình vô nghiệm.";
+                } else {
+                    result = "Phương trình vô số nghiệm.";
+                }
+            } else {
+                result = `Phương trình có nghiệm duy nhất là ${parseFloat((-b / a).toFixed(2))}.`;
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
