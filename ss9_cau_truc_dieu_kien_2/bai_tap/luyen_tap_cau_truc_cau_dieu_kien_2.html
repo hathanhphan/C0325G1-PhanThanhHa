@@ -21,6 +21,7 @@
             font-family: "Lexend", sans-serif;
         }
         .btn {
+            display: block;
             font-weight: bold;
             padding: 10px 20px;
             border-radius: 10px;
@@ -33,12 +34,18 @@
             background-color: #2139d6;
             transition: all 0.3s linear;
         }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="px-4 container">
         <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập cấu trúc câu điều kiện 2.</h1>
-        <ul class="my-8 flex gap-4 w-full font-secondary">
+        <ul class="anchor-list my-8 flex flex-wrap gap-4 w-full font-secondary">
             <li>
                 <a href="#ex1" class="btn btn-blue">Bài 1</a>
             </li>
@@ -59,6 +66,21 @@
             </li>
             <li>
                 <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+            <li>
+                <a href="#ex8" class="btn btn-blue">Bài 8</a>
+            </li>
+            <li>
+                <a href="#ex9" class="btn btn-blue">Bài 9</a>
+            </li>
+            <li>
+                <a href="#ex10" class="btn btn-blue">Bài 10</a>
+            </li>
+            <li>
+                <a href="#ex11" class="btn btn-blue">Bài 11</a>
+            </li>
+            <li>
+                <a href="#ex12" class="btn btn-blue">Bài 12</a>
             </li>
         </ul>
     </div>
@@ -226,6 +248,159 @@
     </div>
     <div class="h-5 lg:h-10"></div>
 
+    <!-- Exercise 8 -->
+    <div id="ex8" class="ex8 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập tuổi</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="age" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 9 -->
+    <div id="ex9" class="ex9 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh a</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="aVal" min="0.01" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh b</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="bVal" min="0.01" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập cạnh c</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="cVal" min="0.01" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 10 -->
+    <div id="ex10" class="ex10 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 10: Tính giá điện.</h2>
+        <div class="italic">
+            <p>Giả sử biểu giá điện có 3 bậc như sau:
+            <ul class="list-disc ml-5">
+                <li>Bậc 1: 0 - 50 kWh: 1,500 đồng/kWh</li>
+                <li>Bậc 2: 51 - 100 kWh: 2,000 đồng/kWh</li>
+                <li>Bậc 3: Trên 100 kWh: 2,500 đồng/kWh</li>
+            </ul>
+        </div>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập số điện</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="eVal" min="0" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <span>(kWh)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 11 -->
+    <div id="ex11" class="ex11 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 11: Tính thuế thu nhập cá nhân.</h2>
+        <div class="italic">
+            <p>Thuế thu nhập cá nhân thường được tính theo biểu thuế lũy tiến từng phần, nghĩa là thuế suất tăng dần theo mức thu nhập. Biểu thuế này có thể thay đổi theo thời gian, nhưng một ví dụ điển hình (dựa trên quy định của Việt Nam) là:
+            <ul class="list-disc ml-5">
+                <li>Thu nhập đến 5 triệu đồng: 5%</li>
+                <li>Trên 5 triệu đến 10 triệu đồng: 10%</li>
+                <li>Trên 10 triệu đến 18 triệu đồng: 15%</li>
+                <li>Trên 18 triệu đến 32 triệu đồng: 20%</li>
+                <li>Trên 32 triệu đến 52 triệu đồng: 25%</li>
+                <li>Trên 52 triệu đến 80 triệu đồng: 30%</li>
+                <li>Trên 80 triệu đồng: 35%</li>
+            </ul>
+        </div>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Thu nhập</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="income" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <span>(đồng)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 12 -->
+    <div id="ex12" class="ex12 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Tiền ban đầu</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="baseMoney" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <span>(đồng)</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số tháng</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="month" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Lãi suất</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="interestRate" min="0" maxlength="5" step="0.01" required class="w-[240px] border border-gray-300 rounded-md">
+                    <span>%</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
     <script>
         // Exercise 1
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
@@ -274,7 +449,7 @@
             e.preventDefault();
             var aVal = parseFloat(document.querySelector('.ex6 input[name="aVal"]').value);
             var bVal = parseFloat(document.querySelector('.ex6 input[name="bVal"]').value);
-            document.querySelector('.ex6 .output').textContent = linearEquation(aVal, bVal);
+            document.querySelector('.ex6 .output').textContent = solveLinearEquation(aVal, bVal);
         })
 
         // Exercise 7
@@ -284,7 +459,7 @@
             var bVal = parseFloat(document.querySelector('.ex7 input[name="bVal"]').value);
             var cVal = parseFloat(document.querySelector('.ex7 input[name="cVal"]').value);
             if (aVal === 0) {
-                document.querySelector('.ex7 .output').textContent = linearEquation(bVal, cVal);
+                document.querySelector('.ex7 .output').textContent = solveLinearEquation(bVal, cVal);
             } else {
                 var result = "";
                 var delta = bVal * bVal - 4 * aVal * cVal;
@@ -299,10 +474,70 @@
                 }
                 document.querySelector('.ex7 .output').textContent = result;
             }
-
         })
 
-        function linearEquation(a, b) {
+        // Exercise 8
+        document.querySelector('.ex8 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var age = parseFloat(document.querySelector('.ex8 input[name="age"]').value);
+            result = "";
+            if (age > 0 && age <= 120) {
+                result = `${age} là tuổi của một người.`;
+            } else {
+                result = `${age} không phải là tuổi của một người.`;
+            }
+            document.querySelector('.ex8 .output').textContent = result;
+        })
+
+        // Exercise 9
+        document.querySelector('.ex9 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var aVal = parseFloat(document.querySelector('.ex9 input[name="aVal"]').value);
+            var bVal = parseFloat(document.querySelector('.ex9 input[name="bVal"]').value);
+            var cVal = parseFloat(document.querySelector('.ex9 input[name="cVal"]').value);
+            is3sideOfTriangle = aVal > 0 && bVal > 0 && cVal > 0 && (aVal + bVal > cVal) && (bVal + cVal > aVal) && (aVal + cVal > bVal);
+            result = "";
+            if (is3sideOfTriangle) {
+                result = `${aVal}, ${bVal} và ${cVal} là 3 cạnh của một tam giác.`;
+            } else {
+                result = `${aVal}, ${bVal} và ${cVal} không là 3 cạnh của một tam giác.`;
+            }
+            document.querySelector('.ex9 .output').textContent = result;
+        })
+
+        // Exercise 10
+        document.querySelector('.ex10 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var eVal = parseInt(document.querySelector('.ex10 input[name="eVal"]').value);
+            var total = 0;
+            if (eVal > 100) {
+                total = 50 * 1500 + 50 * 2000 + (eVal - 100) * 2500;
+            } else if (eVal > 50) {
+                total = 50 * 1500 + (eVal - 50) * 2000;
+            } else {
+                total = eVal * 1500;
+            }
+            document.querySelector('.ex10 .output').textContent = `Tổng tiền điện phải trả là ${total.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
+        })
+
+        // Exercise 11
+        document.querySelector('.ex11 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var income = parseInt(document.querySelector('.ex11 input[name="income"]').value);
+            document.querySelector('.ex11 .output').textContent = `Tổng thuế phải nộp là ${parseFloat(calculateIncomeTax(income).toFixed(2)).toLocaleString('vi', {sytle: 'currency'})} đồng.`;
+        })
+
+        // Exercise 12
+        document.querySelector('.ex12 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var baseMoney = parseInt(document.querySelector('.ex12 input[name="baseMoney"]').value);
+            var month = parseInt(document.querySelector('.ex12 input[name="month"]').value);
+            var interestRate = parseFloat(document.querySelector('.ex12 input[name="interestRate"]').value);
+            var interest = baseMoney * ((interestRate / 100 ) / 12) * month;
+            document.querySelector('.ex12 .output').textContent = `Tổng lãi là ${interest.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
+        })
+
+        function solveLinearEquation(a, b) {
             var result = "";
             if (a === 0) {
                 if (b !== 0) {
@@ -314,6 +549,26 @@
                 result = `Phương trình có nghiệm duy nhất là ${parseFloat((-b / a).toFixed(2))}.`;
             }
             return result;
+        }
+
+        function calculateIncomeTax(income) {
+            let tax = 0;
+            if (income <= 5000000) {
+                tax = income * 0.05;
+            } else if (income <= 10000000) {
+                tax = 5000000 * 0.05 + (income - 5000000) * 0.10;
+            } else if (income <= 18000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.10 + (income - 10000000) * 0.15;
+            } else if (income <= 32000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + (income - 18000000) * 0.20;
+            } else if (income <= 52000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + (income - 32000000) * 0.25;
+            } else if (income <= 80000000) {
+                tax = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + 20000000 * 0.25 + (income - 52000000) * 0.30;
+            } else {
+                tax = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + 20000000 * 0.25 + 28000000 * 0.30 + (income - 80000000) * 0.35;
+            }
+            return tax;
         }
     </script>
 </body>

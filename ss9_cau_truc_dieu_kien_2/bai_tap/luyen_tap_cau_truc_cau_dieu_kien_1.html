@@ -21,6 +21,7 @@
             font-family: "Lexend", sans-serif;
         }
         .btn {
+            display: block;
             font-weight: bold;
             padding: 10px 20px;
             border-radius: 10px;
@@ -33,12 +34,18 @@
             background-color: #2139d6;
             transition: all 0.3s linear;
         }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="px-4 container">
         <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập cấu trúc câu điều kiện 1.</h1>
-        <ul class="my-8 flex gap-4 w-full font-secondary">
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
             <li>
                 <a href="#ex1" class="btn btn-blue">Bài 1</a>
             </li>
@@ -211,6 +218,7 @@
                 <div class="w-40">Doanh số</div>
                 <div class="w-60 flex-auto">
                     <input type="number" name="sales" maxlength="255" required class="w-[120px] border border-gray-300 rounded-md">
+                    <span>(đồng)</span>
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
@@ -234,7 +242,7 @@
     <div id="ex7" class="ex7 p-4 container font-secondary text-xl">
         <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 7: Tính cước điện thoại cho một hộ gia đình dựa trên các thông số được cung cấp.</h2>
         <form>
-            <p>Cước thuê bao cố định: 50000 đồng.</p>
+            <p>Cước thuê bao cố định: 50.000 đồng.</p>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Gọi nội</div>
                 <div class="w-60 flex-auto">
@@ -362,7 +370,7 @@
             var sales = parseInt(document.querySelector('.ex6 input[name="sales"]').value);
             var percent = parseInt(document.querySelector('.ex6 input[name="percent"]').value);
             var result = sales * percent / 100;
-            document.querySelector('.ex6 .output').textContent = `Hoa hồng nhận được là ${parseFloat(result.toFixed(2))}.`;
+            document.querySelector('.ex6 .output').textContent = `Hoa hồng nhận được là ${parseFloat(result.toFixed(2)).toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
 
         // Exercise 7
@@ -372,7 +380,7 @@
             var externalCall = parseInt(document.querySelector('.ex7 input[name="externalCall"]').value);
             var smsNum = parseInt(document.querySelector('.ex7 input[name="smsNum"]').value);
             var result = 50000 + internalCall * 500 + externalCall * 1000 + smsNum * 300;
-            document.querySelector('.ex7 .output').textContent = `Tổng cước là ${result} đồng.`;
+            document.querySelector('.ex7 .output').textContent = `Tổng cước là ${result.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
     </script>
 </body>
