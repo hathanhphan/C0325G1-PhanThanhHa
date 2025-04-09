@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sự kiện chuột</title>
+    <style>
+        .container, #ball {
+            position: relative;
+            left: 0;
+        }
+        #ball {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <form class="container">
+        <img id="ball" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg"/>
+        <p>Click button below to move the image to right</p>
+        <input type="button" value="Click Me" class="btnMoveBall"/>
+        <input type="button" value="Reset" class="btnResetBall"/>
+    </form>
+    <script>
+        var ball = document.querySelector("#ball");
+        document.querySelector(".btnMoveBall").addEventListener("click", function () {
+            if (!ball.style.left) {
+                ball.style.left = "10px";
+            } else {
+                ball.style.left = parseInt(ball.style.left) + 10 + "px";
+            }
+            console.log(ball.style.left);
+        })
+        document.querySelector(".btnResetBall").addEventListener("click", function () {
+            ball.style.left = 0;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body>
+    <form class="container">
+        <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:relative; top: 200px; left: 300px" height="100" width="80"/>
+    </form>
+    <script>
+        var nobita = document.getElementById("nobita");
+        function upArrowPressed() {
+            nobita.style.top = parseInt(nobita.style.top) - 5 + 'px';
+        }
+        function downArrowPressed() {
+            nobita.style.top = parseInt(nobita.style.top) + 5 + 'px';
+        }
+        function leftArrowPressed() {
+            nobita.style.left = parseInt(nobita.style.left) - 5 + 'px';
+        }
+        function rightArrowPressed() {
+            console.log(nobita.style.left);
+            nobita.style.left = parseInt(nobita.style.left) + 5 + 'px';
+        }
+        function moveSelection(evt) {
+            console.log(evt.keyCode);
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+            }
+        }
+        function docReady() {
+            window.addEventListener('keydown', moveSelection);
+        }
+        docReady();
+    </script>
+</body>
+</html>
