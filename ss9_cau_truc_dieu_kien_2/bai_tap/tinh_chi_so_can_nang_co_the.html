@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính chỉ số cân nặng cơ thể</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary bmi-calculator text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Luyện tập sử dụng cấu trúc điều khiển if.</h1>
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Chỉ số khối cơ thể (Body Mass Index - BMI) là thước đo sức khỏe dựa trên cân nặng và chiều cao. BMI được tính theo công thức:</h2>
+        <p class="bg-blue-200 max-w-fit">BMI = cân nặng / (chiều cao ^ 2)</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Cân nặng</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="weight" min="0" max="300" step="0.01" maxlength="3" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Chiều cao</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="height" min="0" max="3" step="0.01" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Chỉ số BMI của bạn là: <span class="bmi"></span></p>
+                <p>Phân loại chỉ số BMI: <span class="interpretation"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <script>
+        document.querySelector('.bmi-calculator form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var weight = parseFloat(document.querySelector('input[name="weight"]').value);
+            var height = parseFloat(document.querySelector('input[name="height"]').value);
+            var result = weight / (height * height);
+            var rank = "";
+            if (result >= 30) {
+                rank = "Béo phì";
+            } else if (result >= 25) {
+                rank = "Thừa cân";
+            } else if (result >= 18.5) {
+                rank = "Bình thường";
+            } else {
+                rank = "Thiếu cân";
+            }
+            document.querySelector('.bmi').textContent = result.toFixed(2).toString();
+            document.querySelector('.interpretation').textContent = rank;
+        })
+    </script>
+</body>
+</html>

@@ -71,9 +71,8 @@
         })
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var amount = parseInt(document.querySelector('input[name="amount"]').value);
+            var amount = parseFloat(document.querySelector('input[name="amount"]').value);
             var fromCurrencySelect = fromCurrency.value;
-            var toCurrencySelect = toCurrency.value;
             var result;
             if (fromCurrencySelect === 'vnd') {
                 result = amount / 26000;
@@ -82,7 +81,7 @@
             } else {
                 result = "Lỗi tính toán";
             }
-            document.querySelector('.output').textContent = result.toString();
+            document.querySelector('.output').textContent = parseFloat(result.toFixed(2)).toString();
         })
 
     </script>

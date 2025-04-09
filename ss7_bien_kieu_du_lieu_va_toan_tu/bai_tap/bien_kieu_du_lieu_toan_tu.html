@@ -27,19 +27,19 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Vật lý</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="physics" min="0" max="10" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="physics" min="0" max="10" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Hóa học</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="chemistry" min="0" max="10" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="chemistry" min="0" max="10" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Sinh học</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="biology" min="0" max="10" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="biology" min="0" max="10" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -59,7 +59,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Giá trị độ C</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="celsius" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="celsius" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -78,7 +78,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Bán kính</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="radius" min="0" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="radius" min="0" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -91,13 +91,13 @@
         </form>
     </div>
     <div class="h-5 lg:h-10"></div>
-    <div class="p-4 container font-secondary ex3 text-xl">
+    <div class="p-4 container font-secondary ex4 text-xl">
         <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Viết chương trình chu vi hình tròn.</h2>
         <form>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Bán kính</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="radius" min="0" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="radius" min="0" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -112,34 +112,34 @@
     <script>
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var physicsMark = parseInt(document.querySelector('input[name="physics"]').value);
-            var chemistryMark = parseInt(document.querySelector('input[name="chemistry"]').value);
-            var biologyMark = parseInt(document.querySelector('input[name="biology"]').value);
+            var physicsMark = parseFloat(document.querySelector('input[name="physics"]').value);
+            var chemistryMark = parseFloat(document.querySelector('input[name="chemistry"]').value);
+            var biologyMark = parseFloat(document.querySelector('input[name="biology"]').value);
             var sum = physicsMark + chemistryMark + biologyMark;
             var avg = sum / 3;
-            document.querySelector('.sum-mark').textContent = sum.toString();
-            document.querySelector('.avg-mark').textContent = avg.toString();
+            document.querySelector('.sum-mark').textContent = parseFloat(sum.toFixed(2)).toString();
+            document.querySelector('.avg-mark').textContent = parseFloat(avg.toFixed(2)).toString();
         })
 
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var celsius = parseInt(document.querySelector('input[name="celsius"]').value);
+            var celsius = parseFloat(document.querySelector('input[name="celsius"]').value);
             var fahrenheit = (9 * celsius) / 5 + 32;
-            document.querySelector('.f-convert').textContent = fahrenheit.toString();
+            document.querySelector('.f-convert').textContent = parseFloat(fahrenheit.toFixed(2)).toString();
         })
 
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var radius = parseInt(document.querySelector('input[name="radius"]').value);
+            var radius = parseFloat(document.querySelector('.ex3 form input[name="radius"]').value);
             var erea = radius * radius * 3.14;
-            document.querySelector('.output').textContent = erea.toFixed(2).toString();
+            document.querySelector('.ex3 form .output').textContent = parseFloat(erea.toFixed(2)).toString();
         })
 
-        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+        document.querySelector('.ex4 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var radius = parseInt(document.querySelector('input[name="radius"]').value);
+            var radius = parseFloat(document.querySelector('.ex4 form input[name="radius"]').value);
             var perimeter = 2 * radius * 3.14;
-            document.querySelector('.output').textContent = perimeter.toFixed(2).toString();
+            document.querySelector('.ex4 form .output').textContent = parseFloat(perimeter.toFixed(2)).toString();
         })
     </script>
 </body>
