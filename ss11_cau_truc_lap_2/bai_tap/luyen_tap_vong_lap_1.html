@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập vòng lặp 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập vòng lặp 1.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+            <li>
+                <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+            <li>
+                <a href="#ex8" class="btn btn-blue">Bài 8</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 1</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả:</p>
+            <div class="output"></div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 2</button>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 3</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả:</p>
+            <div class="output"></div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h2>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả: <span class="output"></span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h2>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả: <span class="output"></span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 6 -->
+    <div id="ex6" class="ex6 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h2>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả: <span class="output"></span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 7 -->
+    <div id="ex7" class="ex7 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</h2>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả: <span class="output"></span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 8 -->
+    <div id="ex8" class="ex8 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 8: Game đoán số.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chơi</button>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        // Exercise 1
+        document.querySelector('.ex1 .btnStart').addEventListener('click', function(e) {
+            let output = document.querySelector('.ex1 .output');
+            output.innerHTML = '';
+            for (let i = 1; i < 100; i++) {
+                printSequentially(output, i, i);
+            }
+        })
+
+        function printSequentially(output, index, value) {
+            setTimeout(function() {
+                output.innerHTML = output.innerHTML + " " + value;
+                if (index === 99) {
+                    setTimeout(function() {
+                        alert("Đã hoàn thành");
+                    }, 50);
+                }
+            }, index * 50);
+        }
+
+        // Exercise 2
+        document.querySelector('.ex2 .btnStart').addEventListener('click', function(e) {
+            let temperature = prompt("Nhập vào nhiệt độ: ");
+            while (true) {
+                if (temperature === "" || temperature === null) {
+                    break;
+                } else if (isNaN(parseInt(temperature))) {
+                    temperature = prompt("Nhập vào nhiệt độ: ");
+                } else if (parseInt(temperature) > 100) {
+                    temperature = prompt("Nhiệt độ quá cao, vui lòng hạ nhiệt: ");
+                } else if (parseInt(temperature) < 20) {
+                    temperature = prompt("Nhiệt độ quá thấp, vui lòng tăng nhiệt: ");
+                } else {
+                    alert("Nhiệt độ hiện tại là: " + temperature);
+                    break;
+                }
+
+            }
+        })
+
+        // Exercise 3
+        document.querySelector('.ex3 .btnStart').addEventListener('click', function(e) {
+            let output = document.querySelector('.ex3 .output');
+            let number = 20;
+            let num1 = 0;
+            let num2 = 1;
+            let nextTerm;
+            output.innerHTML = '';
+            for (let i = 1; i <= number; i++) {
+                printFibonacciSequentially(output, i, num1);
+                nextTerm = num1 + num2;
+                num1 = num2;
+                num2 = nextTerm;
+
+            }
+        })
+        function printFibonacciSequentially(output, index, value) {
+            setTimeout(function() {
+                output.innerHTML = output.innerHTML + " " + value;
+            }, index * 50);
+        }
+
+        // Exercise 4
+        {
+            let output = document.querySelector('.ex4 .output');
+            let number = 20;
+            let num1 = 0;
+            let num2 = 1;
+            let nextTerm;
+            let result = 0;
+            for (let i = 1; i <= number; i++) {
+                if (num1 !== 0 && num1 % 5 === 0) {
+                    result = num1;
+                    break;
+                }
+                if (num2 % 5 === 0) {
+                    result = num2;
+                    break;
+                }
+                nextTerm = num1 + num2;
+                if (nextTerm % 5 === 0) {
+                    result = nextTerm;
+                    break;
+                }
+                num1 = num2;
+                num2 = nextTerm;
+            }
+            output.innerHTML = `Số đầu tiên trong dãy Fibonacci chia hết cho 5 là ${result}.`;
+        }
+
+        // Exercise 5
+        {
+            let output = document.querySelector('.ex5 .output');
+            let number = 20;
+            let num1 = 0;
+            let num2 = 1;
+            let nextTerm;
+            let sum = 0;
+            output.innerHTML = '';
+            for (let i = 1; i <= number; i++) {
+                sum += num1;
+                nextTerm = num1 + num2;
+                num1 = num2;
+                num2 = nextTerm;
+            }
+            output.innerHTML = `Tổng 20 số đầu tiên trong dãy Fibonacci là ${sum}.`;
+        }
+
+        // Exercise 6
+        {
+            let output = document.querySelector('.ex6 .output');
+            let number = 30;
+            let count = 0;
+            let sum = 0;
+            let i = 7;
+            let result = [];
+            while (count < 30) {
+                if (i % 7 === 0) {
+                    sum += i;
+                    count++;
+                    result.push(i);
+                }
+                i++;
+            }
+            output.innerHTML = "<p>" + `Dãy 30 số đầu tiên chia hết cho 7 là ${result.join(" ")}.` + "</p><p>" + `Tổng 30 số này là ${sum}.` + "</p>";
+        }
+
+        // Exercise 7
+        {
+            let output = document.querySelector('.ex7 .output');
+            let number = 100;
+            for (let i = 1; i <= number; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    output.innerHTML += " FizzBuzz";
+                } else if (i % 3 === 0) {
+                    output.innerHTML += " Fizz";
+                } else if (i % 3 === 0) {
+                    output.innerHTML += " Buzz";
+                } else {
+                    output.innerHTML += " " + i;
+                }
+            }
+        }
+
+        // Exercise 8
+        document.querySelector('.ex8 .btnStart').addEventListener('click', function(e) {
+            let max = prompt("Bạn muốn đoán số trong khoảng 1 đến mấy: ");
+            let retry = 3;
+            let key;
+            while (true) {
+                if (max === "" || max === null) {
+                    break;
+                } else if (isNaN(parseInt(max))) {
+                    max = prompt("Bạn cần nhập giá trị là số: ");
+                } else {
+                    break;
+                }
+            }
+            if (max) {
+                key = getRandomInt(1, parseInt(max));
+                let playerAnswer = prompt("Số bạn đoán là: ");
+                while(true) {
+                    if (playerAnswer === "" || playerAnswer === null) {
+                        break;
+                    } else if (isNaN(parseInt(playerAnswer))) {
+                        playerAnswer = prompt("Bạn cần nhập giá trị là số: ");
+                    } else {
+                        if (retry > 1) {
+                            retry--;
+                            if (parseInt(playerAnswer) === key) {
+                                alert("Bạn đã đoán đúng!!!");
+                                break;
+                            } else if (parseInt(playerAnswer) > key) {
+                                playerAnswer = prompt("Số bạn đoán lớn hơn, thử lại: ");
+                            } else if (parseInt(playerAnswer) < key) {
+                                playerAnswer = prompt("Số bạn đoán nhỏ hơn, thử lại: ");
+                            }
+                        } else {
+                            alert("Bạn đã hết lượt đoán!!!");
+                            break;
+                        }
+                    }
+
+                }
+            }
+        })
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+</html>
