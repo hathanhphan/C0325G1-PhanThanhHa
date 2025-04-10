@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sử dụng vòng lặp lồng nhau</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+
+        .output-table {
+            border-collapse: collapse;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        .output-table td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #7e7979;
+            text-align: center;
+            vertical-align: middle;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="font-primary text-blue-800 text-2xl mb-2 text-center">Luyện tập sử dụng vòng lặp lồng nhau</h1>
+        <div class="font-secondary text-blue-500 flex flex-wrap justify-between">
+            <div class="w-full mt-4">
+                <table class="output-table"></table>
+            </div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        const outputTable = document.querySelector('.output-table');
+        let result = "";
+        for (let i = 1; i <= 10; i++) {
+            result += "<tr>";
+            for (let j = 1; j <= 10; j++) {
+                result += `<td>${i * j}</td>`;
+            }
+            result += "</tr>";
+        }
+        outputTable.innerHTML = result;
+    </script>
+</body>
+</html>
