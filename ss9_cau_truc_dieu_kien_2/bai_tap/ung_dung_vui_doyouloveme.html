@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng vui DoYouLoveMe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container mx-auto font-secondary text-xl text-center">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Luyện tập việc xử lý các sự kiện chuột.</h1>
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Ứng dụng DoYouLoveMe</h2>
+        <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <h3 id="title" class="font-primary text-8xl mb-6 text-red-500">Do you love me?</h3>
+            <div class="btn-wrapper flex flex-wrap justify-center gap-4">
+                <button class="btn-yes hover:cursor-pointer w-full mr-2 lg:w-[100px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Yes</button>
+                <button class="btn-no hover:cursor-pointer w-full mr-2 lg:w-[100px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">No</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.btn-yes').addEventListener('click', () => {
+            document.querySelector('#title').textContent = 'Yeah! I love you too ❤️';
+            document.querySelector('.btn-wrapper').classList.add('hidden');
+        })
+        document.querySelector('.btn-no').addEventListener('mouseover', (e) => {
+            e.target.style.position = 'absolute';
+            var x = Math.round(Math.random() * window.innerWidth);
+            var y = Math.round(Math.random() * window.innerHeight);
+            e.target.style.left = x + 'px';
+            e.target.style.top = y + 'px';
+        })
+    </script>
+</body>
+</html>
