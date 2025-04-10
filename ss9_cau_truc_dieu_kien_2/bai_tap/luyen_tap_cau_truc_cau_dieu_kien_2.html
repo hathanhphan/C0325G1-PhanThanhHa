@@ -405,71 +405,71 @@
         // Exercise 1
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var celsius = parseFloat(document.querySelector('.ex1 input[name="celsius"]').value);
-            var fahrenheit = (9 * celsius) / 5 + 32;
+            let celsius = parseFloat(document.querySelector('.ex1 input[name="celsius"]').value);
+            let fahrenheit = (9 * celsius) / 5 + 32;
             document.querySelector('.ex1 .output').textContent = parseFloat(fahrenheit.toFixed(2)).toString();
         })
 
         // Exercise 2
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var meter = parseFloat(document.querySelector('.ex2 input[name="meter"]').value);
-            var feet = meter * 3.2808;
+            let meter = parseFloat(document.querySelector('.ex2 input[name="meter"]').value);
+            let feet = meter * 3.2808;
             document.querySelector('.ex2 .output').textContent = parseFloat(feet.toFixed(4)).toString();
         })
 
         // Exercise 3
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var aVal = parseFloat(document.querySelector('.ex3 input[name="aVal"]').value);
-            var area = aVal * aVal;
+            let aVal = parseFloat(document.querySelector('.ex3 input[name="aVal"]').value);
+            let area = aVal * aVal;
             document.querySelector('.ex3 .output').textContent = parseFloat(area.toFixed(4)).toString();
         })
 
         // Exercise 4
         document.querySelector('.ex4 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var aVal = parseFloat(document.querySelector('.ex4 input[name="aVal"]').value);
-            var bVal = parseFloat(document.querySelector('.ex4 input[name="bVal"]').value);
-            var area = aVal * bVal;
+            let aVal = parseFloat(document.querySelector('.ex4 input[name="aVal"]').value);
+            let bVal = parseFloat(document.querySelector('.ex4 input[name="bVal"]').value);
+            let area = aVal * bVal;
             document.querySelector('.ex4 .output').textContent = parseFloat(area.toFixed(4)).toString();
         })
 
         // Exercise 5
         document.querySelector('.ex5 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var aVal = parseFloat(document.querySelector('.ex5 input[name="aVal"]').value);
-            var bVal = parseFloat(document.querySelector('.ex5 input[name="bVal"]').value);
-            var area = aVal * bVal / 2;
+            let aVal = parseFloat(document.querySelector('.ex5 input[name="aVal"]').value);
+            let bVal = parseFloat(document.querySelector('.ex5 input[name="bVal"]').value);
+            let area = aVal * bVal / 2;
             document.querySelector('.ex5 .output').textContent = parseFloat(area.toFixed(4)).toString();
         })
 
         // Exercise 6
         document.querySelector('.ex6 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var aVal = parseFloat(document.querySelector('.ex6 input[name="aVal"]').value);
-            var bVal = parseFloat(document.querySelector('.ex6 input[name="bVal"]').value);
+            let aVal = parseFloat(document.querySelector('.ex6 input[name="aVal"]').value);
+            let bVal = parseFloat(document.querySelector('.ex6 input[name="bVal"]').value);
             document.querySelector('.ex6 .output').textContent = solveLinearEquation(aVal, bVal);
         })
 
         // Exercise 7
         document.querySelector('.ex7 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var aVal = parseFloat(document.querySelector('.ex7 input[name="aVal"]').value);
-            var bVal = parseFloat(document.querySelector('.ex7 input[name="bVal"]').value);
-            var cVal = parseFloat(document.querySelector('.ex7 input[name="cVal"]').value);
+            let aVal = parseFloat(document.querySelector('.ex7 input[name="aVal"]').value);
+            let bVal = parseFloat(document.querySelector('.ex7 input[name="bVal"]').value);
+            let cVal = parseFloat(document.querySelector('.ex7 input[name="cVal"]').value);
             if (aVal === 0) {
                 document.querySelector('.ex7 .output').textContent = solveLinearEquation(bVal, cVal);
             } else {
-                var result = "";
-                var delta = bVal * bVal - 4 * aVal * cVal;
+                let result = "";
+                let delta = bVal * bVal - 4 * aVal * cVal;
                 if (delta < 0) {
                     result = "Phương trình vô nghiệm.";
                 } else if (delta === 0) {
                     result = `Phương trình có nghiệm kép là ${parseFloat((-bVal / 2 * aVal).toFixed(2))}.`;
                 } else {
-                    var x1 = (-bVal + Math.sqrt(delta)) / (2 * aVal);
-                    var x2 = (-bVal - Math.sqrt(delta)) / (2 * aVal);
+                    let x1 = (-bVal + Math.sqrt(delta)) / (2 * aVal);
+                    let x2 = (-bVal - Math.sqrt(delta)) / (2 * aVal);
                     result = `Phương trình có 2 nghiệm phân biệt là ${parseFloat(x1.toFixed(2))} và ${parseFloat(x2.toFixed(2))}.`;
                 }
                 document.querySelector('.ex7 .output').textContent = result;
@@ -479,7 +479,7 @@
         // Exercise 8
         document.querySelector('.ex8 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var age = parseFloat(document.querySelector('.ex8 input[name="age"]').value);
+            let age = parseFloat(document.querySelector('.ex8 input[name="age"]').value);
             result = "";
             if (age > 0 && age <= 120) {
                 result = `${age} là tuổi của một người.`;
@@ -492,9 +492,9 @@
         // Exercise 9
         document.querySelector('.ex9 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var aVal = parseFloat(document.querySelector('.ex9 input[name="aVal"]').value);
-            var bVal = parseFloat(document.querySelector('.ex9 input[name="bVal"]').value);
-            var cVal = parseFloat(document.querySelector('.ex9 input[name="cVal"]').value);
+            let aVal = parseFloat(document.querySelector('.ex9 input[name="aVal"]').value);
+            let bVal = parseFloat(document.querySelector('.ex9 input[name="bVal"]').value);
+            let cVal = parseFloat(document.querySelector('.ex9 input[name="cVal"]').value);
             is3sideOfTriangle = aVal > 0 && bVal > 0 && cVal > 0 && (aVal + bVal > cVal) && (bVal + cVal > aVal) && (aVal + cVal > bVal);
             result = "";
             if (is3sideOfTriangle) {
@@ -508,8 +508,8 @@
         // Exercise 10
         document.querySelector('.ex10 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var eVal = parseInt(document.querySelector('.ex10 input[name="eVal"]').value);
-            var total = 0;
+            let eVal = parseInt(document.querySelector('.ex10 input[name="eVal"]').value);
+            let total = 0;
             if (eVal > 100) {
                 total = 50 * 1500 + 50 * 2000 + (eVal - 100) * 2500;
             } else if (eVal > 50) {
@@ -523,22 +523,22 @@
         // Exercise 11
         document.querySelector('.ex11 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var income = parseInt(document.querySelector('.ex11 input[name="income"]').value);
+            let income = parseInt(document.querySelector('.ex11 input[name="income"]').value);
             document.querySelector('.ex11 .output').textContent = `Tổng thuế phải nộp là ${parseFloat(calculateIncomeTax(income).toFixed(2)).toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
 
         // Exercise 12
         document.querySelector('.ex12 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var baseMoney = parseInt(document.querySelector('.ex12 input[name="baseMoney"]').value);
-            var month = parseInt(document.querySelector('.ex12 input[name="month"]').value);
-            var interestRate = parseFloat(document.querySelector('.ex12 input[name="interestRate"]').value);
-            var interest = baseMoney * ((interestRate / 100 ) / 12) * month;
+            let baseMoney = parseInt(document.querySelector('.ex12 input[name="baseMoney"]').value);
+            let month = parseInt(document.querySelector('.ex12 input[name="month"]').value);
+            let interestRate = parseFloat(document.querySelector('.ex12 input[name="interestRate"]').value);
+            let interest = baseMoney * ((interestRate / 100 ) / 12) * month;
             document.querySelector('.ex12 .output').textContent = `Tổng lãi là ${interest.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
 
         function solveLinearEquation(a, b) {
-            var result = "";
+            let result = "";
             if (a === 0) {
                 if (b !== 0) {
                     result = "Phương trình vô nghiệm.";

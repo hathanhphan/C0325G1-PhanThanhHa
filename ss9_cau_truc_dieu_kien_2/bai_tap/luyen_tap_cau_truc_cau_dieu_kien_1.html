@@ -279,13 +279,13 @@
         // Exercise 1
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var a = parseFloat(document.querySelector('.ex1 input[name="a"]').value);
-            var b = parseFloat(document.querySelector('.ex1 input[name="b"]').value);
+            let a = parseFloat(document.querySelector('.ex1 input[name="a"]').value);
+            let b = parseFloat(document.querySelector('.ex1 input[name="b"]').value);
             if (b === 0) {
                 document.querySelector('.ex1 .output').textContent = 'Lỗi chia cho 0';
                 return;
             }
-            var result = a % b;
+            let result = a % b;
             if (!result) {
                 document.querySelector('.ex1 .output').textContent = 'a chia hết cho b!';
             } else {
@@ -296,8 +296,8 @@
         // Exercise 2
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var age = parseInt(document.querySelector('.ex2 input[name="age"]').value);
-            var result = "";
+            let age = parseInt(document.querySelector('.ex2 input[name="age"]').value);
+            let result = "";
             if (age < 14) {
                 result = "Học sinh chưa đủ tuổi để vào học lớp 10.";
             } else if (age < 15) {
@@ -315,7 +315,7 @@
         // Exercise 3
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
+            let num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
             if (num < 0) {
                 result = `${num} nhỏ hơn 0.`;
             } else if (num === 0) {
@@ -329,9 +329,9 @@
         // Exercise 4
         document.querySelector('.ex4 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var numA = parseInt(document.querySelector('.ex4 input[name="numA"]').value);
-            var numB = parseInt(document.querySelector('.ex4 input[name="numB"]').value);
-            var numC = parseInt(document.querySelector('.ex4 input[name="numC"]').value);
+            let numA = parseInt(document.querySelector('.ex4 input[name="numA"]').value);
+            let numB = parseInt(document.querySelector('.ex4 input[name="numB"]').value);
+            let numC = parseInt(document.querySelector('.ex4 input[name="numC"]').value);
             if (numA > numC && numA > numC) {
                 result = `${numA} là số lớn nhất.`;
             } else if (numB > numC) {
@@ -345,11 +345,11 @@
         // Exercise 5
         document.querySelector('.ex5 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var numA = parseFloat(document.querySelector('.ex5 input[name="numA"]').value);
-            var numB = parseFloat(document.querySelector('.ex5 input[name="numB"]').value);
-            var numC = parseFloat(document.querySelector('.ex5 input[name="numC"]').value);
-            var result = numA * 0.2 + numB * 0.3 + numC * 0.5;
-            var rank = "";
+            let numA = parseFloat(document.querySelector('.ex5 input[name="numA"]').value);
+            let numB = parseFloat(document.querySelector('.ex5 input[name="numB"]').value);
+            let numC = parseFloat(document.querySelector('.ex5 input[name="numC"]').value);
+            let result = numA * 0.2 + numB * 0.3 + numC * 0.5;
+            let rank = "";
             if (result >= 8.5) {
                 rank = "Xuất sắc";
             } else if (result >= 7) {
@@ -367,19 +367,19 @@
         // Exercise 6
         document.querySelector('.ex6 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var sales = parseInt(document.querySelector('.ex6 input[name="sales"]').value);
-            var percent = parseInt(document.querySelector('.ex6 input[name="percent"]').value);
-            var result = sales * percent / 100;
+            let sales = parseInt(document.querySelector('.ex6 input[name="sales"]').value);
+            let percent = parseInt(document.querySelector('.ex6 input[name="percent"]').value);
+            let result = sales * percent / 100;
             document.querySelector('.ex6 .output').textContent = `Hoa hồng nhận được là ${parseFloat(result.toFixed(2)).toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
 
         // Exercise 7
         document.querySelector('.ex7 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var internalCall = parseInt(document.querySelector('.ex7 input[name="internalCall"]').value);
-            var externalCall = parseInt(document.querySelector('.ex7 input[name="externalCall"]').value);
-            var smsNum = parseInt(document.querySelector('.ex7 input[name="smsNum"]').value);
-            var result = 50000 + internalCall * 500 + externalCall * 1000 + smsNum * 300;
+            let internalCall = parseInt(document.querySelector('.ex7 input[name="internalCall"]').value);
+            let externalCall = parseInt(document.querySelector('.ex7 input[name="externalCall"]').value);
+            let smsNum = parseInt(document.querySelector('.ex7 input[name="smsNum"]').value);
+            let result = 50000 + internalCall * 500 + externalCall * 1000 + smsNum * 300;
             document.querySelector('.ex7 .output').textContent = `Tổng cước là ${result.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
     </script>

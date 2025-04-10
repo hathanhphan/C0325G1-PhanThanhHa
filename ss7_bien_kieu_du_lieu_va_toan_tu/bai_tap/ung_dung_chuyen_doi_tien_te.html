@@ -71,9 +71,9 @@
         })
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var amount = parseFloat(document.querySelector('input[name="amount"]').value);
-            var fromCurrencySelect = fromCurrency.value;
-            var result;
+            let amount = parseFloat(document.querySelector('input[name="amount"]').value);
+            let fromCurrencySelect = fromCurrency.value;
+            let result;
             if (fromCurrencySelect === 'vnd') {
                 result = amount / 26000;
             } else if (fromCurrencySelect === 'usd') {

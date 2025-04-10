@@ -96,9 +96,9 @@
         // Exercise 2
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var num = parseInt(document.querySelector('.ex2 input[name="num"]').value);
-            var result = 0;
-            for (var i = 1; i <= num; i++) {
+            let num = parseInt(document.querySelector('.ex2 input[name="num"]').value);
+            let result = 0;
+            for (let i = 1; i <= num; i++) {
                 result += i;
             }
             document.querySelector('.ex2 .output').textContent = `Tổng từ 1 đến ${num} là ${result}.`;

@@ -38,8 +38,8 @@
         })
         document.querySelector('.btn-no').addEventListener('mouseover', (e) => {
             e.target.style.position = 'absolute';
-            var x = Math.round(Math.random() * window.innerWidth);
-            var y = Math.round(Math.random() * window.innerHeight);
+            let x = Math.round(Math.random() * window.innerWidth);
+            let y = Math.round(Math.random() * window.innerHeight);
             e.target.style.left = x + 'px';
             e.target.style.top = y + 'px';
         })

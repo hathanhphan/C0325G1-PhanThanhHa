@@ -50,10 +50,10 @@
     <script>
         document.querySelector('.bmi-calculator form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var weight = parseFloat(document.querySelector('input[name="weight"]').value);
-            var height = parseFloat(document.querySelector('input[name="height"]').value);
-            var result = weight / (height * height);
-            var rank = "";
+            let weight = parseFloat(document.querySelector('input[name="weight"]').value);
+            let height = parseFloat(document.querySelector('input[name="height"]').value);
+            let result = weight / (height * height);
+            let rank = "";
             if (result >= 30) {
                 rank = "Béo phì";
             } else if (result >= 25) {

@@ -112,33 +112,33 @@
     <script>
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var physicsMark = parseFloat(document.querySelector('input[name="physics"]').value);
-            var chemistryMark = parseFloat(document.querySelector('input[name="chemistry"]').value);
-            var biologyMark = parseFloat(document.querySelector('input[name="biology"]').value);
-            var sum = physicsMark + chemistryMark + biologyMark;
-            var avg = sum / 3;
+            let physicsMark = parseFloat(document.querySelector('input[name="physics"]').value);
+            let chemistryMark = parseFloat(document.querySelector('input[name="chemistry"]').value);
+            let biologyMark = parseFloat(document.querySelector('input[name="biology"]').value);
+            let sum = physicsMark + chemistryMark + biologyMark;
+            let avg = sum / 3;
             document.querySelector('.sum-mark').textContent = parseFloat(sum.toFixed(2)).toString();
             document.querySelector('.avg-mark').textContent = parseFloat(avg.toFixed(2)).toString();
         })
 
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var celsius = parseFloat(document.querySelector('input[name="celsius"]').value);
-            var fahrenheit = (9 * celsius) / 5 + 32;
+            let celsius = parseFloat(document.querySelector('input[name="celsius"]').value);
+            let fahrenheit = (9 * celsius) / 5 + 32;
             document.querySelector('.f-convert').textContent = parseFloat(fahrenheit.toFixed(2)).toString();
         })
 
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var radius = parseFloat(document.querySelector('.ex3 form input[name="radius"]').value);
-            var erea = radius * radius * 3.14;
-            document.querySelector('.ex3 form .output').textContent = parseFloat(erea.toFixed(2)).toString();
+            let radius = parseFloat(document.querySelector('.ex3 form input[name="radius"]').value);
+            let area = radius * radius * 3.14;
+            document.querySelector('.ex3 form .output').textContent = parseFloat(area.toFixed(2)).toString();
         })
 
         document.querySelector('.ex4 form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var radius = parseFloat(document.querySelector('.ex4 form input[name="radius"]').value);
-            var perimeter = 2 * radius * 3.14;
+            let radius = parseFloat(document.querySelector('.ex4 form input[name="radius"]').value);
+            let perimeter = 2 * radius * 3.14;
             document.querySelector('.ex4 form .output').textContent = parseFloat(perimeter.toFixed(2)).toString();
         })
     </script>

@@ -78,8 +78,8 @@
         const resultDisplay = document.querySelector('.result-display');
         const calculatingDisplay = document.querySelector('.calculating-display');
         const buttons = document.querySelectorAll('.calculator td');
-        var isFirstTimeInputSecondNumber = false;
-        var isSelectedOperator = false;
+        let isFirstTimeInputSecondNumber = false;
+        let isSelectedOperator = false;
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const value = button.getAttribute('data-val');
@@ -133,8 +133,8 @@
                             isFirstTimeInputSecondNumber = true;
                             isSelectedOperator = true;
                         } else if (isSelectedOperator) {
-                            var arr = calculatingDisplay.innerText.split(' ');
-                            var finalResult = fn_calculatingDisplay(parseFloat(arr[0]), parseFloat(resultDisplay.innerText), arr[1]);
+                            let arr = calculatingDisplay.innerText.split(' ');
+                            let finalResult = fn_calculatingDisplay(parseFloat(arr[0]), parseFloat(resultDisplay.innerText), arr[1]);
                             resultDisplay.innerText = finalResult;
                             calculatingDisplay.innerText = resultDisplay.innerText + ' ' + value + ' ';
                             isFirstTimeInputSecondNumber = true;
@@ -146,7 +146,7 @@
                         break;
                     case '=':
                         if (calculatingDisplay.innerText[calculatingDisplay.innerText.length - 1] === '=') {
-                            var arr = calculatingDisplay.innerText.split(' ');
+                            let arr = calculatingDisplay.innerText.split(' ');
                             if (arr.length >= 3) {
                                 finalResult = fn_calculatingDisplay(parseFloat(resultDisplay.innerText), parseFloat(arr[2]), arr[1]);
                                 calculatingDisplay.innerText = resultDisplay.innerText + ' ' + arr[1] + ' ' + arr[2] + ' = ';
