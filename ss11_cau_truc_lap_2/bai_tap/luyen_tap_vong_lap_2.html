@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập vòng lặp 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập vòng lặp 2.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+            <li>
+                <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+            <li>
+                <a href="#ex8" class="btn btn-blue">Bài 8</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: In dãy Fibonacci.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Tính giai thừa của 1 số nguyên dương.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập h</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="18" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 max-w-fit min-w-[800px]">
+                <p>Kết quả:</p>
+                <div class="font-primary text-4xl text-blue-800 output flex gap-8"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: In hình chữ nhật.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Chiều dài</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numA" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Chiều rộng</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numB" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 max-w-fit min-w-[800px]">
+                <p>Kết quả:</p>
+                <div class="font-primary text-4xl text-blue-800 output flex gap-8 leading-[0.5]"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Tiền ban đầu</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="baseMoney" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <span>(đồng)</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số tháng</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="month" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Lãi suất</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="interestRate" min="0" maxlength="5" step="0.01" required class="w-[240px] border border-gray-300 rounded-md">
+                    <span>%</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        // Exercise 1
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseFloat(document.querySelector('.ex1 input[name="num"]').value);
+            let output = document.querySelector('.ex1 .output');
+            let num1 = 0;
+            let num2 = 1;
+            let nextTerm;
+            output.innerHTML = '';
+            for (let i = 1; i <= num; i++) {
+                printFibonacciSequentially(output, i, num1);
+                nextTerm = num1 + num2;
+                num1 = num2;
+                num2 = nextTerm;
+            }
+        })
+        function printFibonacciSequentially(output, index, value) {
+            setTimeout(function() {
+                output.innerHTML = output.innerHTML + " " + value;
+            }, index * 50);
+        }
+
+        // Exercise 2
+        document.querySelector('.ex2 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseFloat(document.querySelector('.ex2 input[name="num"]').value);
+            let output = document.querySelector('.ex2 .output');
+            let result = 1;
+            output.innerHTML = '';
+            for (let i = 2; i <= num; i++) {
+                result *= i;
+            }
+            output.innerHTML = result.toString();
+        })
+
+        // Exercise 3
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseFloat(document.querySelector('.ex3 input[name="num"]').value);
+            let output = document.querySelector('.ex3 .output');
+            output.innerHTML = '';
+
+            // above and right
+            let result = '';
+            result += '<div>';
+            for (let i = num; i > 0; i--) {
+                for (let j = 0; j < i; j++) {
+                    result += '*';
+                }
+                result += '<br>';
+            }
+            result += '</div>';
+
+            // above and left
+            result += '<div>';
+            for (let i = num; i > 0; i--) {
+                for (let j = 0; j < num - i; j++) {
+                    result += '<span class="opacity-0">*</span>';
+                }
+                for (let j = 0; j < i; j++) {
+                    result += '*';
+                }
+                result += '<br>';
+            }
+            result += '</div>';
+
+            // bottom and right
+            result += '<div>';
+            for (let i = 0; i < num; i++) {
+                for (let j = 0; j < num - i; j++) {
+                    result += '<span class="opacity-0">*</span>';
+                }
+                for (let j = 0; j <= i; j++) {
+                    result += '*';
+                }
+                result += '<br>';
+            }
+            result += '</div>';
+
+            // bottom and left
+            result += '<div>';
+            for (let i = 0; i < num; i++) {
+                for (let j = 0; j <= i; j++) {
+                    result += '*';
+                }
+                result += '<br>';
+            }
+            result += '</div>';
+
+            output.innerHTML = result;
+        })
+
+        // Exercise 4
+        document.querySelector('.ex4 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let numA = parseFloat(document.querySelector('.ex4 input[name="numA"]').value);
+            let numB = parseFloat(document.querySelector('.ex4 input[name="numB"]').value);
+            let output = document.querySelector('.ex4 .output');
+            output.innerHTML = '';
+
+            // above and right
+            let result = '';
+            result += '<div>';
+            for (let i = 0; i < numB; i++) {
+                for (let j = 0; j < numA; j++) {
+                    if (i === 0 || i === numB - 1) {
+                        result += '*';
+                    } else {
+                        if (j === 0 || j === numA - 1) {
+                            result += '*';
+                        } else {
+                            result += '<span class="opacity-0">*</span>';
+                        }
+                    }
+                }
+                result += '<br>';
+            }
+            result += '</div>';
+
+            output.innerHTML = result;
+        })
+
+        // Exercise 5
+        document.querySelector('.ex5 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let baseMoney = parseInt(document.querySelector('.ex5 input[name="baseMoney"]').value);
+            let month = parseInt(document.querySelector('.ex5 input[name="month"]').value);
+            let interestRate = parseFloat(document.querySelector('.ex5 input[name="interestRate"]').value);
+            let interest = baseMoney * ((interestRate / 100 ) / 12) * month;
+            document.querySelector('.ex5 .output').textContent = `Tổng lãi là ${interest.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
+        })
+    </script>
+</body>
+</html>
