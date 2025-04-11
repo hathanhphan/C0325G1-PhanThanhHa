@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Sử dụng các hàm có sẵn của mảng.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: Nối các phần tử trong mảng thành chuỗi.</h2>
+        <p>Ví dụ:</p>
+        <code>
+            let myColor = ["Red", "Green", "White", "Black"];
+        </code>
+        <div class="bg-blue-200 w-[800px] mt-2">
+            <p>Kết quả: <span class="output"></span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Chèn dấu "-" giữa các số chẵn.</h2>
+        <div>
+            <p>Ví dụ:</p>
+            <p>Đầu vào: "025468"</p>
+            <p>Kết quả: "0-254-6-8"</p>
+        </div>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập số</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="num" maxlength="255" pattern="\d*" title="Only numbers are allowed" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Chuyển đổi" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Chuyển đổi chữ thường sang chữ hoa và ngược lại.</h2>
+        <div>
+            <p>Ví dụ:</p>
+            <p>Đầu vào: 'The Quick Brown Fox'</p>
+            <p>Kết quả: 'tHE qUICK bROWN fOX'</p>
+        </div>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" title="Only numbers are allowed" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Chuyển đổi" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        // Exercise 1
+        {
+            let myColor = ["Red", "Green", "White", "Black"];
+            document.querySelector('.ex1 .output').innerHTML = myColor.join(',');
+        }
+
+
+        // Exercise 2
+        document.querySelector('.ex2 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = document.querySelector('.ex2 input[name="num"]').value;
+            let output = document.querySelector('.ex2 .output');
+            let numArr = num.split('');
+            output.innerHTML = '';
+            if (numArr.length > 0) {
+                for (let i = 0; i <= numArr.length -1; i++) {
+                    if (parseInt(numArr[i]) % 2 === 0 && parseInt(numArr[i + 1]) % 2 === 0) {
+                        numArr[i + 1] = '-' + numArr[i + 1];
+                    }
+                }
+                output.innerHTML = numArr.join("");
+            }
+        })
+
+        // Exercise 3
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let str = document.querySelector('.ex3 input[name="str"]').value;
+            let output = document.querySelector('.ex3 .output');
+            let strArr = str.split('');
+            output.innerHTML = '';
+            if (strArr.length > 0) {
+                for (let i = 0; i <= strArr.length - 1; i++) {
+                    strArr[i] = isLowerCase(strArr[i]) ? strArr[i].toUpperCase() : strArr[i].toLowerCase();
+                }
+                output.innerHTML = strArr.join("");
+            }
+        })
+        function isLowerCase(str) {
+            return str === str.toLowerCase() &&
+                str !== str.toUpperCase();
+        }
+    </script>
+</body>
+</html>
