@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game puzzle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container mx-auto font-secondary text-xl text-center">
+        <h1 class="font-primary text-3xl mb-4 text-blue-800">Luyện tập xử lý các sự kiện và sử dụng cấu trúc điều kiện.</h1>
+        <h2 class="font-primary text-3xl mb-4 text-blue-600">Puzzle</h2>
+        <button data-tooltip-target="tooltip-random-game" type="button" class="btn-random hover:cursor-pointer font-primary text-3xl mb-4 text-blue-600" ><i class="fas fa-random"></i></button>
+        <div id="tooltip-random-game" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+            Tạo màn chơi mới
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <div class="game-wrapper gap-2 flex flex-wrap justify-center w-full max-w-[500px] mx-auto transition mb-8">
+            <div data-img="1" class="hover:cursor-pointer transition hover:shadow-xl min-h-30 w-full"></div>
+            <div data-img="2" class="hover:cursor-pointer transition hover:shadow-xl min-h-30 w-full"></div>
+            <div data-img="3" class="hover:cursor-pointer transition hover:shadow-xl min-h-30 w-full"></div>
+            <div data-img="4" class="hover:cursor-pointer transition hover:shadow-xl min-h-30 w-full"></div>
+        </div>
+        <p class="result-notification hidden font-primary text-5xl text-red-600">Đúng rồi nè 😍</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+        const imageDb = ['red', 'blue', 'green', 'yellow'];
+        const currentPlayerSelection = [];
+        const images = document.querySelectorAll('[data-img]');
+        const gameWrapper = document.querySelector('.game-wrapper');
+        const resultNotification = document.querySelector('.result-notification');
+        const btnRandom = document.querySelector('.btn-random');
+        class Puzzle {
+            constructor(images, gameWrapper, currentPlayerSelection, resultNotification) {
+                this.images = images;
+                this.gameWrapper = gameWrapper;
+                this.currentPlayerSelection = currentPlayerSelection;
+                this.resultNotification = resultNotification;
+            }
+            init() {
+                this.randomNewGame();
+                this.clickChangeImg();
+            }
+            randomNewGame() {
+                do {
+                    this.images.forEach(image => {
+                        let index = Math.floor(Math.random() * imageDb.length);
+                        image.style.backgroundColor = imageDb[index];
+                        currentPlayerSelection.push(index);
+                    })
+                } while (this.checkResult());
+            }
+            checkResult() {
+                let isSuccess = true;
+                for (let i = 0; i < this.images.length - 1; i++) {
+                    if (this.images[i].style.backgroundColor !== this.images[i + 1].style.backgroundColor) {
+                        isSuccess = false;
+                        break;
+                    }
+                }
+                if (isSuccess) {
+                    this.gameWrapper.style.boxShadow = '0 20px 50px rgba(8, 112, 184, 0.7)';
+                    this.resultNotification.classList.remove('hidden');
+                    return true;
+                } else {
+                    this.gameWrapper.style.boxShadow = 'none';
+                    this.resultNotification.classList.add('hidden');
+                    return false;
+                }
+            }
+            clickChangeImg() {
+                this.images.forEach(image => {
+                    image.addEventListener('click', (e) => {
+                        let index = imageDb.indexOf(image.style.backgroundColor);
+                        image.style.backgroundColor = imageDb[(index + 1) % imageDb.length];
+                        this.currentPlayerSelection[image.getAttribute('data-img')] = index + 1;
+                        this.checkResult();
+                    })
+                })
+            }
+        }
+        const puzzle = new Puzzle(images, gameWrapper, currentPlayerSelection, resultNotification);
+        puzzle.init();
+        btnRandom.addEventListener('click', () => {
+            puzzle.randomNewGame();
+        })
+    </script>
+</body>
+</html>
