@@ -83,6 +83,7 @@
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const value = button.getAttribute('data-val');
+                let finalResult;
                 switch (value) {
                     case '0':
                     case '1':
@@ -134,7 +135,7 @@
                             isSelectedOperator = true;
                         } else if (isSelectedOperator) {
                             let arr = calculatingDisplay.innerText.split(' ');
-                            let finalResult = fn_calculatingDisplay(parseFloat(arr[0]), parseFloat(resultDisplay.innerText), arr[1]);
+                            finalResult = fn_calculatingDisplay(parseFloat(arr[0]), parseFloat(resultDisplay.innerText), arr[1]);
                             resultDisplay.innerText = finalResult;
                             calculatingDisplay.innerText = resultDisplay.innerText + ' ' + value + ' ';
                             isFirstTimeInputSecondNumber = true;
