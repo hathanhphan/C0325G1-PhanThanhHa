@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập mảng 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập thao tác với mảng hai chiều và một chiều.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: Viết chương trình khởi tạo mảng 2 chiều với một bộ phần tử có sẵn, sau đó in ra các phần tử trong mảng.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 1</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả:</p>
+            <div class="output"></div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Viết chương trình in các ký tự trong một mảng theo thứ tự đảo ngược.</h2>
+        <p>Ví dụ:</p>
+        <div class="mb-4">Với mảng <code>[ 'c', 's', 'c', '2', '6', '1' ]</code>, sau khi đảo ngược sẽ là: <code>"162csc"</code>.</div>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 2</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả: <span class="output"></span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Viết chương trình khai báo một mảng ký tự và kích thước của mảng. Đếm số ký tự số (0-9) trong mảng.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Viết chương trình đếm số từ trong một chuỗi.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Viết chương trình nhập vào 2 chuỗi, kiểm tra xem hai chuỗi có giống nhau không.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi 1</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str1" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi 2</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str2" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 6 -->
+    <div id="ex6" class="ex6 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự '-' trong mảng và thay thế chúng bằng ký tự '_'.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Exercise 1
+        document.querySelector('.ex1 .btnStart').addEventListener('click', function(e) {
+            let output = document.querySelector('.ex1 .output');
+            let row = 4;
+            let col = 5;
+            let arr = [];
+            let min = -255;
+            let max = 255;
+            output.innerHTML = '';
+            for (let i = 0; i < row; i++) {
+                arr[i] = [];
+                for (let j = 0; j < col; j++) {
+                    arr[i][j] = getRandomInt(min, max);
+                }
+            }
+            for (let i = 0; i < row; i++) {
+                output.innerHTML += `<p>row ${i}</p>`;
+                for (let j = 0; j < col; j++) {
+                    output.innerHTML += `<p>${arr[i][j]}</p>`;
+                }
+            }
+        })
+
+        // Exercise 2
+        document.querySelector('.ex2 .btnStart').addEventListener('click', function(e) {
+            let output = document.querySelector('.ex2 .output');
+            output.innerHTML = '';
+            let arr = ['c', 's', 'c', '2', '6', '1'];
+            output.innerHTML = arr.reverse().join("");
+        })
+
+        // Exercise 3
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex3 .output');
+            let str = document.querySelector('.ex3 input[name="str"]').value.toLowerCase();
+            let count = 0;
+            let stringArr = str.split("");
+            output.innerHTML = '';
+            for (let i = 0; i < stringArr.length; i++) {
+                if (Number(stringArr[i])) {
+                    count++;
+                }
+            }
+            output.innerHTML = `Số kí tự số trong chuỗi là ${count}.`;
+        })
+
+        // Exercise 4
+        document.querySelector('.ex4 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex4 .output');
+            let str = document.querySelector('.ex4 input[name="str"]').value.toLowerCase();
+            let stringArr = str.trim().split(/\s+/);
+            output.innerHTML = '';
+            output.innerHTML = `Số lượng từ trong chuỗi là ${stringArr.length}.`;
+        })
+
+        // Exercise 5
+        document.querySelector('.ex5 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.preventDefault();
+            let output = document.querySelector('.ex5 .output');
+            let str1 = document.querySelector('.ex5 input[name="str1"]').value.toLowerCase();
+            let str2 = document.querySelector('.ex5 input[name="str2"]').value.toLowerCase();
+            if (str1 === str2) {
+                output.innerHTML = 'Hai chuỗi này giống nhau.';
+            } else {
+                output.innerHTML = 'Hai chuỗi này khác nhau.';
+            }
+        })
+
+        // Exercise 6
+        document.querySelector('.ex6 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex6 .output');
+            let str = document.querySelector('.ex6 input[name="str"]').value.toLowerCase();
+            let stringArr = str.split("");
+            output.innerHTML = '';
+            for (let i = 0; i < stringArr.length; i++) {
+                if (stringArr[i] === '-') {
+                    stringArr[i] = '_';
+                }
+            }
+            output.innerHTML = `Chuỗi mới là ${stringArr.join("")}.`;
+        })
+    </script>
+</body>
+</html>
