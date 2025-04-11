@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container mx-auto font-secondary text-xl text-center">
+        <h1 class="font-primary text-3xl mb-4 text-blue-800">Luyện tập việc sử dụng mảng và vòng lặp.</h1>
+        <h2 class="font-primary text-3xl mb-4 text-blue-600">Type anything slowly</h2>
+        <textarea id="message" rows="4" class="block p-2.5 w-full max-w-[500px] mx-auto text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Viết sự thật về bạn ở đây..."></textarea>
+    </div>
+    <script>
+        const trollMessage = "Tôi là một đứa ngốc!";
+        const trollMessageArr = trollMessage.split("");
+        let index = 0;
+        document.getElementById('message').addEventListener('keydown', (e) => {
+            e.preventDefault();
+            console.log(e.target.value);
+            if (e.target.value === trollMessage) {
+                e.target.value = trollMessageArr[0];
+                index = 1;
+            } else {
+                e.target.value += trollMessageArr[index];
+                index++;
+            }
+        })
+    </script>
+</body>
+</html>
