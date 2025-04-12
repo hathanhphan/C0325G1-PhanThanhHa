@@ -73,11 +73,17 @@
     <script>
         // Exercise 1
         document.querySelector('.ex1 .btnStart').addEventListener('click', function(e) {
-            let num = prompt("Enter a number (Stop when enter -1): ");
+            let num = prompt("Nhập 1 số: ");
             let total = 0;
-            while(parseInt(num) !== -1) {
-                total += parseInt(num);
-                num = prompt("Enter a number (Stop when enter -1): ");
+            while (true) {
+                if (num === "" || num === null) {
+                    break;
+                } else if (isNaN(parseFloat(num))) {
+                    num = prompt("Nhập 1 số: ");
+                } else {
+                    total += parseFloat(num);
+                    num = prompt("Nhập 1 số: ");
+                }
             }
             if (total !== 0) {
                 alert("Tổng là " + total);

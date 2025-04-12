@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hiển thị các số nguyên tố đầu tiên</title>
+    <title>Hàm kiểm tra số nguyên tố</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
@@ -55,53 +55,46 @@
     </style>
 </head>
 <body>
-    <div class="container max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="font-primary text-blue-800 text-4xl mb-2">Hiển thị các số nguyên tố đầu tiên</h1>
-        <div class="output font-secondary text-blue-500 mx-auto text-2xl">
-        </div>
+<div class="container max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="font-primary text-blue-800 text-4xl mb-2">Hàm kiểm tra số nguyên tố</h1>
+    <div class="output font-secondary text-blue-500 mx-auto text-2xl">
     </div>
-    <div class="h-5 lg:h-10"></div>
+</div>
+<div class="h-5 lg:h-10"></div>
 
-    <script>
-        window.addEventListener('load', () => {
-            const output = document.querySelector('.output');
-            let num = prompt("Nhập số lượng số nguyên tố cần in (max = 255): ");
-            let result = [];
-            let count = 0;
-            let i = 1;
-            while (true) {
-                if (num === "" || num === null) {
-                    break;
-                } else if (isNaN(parseFloat(num)) || parseInt(num) > 255 || parseInt(num) <= 0) {
-                    num = prompt("Nhập số lượng số nguyên tố cần in (max = 255): ");
-                } else {
-                    break;
-                }
+<script>
+    window.addEventListener('load', () => {
+        const output = document.querySelector('.output');
+        let num = prompt("Nhập số cần kiểm tra: ");
+        while (true) {
+            if (num === "" || num === null) {
+                break;
+            } else if (isNaN(parseFloat(num))) {
+                num = prompt("Vui lòng nhập giá trị số: ");
+            } else {
+                break;
             }
-            if (num) {
-                while (count < parseInt(num)) {
-
-                    if (checkPrimeNumber(i)) {
-                        result.push(i);
-                        count++;
-                    }
-                    i++;
-                }
-                output.innerHTML = num + " số nguyên tố đầu tiên là:\<br\>" + result.join("&emsp;");
+        }
+        if (num) {
+            if (checkPrimeNumber(parseFloat(num))) {
+                output.innerHTML = `${num} là số nguyên tố.`;
+            } else {
+                output.innerHTML = `${num} không là số nguyên tố.`;
             }
-        })
+        }
+    })
 
-        function checkPrimeNumber(num) {
-            if (num < 2) {
+    function checkPrimeNumber(num) {
+        if (num < 2) {
+            return false;
+        }
+        for (let i = 2; i < num / 2; i++) {
+            if (num % i === 0) {
                 return false;
             }
-            for (let i = 2; i < num / 2; i++) {
-                if (num % i === 0) {
-                    return false;
-                }
-            }
-            return true;
         }
-    </script>
+        return true;
+    }
+</script>
 </body>
 </html>
