@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tìm giá trị lớn nhất trong mảng</title>
+    <title>Tìm giá trị trong mảng</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
@@ -48,32 +48,40 @@
 </div>
 
 <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
-    <h2 class="font-primary text-xl mb-4 text-blue-600">Viết một chương trình JavaScript để tìm giá trị lớn nhất trong mảng cho trước.</h2>
+    <h2 class="font-primary text-xl mb-4 text-blue-600">Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại có nằm trong mảng hay không. Nếu có in ra vị trí của phần tử đó. Trong trường hợp không tìm thấy thông báo không tìm thấy phần tử.</h2>
     <div class="mb-4">
         <p>Ví dụ mảng gồm các phần tử: <code>[-3,5,1,3,2,10];</code></p>
-        <p>Sau khi thực thi chương trình kết quả sẽ là: <code>10</code></p>
     </div>
-    <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[300px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy chương trình</button>
-    <div class="bg-blue-200 w-[800px] mt-4">
+    <div class="flex flex-wrap my-5 lg:justify-center">
+        <div class="w-40">Nhập giá trị</div>
+        <div class="w-60 flex-auto">
+            <input type="number" name="num" required class="w-[120px] border border-gray-300 rounded-md">
+        </div>
+    </div>
+    <div class="bg-blue-200 w-[800px]">
         <p>Kết quả: <span class="output"></span></p>
+    </div>
+    <div class="flex flex-wrap my-5 justify-left">
+        <button class="btnSearch hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Kiểm tra</button>
     </div>
 </div>
 <div class="h-5 lg:h-10"></div>
 
 <script>
-    document.querySelector('.ex1 .btnStart').addEventListener('click', function(e) {
+    document.querySelector('.ex1 .btnSearch').addEventListener('click', function(e) {
         let output = document.querySelector('.ex1 .output');
+        let num = parseInt(document.querySelector('.ex1 input[name="num"]').value);
+        if (!num) {
+            return;
+        }
         const arr = [-3,5,1,3,2,10];
         output.innerHTML = '';
-        let max = arr[0];
-        let index = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (max < arr[i]) {
-                max = arr[i];
-                index = i;
-            }
+        const index = arr.indexOf(num);
+        if (index > -1) {
+            output.innerHTML = `Tìm thấy ${num} tại vị trí ${index}.`;
+        } else {
+            output.innerHTML = `Không tìm thấy ${num} trong mảng.`;
         }
-        output.innerHTML = `Phần tử lớn nhất là ${max} tại vị trí ${index}.`;
     })
 </script>
 </body>
