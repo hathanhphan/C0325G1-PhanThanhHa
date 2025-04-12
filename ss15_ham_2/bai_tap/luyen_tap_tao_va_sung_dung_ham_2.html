@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập kỹ năng phân tích và xây dựng hàm.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+            <li>
+                <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+            <li>
+                <a href="#ex8" class="btn btn-blue">Bài 8</a>
+            </li>
+            <li>
+                <a href="#ex9" class="btn btn-blue">Bài 9</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: Tính bình phương.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Tính diện tích và chu vi hình tròn.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập bán kính</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="radius" min="0" max="999" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Tính giai thừa.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="0" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Kiểm tra ký tự số.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập kí tự</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="1" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Tìm số nguyên nhỏ nhất.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số A</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numA" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số B</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numB" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số C</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numC" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 6 -->
+    <div id="ex6" class="ex6 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 6: Kiểm tra số nguyên dương.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 7 -->
+    <div id="ex7" class="ex7 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 7: Đổi chỗ hai số nguyên.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số A</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numA" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Số B</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numB" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 8 -->
+    <div id="ex8" class="ex8 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 8: Đảo ngược mảng.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Mảng số</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" pattern="^[0-9\,\-]*$" title="Chỉ chấp nhận kí tự số, dấu - và dấu ," required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 1,2,-4,5,-6,23)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 8 -->
+    <div id="ex9" class="ex9 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 9: Kiểm tra ký tự trong mảng.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" required class="w-[360px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập kí tự</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="char" maxlength="1" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        // Exercise 1
+        function pow2(number) {
+            return number * number;
+        }
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex1 .output');
+            let num = parseFloat(document.querySelector('.ex1 input[name="num"]').value);
+            output.innerHTML = '';
+            let result = pow2(num);
+            output.innerHTML = `Bình phương của ${num} là ${result}.`;
+        })
+
+        // Exercise 2
+        const PI = 3.14;
+        function circlePerimeter(r) {
+            return (2 * PI * r).toFixed(2);
+        }
+        function areaCircle(r) {
+            return (PI * r * r).toFixed(2);
+        }
+        document.querySelector('.ex2 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex2 .output');
+            let radius = parseFloat(document.querySelector('.ex2 input[name="radius"]').value);
+            output.innerHTML = '';
+            let perimeter = circlePerimeter(radius);
+            let area = areaCircle(radius);
+            output.innerHTML = `Chu vi hình tròn là ${perimeter}.<br>`;
+            output.innerHTML += `Diện tích hình tròn là ${area}.`;
+        })
+
+        // Exercise 3
+        function factorial(number) {
+            let result = 1;
+            if (number === 0) {
+                return 1;
+            }
+            for (let i = 1; i <= number; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex3 .output');
+            let num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
+            output.innerHTML = '';
+            let result = factorial(num);
+            output.innerHTML = `Giai thừa của ${num} là ${result}.`;
+        })
+
+        // Exercise 4
+        function isCharacterNumber(str) {
+            return /^\d+$/.test(str);
+        }
+        document.querySelector('.ex4 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex4 .output');
+            let str = document.querySelector('.ex4 input[name="str"]').value;
+            output.innerHTML = '';
+            if (isCharacterNumber(str)) {
+                output.innerHTML = 'Kí tự vừa nhập là kí tự số';
+            } else {
+                output.innerHTML = 'Kí tự vừa nhập không phải kí tự số';
+            }
+        })
+
+        // Exercise 5
+        function min(num1, num2, num3) {
+            let min;
+            if (num1 < num2 && num1 < num3) {
+                min = num1;
+            } else if (num2 < num3) {
+                min = num2;
+            } else {
+                min = num3;
+            }
+            return min;
+        }
+        document.querySelector('.ex5 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let numA = parseInt(document.querySelector('.ex5 input[name="numA"]').value);
+            let numB = parseInt(document.querySelector('.ex5 input[name="numB"]').value);
+            let numC = parseInt(document.querySelector('.ex5 input[name="numC"]').value);
+            let minNum = min(numA, numB, numC);
+            document.querySelector('.ex5 .output').textContent = `${minNum} là số nhỏ nhất.`;
+        })
+
+        // Exercise 6
+        function isPositiveNumber(number) {
+            if (number === 0) {
+                return -1;
+            } else return number > 0;
+        }
+        document.querySelector('.ex6 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex6 .output');
+            let num = parseInt(document.querySelector('.ex6 input[name="num"]').value);
+            output.innerHTML = '';
+            if (isPositiveNumber(num) === -1) {
+                output.innerHTML = `${num} là số 0.`;
+            } else if (isPositiveNumber(num)) {
+                output.innerHTML = `${num} là số nguyên dương.`;
+            } else {
+                output.innerHTML = `${num} là số nguyên âm.`;
+            }
+        })
+
+        // Exercise 7
+        function swap(num1, num2) {
+            let temp = num1;
+            num1 = num2;
+            num2 = temp;
+            return [num1, num2];
+        }
+        document.querySelector('.ex7 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let numA = parseInt(document.querySelector('.ex7 input[name="numA"]').value);
+            let numB = parseInt(document.querySelector('.ex7 input[name="numB"]').value);
+            let [num1, num2] = swap(numA, numB);
+            document.querySelector('.ex7 .output').textContent = `A là ${num1}, B là ${num2}.`;
+        })
+
+        // Exercise 8
+        function reverseArray(arr) {
+            return arr.reverse();
+        }
+        document.querySelector('.ex8 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex8 .output');
+            let str = document.querySelector('.ex8 input[name="str"]').value;
+            let arr = str.split(',');
+            output.innerHTML = `Mảng sau khi đảo ngược là ${reverseArray(arr).join(',')}.`;
+        })
+
+        // Exercise 9
+        function searchChar(strArr, char) {
+            let count = 0;
+            for (let i = 0; i < strArr.length; i++) {
+                if (strArr[i] === char) {
+                    count++;
+                }
+            }
+            if (count > 0) {
+                return count;
+            }
+            return -1;
+        }
+        document.querySelector('.ex9 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex9 .output');
+            let str = document.querySelector('.ex9 input[name="str"]').value;
+            let char = document.querySelector('.ex9 input[name="char"]').value;
+            let arr = str.split('');
+            output.innerHTML = `Số lần ${char} xuất hiện trong chuỗi là ${searchChar(arr, char)}.`;
+        })
+    </script>
+</body>
+</html>
