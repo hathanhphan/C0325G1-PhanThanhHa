@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập tạo hàm không tham số, có tham số và sử dụng mảng với hàm.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 1: Tạo hàm <code>alertMessage()</code> hiển thị hộp thoại chứa chuỗi "Xin chào". Gọi hàm từ trong phần &lt;body&gt; của trang web.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 1</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả:</p>
+            <div class="output"></div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị của đối số lên 1 và trả về giá trị sau khi tăng. Gọi hàm từ trong phần &lt;body&gt; của trang web và hiển thị kết quả lên màn hình.</h2>
+        <button class="btnIncrease hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Tăng</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả: <span class="output">1</span></p>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Tạo hàm nhận vào hai tham số:</h2>
+        <div class="mb-4">
+            <p>Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.</p>
+            <p>Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</p>
+        </div>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Tham số 1</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num1" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Tham số 2</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num2" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Thêm các hàm <code>alert()</code> vào những vị trí thích hợp trong đoạn mã sau để hiển thị giá trị của biến result trước và sau lời gọi hàm.</h2>
+        <button class="btnStart hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Chạy bài 4</button>
+        <div class="bg-blue-200 w-[800px] mt-4">
+            <p>Kết quả:</p>
+            <div class="output"></div>
+        </div>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Viết chương trình tìm kiếm chòm sao.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tìm kiếm" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        // Exercise 1
+        function alertMessage() {
+            alert('Xin chào');
+        }
+        document.querySelector('.ex1 .btnStart').addEventListener('click', function(e) {
+            alertMessage();
+        })
+
+        // Exercise 2
+        function increaseNumber(number) {
+            return ++number;
+        }
+        document.querySelector('.ex2 .btnIncrease').addEventListener('click', function(e) {
+            let output = document.querySelector('.ex2 .output');
+            output.innerHTML = increaseNumber(parseInt(output.innerHTML)).toString();
+        })
+
+        // Exercise 3
+        function compareValue(a, b) {
+            if (a > b) {
+                alert("Số thứ nhất lớn hơn số thứ 2!");
+                return null;
+            } else {
+                return a + b;
+            }
+        }
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex3 .output');
+            let num1 = parseInt(document.querySelector('.ex3 input[name="num1"]').value);
+            let num2 = parseInt(document.querySelector('.ex3 input[name="num2"]').value);
+            output.innerHTML = '';
+            let sum = compareValue(num1, num2);
+            if (sum !== null) {
+                output.innerHTML = `Tổng 2 số là ${sum}`;
+            }
+        })
+
+        // Exercise 4
+        function addNumbers() {
+            let firstNum = 4;
+            let secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        document.querySelector('.ex4 .btnStart').addEventListener('click', function(e) {
+            let result = addNumbers();
+            alert(result);
+        })
+
+        // Exercise 5
+        const firstStars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+        const secondStars = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+        function searchStar(str) {
+            let index = firstStars.indexOf(str);
+            if (index > -1) {
+                return secondStars[index];
+            }
+            return null;
+        }
+        document.querySelector('.ex5 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex5 .output');
+            let str = document.querySelector('.ex5 input[name="str"]').value;
+            output.innerHTML = "";
+            let result = searchStar(str);
+            if (result !== null) {
+                output.innerHTML = `Tìm thấy chòm sao ${result}.`;
+            } else {
+                output.innerHTML = 'Không tìm thấy chòm sao.';
+            }
+        })
+    </script>
+</body>
+</html>
