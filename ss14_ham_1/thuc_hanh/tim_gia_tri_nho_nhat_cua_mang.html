@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm giá trị nhỏ nhất của mảng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Luyện tập tạo và sử dụng hàm, truyền mảng vào hàm.</h1>
+    </div>
+    <div class="p-4 container font-secondary ex1 text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Xây dựng hàm nhận vào một tham số là một mảng cho trước. Hàm thực hiện tìm giá trị nhỏ nhất trong mảng và trả về giá trị đó.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Mảng số</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" pattern="^[0-9\,\-]*$" title="Chỉ chấp nhận kí tự số, dấu - và dấu ," required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 1,2,-4,5,-6,23)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <script>
+        function minInArray(arr) {
+            return Math.min.apply(null, arr);
+        }
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex1 .output');
+            let str = document.querySelector('.ex1 input[name="str"]').value;
+            let arr = str.split(',');
+            output.innerHTML = `Phần tử nhỏ nhất trong mảng là ${minInArray(arr)}.`;
+        })
+    </script>
+</body>
+</html>
