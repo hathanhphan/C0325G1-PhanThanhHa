@@ -114,11 +114,11 @@
                 for(let i = 0; i < this.gameMatrix.length - 4; i++) {
                     for (let j = 0; j < this.gameMatrix[0].length - 4; j++) {
                         if (this.gameMatrix[i][j] === 'x' && this.gameMatrix[i + 1][j + 1] === 'x' && this.gameMatrix[i + 2][j + 2] === 'x' && this.gameMatrix[i + 3][j + 3] === 'x' && this.gameMatrix[i + 4][j + 4] === 'x' ||
-                            this.gameMatrix[i + 4][j] === 'x' && this.gameMatrix[i + 1][j + 1] === 'x' && this.gameMatrix[i + 2][j + 2] === 'x' && this.gameMatrix[i + 3][j + 3] === 'x' && this.gameMatrix[i][j + 4] === 'x') {
+                            this.gameMatrix[i + 4][j] === 'x' && this.gameMatrix[i + 3][j + 1] === 'x' && this.gameMatrix[i + 2][j + 2] === 'x' && this.gameMatrix[i + 1][j + 3] === 'x' && this.gameMatrix[i][j + 4] === 'x') {
                             this.printPlayerWin('player1');
                             return;
                         } else if (this.gameMatrix[i][j] === 'o' && this.gameMatrix[i + 1][j + 1] === 'o' && this.gameMatrix[i + 2][j + 2] === 'o' && this.gameMatrix[i + 3][j + 3] === 'o' && this.gameMatrix[i + 4][j + 4] === 'o' ||
-                            this.gameMatrix[i + 4][j] === 'o' && this.gameMatrix[i + 1][j + 1] === 'o' && this.gameMatrix[i + 2][j + 2] === 'o' && this.gameMatrix[i + 3][j + 3] === 'o' && this.gameMatrix[i][j + 4] === 'o') {
+                            this.gameMatrix[i + 4][j] === 'o' && this.gameMatrix[i + 3][j + 1] === 'o' && this.gameMatrix[i + 2][j + 2] === 'o' && this.gameMatrix[i + 1][j + 3] === 'o' && this.gameMatrix[i][j + 4] === 'o') {
                             this.printPlayerWin('player2');
                             return;
                         }

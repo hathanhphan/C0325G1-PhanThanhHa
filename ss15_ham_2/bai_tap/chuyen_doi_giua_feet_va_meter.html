@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chuyển đổi giữa feet và meter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4 container font-secondary ex1 text-xl">
+        <h1 class="font-primary text-2xl mb-4 text-blue-800">Luyện tập tạo và sử dụng hàm.</h1>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Amount</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="amount" min="0" max="99999" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">To unit</div>
+                <div class="w-60 flex-auto">
+                    <select name="toUnit" class="w-[120px] border border-gray-300 rounded-md">
+                        <option value="feet">Feet</option>
+                        <option value="meter">Meter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[400px]">
+                <p>Kết quả chuyển đổi là: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <script>
+        function feetToMeter(number) {
+            return 0.305 * number;
+        }
+        function meterToFeet(number) {
+            return 3.279 * number;
+        }
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let amount = parseFloat(document.querySelector('input[name="amount"]').value);
+            const toUnit = document.querySelector('[name="toUnit"]')
+            let result;
+            if (toUnit.value === 'feet') {
+                result = meterToFeet(amount);
+            } else {
+                result = feetToMeter(amount);
+            }
+            document.querySelector('.output').textContent = result.toString();
+        })
+
+    </script>
+</body>
+</html>
