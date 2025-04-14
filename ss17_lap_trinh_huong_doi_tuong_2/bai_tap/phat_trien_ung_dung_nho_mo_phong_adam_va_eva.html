@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+    <h1>Luyện tập định nghĩa lớp, khởi tạo đối tượng, sử dụng phương thức và thuộc tính của đối tượng.</h1>
+    <h2>Xem kết quả ở màn hình console</h2>
+    <script>
+        class Apple {
+            #weight = 10;
+            constructor() {}
+            decrease() {
+                if (!this.isEmpty()) {
+                    this.#weight = this.#weight - 1;
+                }
+            }
+            isEmpty() {
+                return !this.#weight;
+            }
+            getWeight() {
+                return this.#weight;
+            }
+        }
+
+        class Human {
+            #name;
+            #gender;
+            #weight;
+            constructor(name, gender, weight) {
+                this.#name = name;
+                this.#gender = gender;
+                this.#weight = weight;
+            }
+            isMale() {
+                return this.#gender;
+            }
+            setGender(gender) {
+                this.#gender = gender;
+            }
+            checkApple(apple) {
+                if (apple.isEmpty()) {
+                    this.say("The apple is empty now");
+                } else {
+                    this.say(`The apple's weight is ${apple.getWeight()} now`);
+                }
+            }
+            eat(apple) {
+                if (apple.isEmpty()) {
+                    this.say("The apple is empty now");
+                } else {
+                    this.setWeight(this.getWeight() + 1);
+                    apple.decrease();
+                    this.say(`My weight is ${this.getWeight()} and the apple's weight is ${apple.getWeight()} now`);
+                }
+            }
+            say(sentence) {
+                console.log(`${this.#name} says "${sentence}".`);
+            }
+            getName() {
+                return this.#name;
+            }
+            setName(name) {
+                this.#name = name;
+            }
+            getWeight() {
+                return this.#weight;
+            }
+            setWeight(weight) {
+                this.#weight = weight;
+            }
+        }
+
+        const apple = new Apple();
+        console.log(`The apple's weight is ${apple.getWeight()} now.`);
+        const adam = new Human("Adam", 1, 65);
+        const eva = new Human("Eva", 0, 45);
+        adam.say("You eat first, Eva!");
+        eva.say("Okay");
+        eva.eat(apple);
+        adam.say("My turn");
+        adam.eat(apple);
+        eva.eat(apple);
+        adam.eat(apple);
+        eva.eat(apple);
+        adam.eat(apple);
+        eva.eat(apple);
+        adam.eat(apple);
+        eva.eat(apple);
+        adam.eat(apple);
+        eva.eat(apple);
+        adam.eat(apple);
+    </script>
+</body>
+</html>
