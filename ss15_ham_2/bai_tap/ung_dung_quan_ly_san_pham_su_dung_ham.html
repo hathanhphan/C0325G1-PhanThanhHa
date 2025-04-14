@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        #product-table td {
+            padding: 10px;
+        }
+        #product-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="toast-success" class="hidden fixed top-5 right-5 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+            </svg>
+            <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ms-3 text-sm font-normal font-secondary toast-message">Đã thêm thành công.</div>
+    </div>
+    <div id="toast-warning" class="hidden fixed top-5 right-5 flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM10 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 0 1-2 0V6a1 1 0 0 1 2 0v5Z"/>
+            </svg>
+            <span class="sr-only">Warning icon</span>
+        </div>
+        <div class="ms-3 text-sm font-normal">Bạn chưa nhập tên sản phẩm.</div>
+    </div>
+    <div class="p-4 container font-secondary text-xl">
+        <h1 class="font-primary text-4xl mb-4 text-blue-800">Luyện tập sử dụng mảng, hàm và làm quen với khái niệm "Ứng dụng quản lý".</h1>
+        <h2 class="font-primary text-2xl mb-4 text-blue-600">Thêm mới sản phẩm</h2>
+        <div class="flex flex-wrap my-5 lg:justify-center gap-4">
+            <div class="w-60 min-w-[375px]">
+                <input type="text" name="productName" maxlength="255" class="w-full h-[50px] p-[10px] border border-gray-300 rounded-md" placeholder="Nhập tên sản phẩm...">
+            </div>
+            <div class="w-40 flex-auto">
+                <button class="btn-add hover:cursor-pointer mb-2 lg:mb-0 lg:w-[100px] h-[50px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl">Thêm</button>
+            </div>
+        </div>
+    </div>
+    <div class="p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-2xl mb-4 text-blue-600">Danh sách sản phẩm</h2>
+        <table id="product-table" class="min-w-[600px]">
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        let productList = [];
+        const toastSuccess = document.querySelector('#toast-success');
+        const toastSuccessMessage = document.querySelector('#toast-success .toast-message');
+        const toastWarning = document.querySelector('#toast-warning');
+        const productTable = document.querySelector("#product-table tbody");
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let productListString = localStorage.getItem("productList");
+            if (productListString) {
+                productList = JSON.parse(productListString);
+                // display
+                let htmlString = "";
+                productList.forEach((product) => {
+                    htmlString += displayProduct(product);
+                });
+                productTable.innerHTML = htmlString;
+                setUpButtonDeleteProduct();
+                setUpButtonUpdateProduct();
+            }
+        })
+
+        document.querySelector(".btn-add").addEventListener("click", (e) => {
+            if (!validateInput("productName")) {
+                return;
+            }
+            const productName = document.querySelector('input[name="productName"]');
+            addNewProduct(productName);
+        })
+
+        document.querySelector('input[name="productName"]').addEventListener("keydown", (e) => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                document.querySelector(".btn-add").click();
+            }
+        })
+
+        function validateInput(name) {
+            const input = document.querySelector(`input[name="${name}"]`);
+            if (input.value === "") {
+                toastWarning.classList.remove("hidden");
+                toastWarning.classList.remove("opacity-0");
+                toastWarning.classList.add("opacity-100");
+                setTimeout(() => {
+                    toastWarning.classList.add("hidden");
+                    toastWarning.classList.add("opacity-0");
+                    toastWarning.classList.remove("opacity-100");
+                }, 1000);
+                return false;
+            }
+            return true;
+        }
+
+        function addNewProduct(productName) {
+            let currentId = Math.max(...productList.map(p => p.id));
+            let nextId = 0;
+            if (currentId > -1) {
+                nextId = currentId + 1  ;
+            }
+            productList.push({
+                id: nextId,
+                name: productName.value
+            });
+            productTable.innerHTML += displayProduct({
+                id: nextId,
+                name: productName.value
+            });
+            displayToast(`Đã thêm thành công sản phẩm ${productName.value}`);
+            productName.value = "";
+            productName.focus();
+            let productListString = JSON.stringify(productList);
+            localStorage.setItem("productList", productListString);
+            setUpButtonDeleteProduct();
+            setUpButtonUpdateProduct();
+        }
+
+        function displayProduct(product) {
+            return `
+                <tr>
+                    <td class="display-product-name">${product.name}</td>
+                    <td class="w-[100px]">
+                        <button data-id="${product.id}" class="btn-update hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[70px] h-[50px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl"><i class="fas fa-edit"></i></button>
+                    </td>
+                    <td class="w-[100px]">
+                        <button data-id="${product.id}" class="btn-delete hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[70px] h-[50px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+            `;
+        }
+
+        function deleteProduct(id) {
+            let index = productList.findIndex(p => p.id === id);
+            if (index > -1) {
+                productList.splice(index, 1);
+                let productListString = JSON.stringify(productList);
+                localStorage.setItem("productList", productListString);
+            }
+        }
+
+        function setUpButtonDeleteProduct() {
+            document.querySelectorAll(".btn-delete").forEach((item) => {
+                item.addEventListener("click", (e) => {
+                    let id = parseInt(e.target.closest('button').getAttribute("data-id"));
+                    let product = getProductById(id);
+                    if (confirm("Bạn có chắc chắn muốn xoá sản phẩm này") === true) {
+                        deleteProduct(id);
+                        e.target.closest('tr').remove();
+                        displayToast(`Đã xoá thành công sản phẩm ${product.name}`);
+                    }
+                })
+            })
+        }
+
+        function setUpButtonUpdateProduct() {
+            document.querySelectorAll(".btn-update").forEach((item) => {
+                item.addEventListener("click", (e) => {
+                    let id = parseInt(e.target.closest('button').getAttribute("data-id"));
+                    let parentTrElement = e.target.closest('tr');
+                    let displayProductNameElement = parentTrElement.querySelector(".display-product-name");
+                    if (!displayProductNameElement.querySelector("input")) {
+                        displayProductNameElement.innerHTML = `<input type="text" name="newProductName" maxlength="255" class="w-full h-[50px] p-[10px] border border-gray-300 rounded-md" placeholder="Nhập tên sản phẩm...">`;
+                        let input = displayProductNameElement.querySelector("input");
+                        input.onkeydown = function (_e) {
+                            if (_e.keyCode === 13) {
+                                e.target.click();
+                            }
+                        }
+                        input.focus();
+                        input.value = getProductById(id).name;
+                    } else {
+                        let input = displayProductNameElement.querySelector("input");
+                        input.onkeydown = function (_e) {
+                            if (_e.keyCode === 13) {
+                                e.target.click();
+                            }
+                        }
+                        if (input) {
+                            updateProductById(id, input.value);
+                            displayProductNameElement.innerHTML = getProductById(id).name;
+                            displayToast(`Đã cập nhật thành công sản phẩm ${input.value}`);
+                        }
+                    }
+                })
+            })
+        }
+
+        function getProductById(id) {
+            return productList.find(p => p.id === id);
+        }
+
+        function updateProductById(id, name) {
+            let index = productList.findIndex(p => p.id === id);
+            productList[index].name = name;
+            let productListString = JSON.stringify(productList);
+            localStorage.setItem("productList", productListString);
+        }
+        function displayToast(message) {
+            toastSuccessMessage.textContent = message;
+            toastSuccess.classList.remove("hidden");
+            toastSuccess.classList.remove("opacity-0");
+            toastSuccess.classList.add("opacity-100");
+            setTimeout(() => {
+                toastSuccess.classList.add("hidden");
+                toastSuccess.classList.add("opacity-0");
+                toastSuccess.classList.remove("opacity-100");
+            }, 500);
+        }
+    </script>
+</body>
+</html>
