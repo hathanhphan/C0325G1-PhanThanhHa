@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
+</head>
+<body>
+    <h1>Luyện tập tạo lớp, đối tượng, phương thức, và thuộc tính của đối tượng.</h1>
+    <h2>Xem kết quả ở màn hình console</h2>
+    <script>
+        class SwitchButton {
+            #status;
+            #lamp;
+            constructor() {
+            }
+            connectToLamp(lamp) {
+                this.#lamp = lamp;
+            }
+            switchOff() {
+                this.#status = false;
+                this.#lamp.turnOff();
+            }
+            switchOn() {
+                this.#status = true;
+                this.#lamp.turnOn();
+            }
+        }
+        class ElectricLamp {
+            #status;
+            constructor(status) {
+                this.#status = status;
+            }
+            turnOff() {
+                this.#status = false;
+            }
+            turnOn() {
+                this.#status = true;
+            }
+            getStatus() {
+                return this.#status;
+            }
+        }
+        const electricLamp = new ElectricLamp(false);
+        const switchButton = new SwitchButton();
+        switchButton.connectToLamp(electricLamp);
+        for (let i = 0; i < 10; i++) {
+            if (electricLamp.getStatus()) {
+                switchButton.switchOff();
+                console.log("Bóng đèn đang tắt.");
+            } else {
+                switchButton.switchOn();
+                console.log("Bóng đèn đang bật.");
+            }
+        }
+    </script>
+</body>
+</html>
