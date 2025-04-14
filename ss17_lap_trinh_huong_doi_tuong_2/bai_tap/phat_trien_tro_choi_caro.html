@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phát triển trò chơi cờ ca-ro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="p-4 container mx-auto font-secondary text-xl text-center">
+    <h1 class="font-primary text-3xl mb-4 text-blue-800">Luyện tập sử dụng mảng hai chiều.</h1>
+    <h2 class="font-primary text-3xl mb-4 text-blue-600">Game caro đơn giản</h2>
+    <button data-tooltip-target="tooltip-random-game" type="button" class="btn-random hover:cursor-pointer font-primary text-3xl mb-4 text-blue-600" ><i class="fas fa-random"></i></button>
+    <div id="tooltip-random-game" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+        Tạo màn chơi mới
+        <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+    <p class="info-notification"></p>
+    <table class="game-table mx-auto text-center font-secondary text-xl text-center my-8">
+    </table>
+    <p class="result-notification font-primary text-5xl text-red-600"></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script>
+    const gameMatrix = [];
+    const rows = 20;
+    const cols = 20;
+    let remainCells = rows * cols;
+    const gameTable = document.querySelector('.game-table');
+    const playerIcons = {
+        'player1': '<i class="fas fa-times text-[20px] leading-none"></i>',
+        'player2': '<i class="far fa-circle text-[18px] leading-none"></i>',
+    }
+    const resultNotifications = {
+        'player1' : 'Người chơi 1 đã thắng 😍',
+        'player2' : 'Người chơi 2 đã thắng 😍',
+        'tie' : 'Hoà rồi na 🤣'
+    }
+    const infoNotifications = {
+        'player1' : 'Đến lượt người chơi 1 - <i class="fas fa-times"></i>',
+        'player2' : 'Đến lượt người chơi 2 - <i class="far fa-circle"></i>',
+        'finish'  : 'Game đã kết thúc',
+    }
+    let playerTurn = true; // Player 1: true - Player 2: false
+    const resultNotification = document.querySelector('.result-notification');
+    const infoNotification = document.querySelector('.info-notification');
+    class TicTacToe {
+        constructor(gameMatrix, rows, cols, playerTurn, resultNotification, infoNotification) {
+            this.gameMatrix = gameMatrix;
+            this.rows = rows;
+            this.cols = cols;
+            this.playerTurn = playerTurn;
+            this.resultNotification = resultNotification;
+            this.infoNotification = infoNotification;
+        }
+        init() {
+            this.randomNewGame();
+            let _this = this;
+            document.querySelector('.btn-random').addEventListener('click', function () {
+                _this.randomNewGame();
+            })
+        }
+        createNewGameTable() {
+            gameTable.innerHTML = "";
+            let htmlString = "";
+            for (let i = 0; i < this.rows; i++) {
+                this.gameMatrix[i] = [];
+                htmlString += '<tr>';
+                for (let j = 0; j < this.cols; j++) {
+                    this.gameMatrix[i][j] = "";
+                    htmlString += `<td data-x="${i}" data-y="${j}" class="btn-choose-cell hover:cursor-pointer transition hover:shadow-xl w-10 h-10 border border-2 border-solid border-black"></td>`;
+                }
+                htmlString += '</tr>';
+            }
+            gameTable.innerHTML = htmlString;
+        }
+        randomNewGame() {
+            this.playerTurn = Math.random() >= 0.5;
+            remainCells = this.rows * this.cols;
+            if (this.playerTurn) {
+                this.infoNotification.innerHTML = infoNotifications['player1'];
+            } else {
+                this.infoNotification.innerHTML = infoNotifications['player2'];
+            }
+            this.resultNotification.innerHTML = "";
+            this.clearTable();
+            this.createNewGameTable();
+            this.clickChooseCells();
+        }
+        clearTable() {
+            document.querySelectorAll('.btn-choose-cell').forEach(cell => {
+                cell.innerHTML = '';
+                cell.classList.add('hover:cursor-pointer');
+                cell.classList.add('hover:shadow-xl');
+            })
+        }
+        checkResult() {
+            // Kiểm tra 2 đường chéo
+            for(let i = 0; i < this.gameMatrix.length - 4; i++) {
+                for (let j = 0; j < this.gameMatrix[0].length - 4; j++) {
+                    if (this.gameMatrix[i][j] === 'x' && this.gameMatrix[i + 1][j + 1] === 'x' && this.gameMatrix[i + 2][j + 2] === 'x' && this.gameMatrix[i + 3][j + 3] === 'x' && this.gameMatrix[i + 4][j + 4] === 'x' ||
+                        this.gameMatrix[i + 4][j] === 'x' && this.gameMatrix[i + 3][j + 1] === 'x' && this.gameMatrix[i + 2][j + 2] === 'x' && this.gameMatrix[i + 1][j + 3] === 'x' && this.gameMatrix[i][j + 4] === 'x') {
+                        this.printPlayerWin('player1');
+                        return;
+                    } else if (this.gameMatrix[i][j] === 'o' && this.gameMatrix[i + 1][j + 1] === 'o' && this.gameMatrix[i + 2][j + 2] === 'o' && this.gameMatrix[i + 3][j + 3] === 'o' && this.gameMatrix[i + 4][j + 4] === 'o' ||
+                        this.gameMatrix[i + 4][j] === 'o' && this.gameMatrix[i + 3][j + 1] === 'o' && this.gameMatrix[i + 2][j + 2] === 'o' && this.gameMatrix[i + 1][j + 3] === 'o' && this.gameMatrix[i][j + 4] === 'o') {
+                        this.printPlayerWin('player2');
+                        return;
+                    }
+                }
+            }
+            // Kiểm tra các cột
+            for(let i = 0; i < this.gameMatrix.length - 4; i++) {
+                for (let j = 0; j < this.gameMatrix[0].length; j++) {
+                    if (this.gameMatrix[i][j] === 'x' && this.gameMatrix[i + 1][j] === 'x' && this.gameMatrix[i + 2][j] === 'x' && this.gameMatrix[i + 3][j] === 'x' && this.gameMatrix[i + 4][j] === 'x') {
+                        this.printPlayerWin('player1');
+                        return;
+                    } else if (this.gameMatrix[i][j] === 'o' && this.gameMatrix[i + 1][j] === 'o' && this.gameMatrix[i + 2][j] === 'o' && this.gameMatrix[i + 3][j] === 'o' && this.gameMatrix[i + 4][j] === 'o') {
+                        this.printPlayerWin('player2');
+                        return;
+                    }
+                }
+            }
+            // Kiểm tra các hàng
+            for(let j = 0; j < this.gameMatrix[0].length - 4; j++) {
+                for (let i = 0; i < this.gameMatrix.length; i++) {
+                    if (this.gameMatrix[i][j] === 'x' && this.gameMatrix[i][j + 1] === 'x' && this.gameMatrix[i][j + 2] === 'x' && this.gameMatrix[i][j + 3] === 'x' && this.gameMatrix[i][j + 4] === 'x') {
+                        this.printPlayerWin('player1');
+                        return;
+                    } else if (this.gameMatrix[i][j] === 'o' && this.gameMatrix[i][j + 1] === 'o' && this.gameMatrix[i][j + 2] === 'o' && this.gameMatrix[i][j + 3] === 'o' && this.gameMatrix[i][j + 4] === 'o') {
+                        this.printPlayerWin('player2');
+                        return;
+                    }
+                }
+            }
+            if (remainCells === 0) {
+                this.resultNotification.innerHTML = resultNotifications['tie'];
+                this.infoNotification.innerHTML = infoNotifications['finish'];
+            }
+        }
+        printPlayerWin(player) {
+            this.resultNotification.innerHTML = resultNotifications[player];
+            this.infoNotification.innerHTML = infoNotifications['finish'];
+            if (remainCells !== 0) {
+                this.disableAllCells();
+            }
+        }
+        clickChooseCells() {
+            document.querySelectorAll('.btn-choose-cell').forEach(cell => {
+                cell.addEventListener('click', (e) => {
+                    if (cell.innerHTML || !cell.classList.contains('hover:cursor-pointer')) {
+                        return;
+                    }
+                    let x = cell.getAttribute('data-x');
+                    let y = cell.getAttribute('data-y');
+                    remainCells--;
+                    if (this.playerTurn) {
+                        cell.innerHTML = playerIcons['player1'];
+                        gameMatrix[x][y] = 'x';
+                        this.infoNotification.innerHTML = infoNotifications['player2'];
+                    } else {
+                        cell.innerHTML = playerIcons['player2'];
+                        gameMatrix[x][y] = 'o';
+                        this.infoNotification.innerHTML = infoNotifications['player1'];
+                    }
+                    this.playerTurn = !this.playerTurn;
+                    cell.classList.remove('hover:cursor-pointer');
+                    cell.classList.remove('hover:shadow-xl');
+                    this.checkResult();
+                })
+            })
+        }
+        disableAllCells() {
+            document.querySelectorAll('.btn-choose-cell').forEach(cell => {
+                cell.classList.remove('hover:cursor-pointer');
+                cell.classList.remove('hover:shadow-xl');
+            })
+        }
+    }
+    const ticTacToe = new TicTacToe(gameMatrix, rows, cols, playerTurn, resultNotification, infoNotification);
+    ticTacToe.init();
+</script>
+</body>
+</html>
