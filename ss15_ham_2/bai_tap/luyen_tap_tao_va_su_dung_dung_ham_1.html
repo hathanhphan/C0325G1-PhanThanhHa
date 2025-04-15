@@ -149,6 +149,25 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
         // Exercise 1
         function alertMessage() {
             alert('Xin chào');
@@ -180,6 +199,10 @@
             let output = document.querySelector('.ex3 .output');
             let num1 = parseInt(document.querySelector('.ex3 input[name="num1"]').value);
             let num2 = parseInt(document.querySelector('.ex3 input[name="num2"]').value);
+            if (!validate('.ex3 input[name="num1"]', 'tham số 1', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex3 input[name="num2"]', 'tham số 2', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             output.innerHTML = '';
             let sum = compareValue(num1, num2);
             if (sum !== null) {
@@ -213,6 +236,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex5 .output');
             let str = document.querySelector('.ex5 input[name="str"]').value;
+            if (!validateLength('input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             output.innerHTML = "";
             let result = searchStar(str);
             if (result !== null) {

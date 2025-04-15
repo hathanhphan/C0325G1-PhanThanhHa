@@ -39,6 +39,14 @@
         </form>
     </div>
     <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
         function isPalindrome(s, first = 0, last = s.length - 1) {
             if (s.length === 1 || first >= last) {
                 return true;
@@ -52,6 +60,9 @@
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let str = document.querySelector('input[name="str"]').value;
+            if (!validateLength('input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             let result = isPalindrome(str);
             if (result) {
                 document.querySelector('.output').textContent = `${str} là chuỗi đối xứng.`;

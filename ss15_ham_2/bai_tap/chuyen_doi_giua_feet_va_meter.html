@@ -50,6 +50,17 @@
         </form>
     </div>
     <script>
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
         function feetToMeter(number) {
             return 0.305 * number;
         }
@@ -59,6 +70,9 @@
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let amount = parseFloat(document.querySelector('input[name="amount"]').value);
+            if (!validate('input[name="amount"]', 'amount', 0, 99999)) {
+                return;
+            }
             const toUnit = document.querySelector('[name="toUnit"]')
             let result;
             if (toUnit.value === 'feet') {

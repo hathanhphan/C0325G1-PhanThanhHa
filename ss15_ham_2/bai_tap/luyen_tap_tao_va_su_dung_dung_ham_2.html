@@ -292,6 +292,25 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
         // Exercise 1
         function pow2(number) {
             return number * number;
@@ -300,6 +319,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex1 .output');
             let num = parseFloat(document.querySelector('.ex1 input[name="num"]').value);
+            if (!validate('.ex1 input[name="num"]', 'tham số 1', Number.MIN_SAFE_INTEGER / 2, Number.MAX_SAFE_INTEGER / 2)) {
+                return;
+            }
             output.innerHTML = '';
             let result = pow2(num);
             output.innerHTML = `Bình phương của ${num} là ${result}.`;
@@ -317,6 +339,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex2 .output');
             let radius = parseFloat(document.querySelector('.ex2 input[name="radius"]').value);
+            if (!validate('.ex2 input[name="radius"]', 'bán kính', 1, 999)) {
+                return;
+            }
             output.innerHTML = '';
             let perimeter = circlePerimeter(radius);
             let area = areaCircle(radius);
@@ -339,6 +364,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex3 .output');
             let num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
+            if (!validate('.ex3 input[name="num"]', 'n', 0, 100)) {
+                return;
+            }
             output.innerHTML = '';
             let result = factorial(num);
             output.innerHTML = `Giai thừa của ${num} là ${result}.`;
@@ -352,6 +380,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex4 .output');
             let str = document.querySelector('.ex4 input[name="str"]').value;
+            if (!validateLength('.ex4 input[name="str"]', 'kí tự', 1, 1)) {
+                return;
+            }
             output.innerHTML = '';
             if (isCharacterNumber(str)) {
                 output.innerHTML = 'Kí tự vừa nhập là kí tự số';
@@ -377,6 +408,11 @@
             let numA = parseInt(document.querySelector('.ex5 input[name="numA"]').value);
             let numB = parseInt(document.querySelector('.ex5 input[name="numB"]').value);
             let numC = parseInt(document.querySelector('.ex5 input[name="numC"]').value);
+            if (!validate('.ex5 input[name="numA"]', 'số A', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex5 input[name="numB"]', 'số B', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex5 input[name="numC"]', 'số C', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             let minNum = min(numA, numB, numC);
             document.querySelector('.ex5 .output').textContent = `${minNum} là số nhỏ nhất.`;
         })
@@ -391,6 +427,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex6 .output');
             let num = parseInt(document.querySelector('.ex6 input[name="num"]').value);
+            if (!validate('.ex6 input[name="num"]', 'n', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             output.innerHTML = '';
             if (isPositiveNumber(num) === -1) {
                 output.innerHTML = `${num} là số 0.`;
@@ -412,6 +451,10 @@
             e.preventDefault();
             let numA = parseInt(document.querySelector('.ex7 input[name="numA"]').value);
             let numB = parseInt(document.querySelector('.ex7 input[name="numB"]').value);
+            if (!validate('.ex7 input[name="numA"]', 'số A', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex7 input[name="numB"]', 'số B', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             let [num1, num2] = swap(numA, numB);
             document.querySelector('.ex7 .output').textContent = `A là ${num1}, B là ${num2}.`;
         })
@@ -424,6 +467,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex8 .output');
             let str = document.querySelector('.ex8 input[name="str"]').value;
+            if (!validateLength('.ex8 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             let arr = str.split(',');
             output.innerHTML = `Mảng sau khi đảo ngược là ${reverseArray(arr).join(',')}.`;
         })
@@ -446,6 +492,10 @@
             let output = document.querySelector('.ex9 .output');
             let str = document.querySelector('.ex9 input[name="str"]').value;
             let char = document.querySelector('.ex9 input[name="char"]').value;
+            if (!validateLength('.ex9 input[name="str"]', 'chuỗi', 1, 255)
+                || !validateLength('.ex9 input[name="char"]', 'kí tự', 1, 1)) {
+                return;
+            }
             let arr = str.split('');
             output.innerHTML = `Số lần ${char} xuất hiện trong chuỗi là ${searchChar(arr, char)}.`;
         })
