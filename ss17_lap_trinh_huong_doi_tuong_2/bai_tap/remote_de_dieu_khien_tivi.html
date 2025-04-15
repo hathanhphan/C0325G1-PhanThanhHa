@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+</head>
+<body>
+    <h1>Luyện tập tạo lớp, đối tượng, phương thức, và thuộc tính của đối tượng.</h1>
+    <h2>Xem kết quả ở màn hình console</h2>
+    <script>
+        class Remote {
+            #code;
+            #tv;
+            constructor(code, tv) {
+                this.#code = code;
+                this.#tv = tv;
+            }
+            switchChannel(channel) {
+                this.#tv.setChannel(channel);
+            }
+            setVolume(volume) {
+                this.#tv.setVolume(volume);
+            }
+
+            turnOn() {
+                this.#tv.turnOn();
+            }
+
+            turnOff() {
+                this.#tv.turnOff();
+            }
+        }
+
+        class Tv {
+            #channel = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            #volume = { "min": 0, "max": 100 };
+            #currentChannel;
+            #currentVolume;
+            #status;
+            constructor(currentChannel, currentVolume, status) {
+                this.#currentChannel = currentChannel;
+                this.#currentVolume = currentVolume;
+                this.#status = status;
+            }
+            getNextChannel() {
+                if (!this.getStatus()) {
+                    return;
+                }
+                let index = this.#channel.indexOf(this.#currentChannel);
+                if (index > -1) {
+                    this.#currentChannel = this.#channel[(index + 1) % this.#channel.length];
+                } else {
+                    this.#currentChannel = this.#channel[0];
+                }
+                console.log("Đã chuyển sang channel" + this.#currentChannel);
+            }
+            getPrevChannel() {
+                if (!this.getStatus()) {
+                    return;
+                }
+                let index = this.#channel.indexOf(this.#currentChannel);
+                if (index > -1) {
+                    this.#currentChannel = this.#channel[(index - 1) % this.#channel.length];
+                } else {
+                    this.#currentChannel = this.#channel[0];
+                }
+                console.log("Đã chuyển sang channel" + this.#currentChannel);
+            }
+
+            setChannel(channel) {
+                if (!this.getStatus()) {
+                    return;
+                }
+                let index = this.#channel.indexOf(this.#currentChannel);
+                if (index > -1) {
+                    this.#currentChannel = this.#channel[index];
+                    console.log("Đã chuyển sang channel " + channel);
+                } else {
+                    console.log("Không tìm thấy channel " + channel);
+                }
+            }
+
+            setVolume(volume) {
+                if (!this.getStatus()) {
+                    return;
+                }
+                if (this.#currentVolume + volume > this.#volume.max) {
+                    this.#currentVolume = 100;
+                } else if (this.#currentVolume + volume < this.#volume.min) {
+                    this.#currentVolume = 0;
+                } else {
+                    this.#currentVolume += volume;
+                }
+                console.log("Âm lượng hiện tại là " + this.#currentVolume);
+            }
+
+            getChannel() {
+                if (!this.getStatus()) {
+                    return;
+                }
+                console.log("Channel hiện tại là " + this.#currentChannel);
+                return this.#currentChannel;
+            }
+
+            getVolume() {
+                if (!this.getStatus()) {
+                    return;
+                }
+                console.log("Volume hiện tại là " + this.#currentVolume);
+                return this.#currentVolume;
+            }
+
+            getStatus() {
+                return this.#status;
+            }
+
+            turnOn() {
+                this.#status = true;
+                console.log("TV đang bật");
+            }
+
+            turnOff() {
+                this.#status = false;
+                console.log("TV đang tắt");
+            }
+        }
+        const samsung = new Tv(1, 75, false);
+        const remote = new Remote("C0325G1", samsung);
+        samsung.turnOn();
+        samsung.getChannel();
+        samsung.getVolume();
+        samsung.setChannel(7);
+        remote.switchChannel(3);
+        remote.setVolume(2);
+        remote.turnOff();
+
+    </script>
+</body>
+</html>
