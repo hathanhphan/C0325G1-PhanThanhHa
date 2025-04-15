@@ -77,13 +77,13 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập số a</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="a" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="a" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập số b</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="b" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="b" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -104,7 +104,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập tuổi</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="age" min="1" maxlength="3" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="age" min="1" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -125,7 +125,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số nguyên</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="num" maxlength="8" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="num" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -146,19 +146,19 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số A</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="numA" maxlength="8" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="numA" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số B</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="numB" maxlength="8" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="numB" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số C</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="numC" maxlength="8" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="numC" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -217,14 +217,14 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Doanh số</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="sales" maxlength="255" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="sales" required class="w-[120px] border border-gray-300 rounded-md">
                     <span>(đồng)</span>
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Phần trăm (%)</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="percent" maxlength="3" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="percent" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -246,21 +246,21 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Gọi nội</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="internalCall" min="0" maxlength="255" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="internalCall" min="0" required class="w-[120px] border border-gray-300 rounded-md">
                     <span>(500 đồng / 1 phút)</span>
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Gọi ngoại</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="externalCall" min="0" maxlength="255" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="externalCall" min="0" required class="w-[120px] border border-gray-300 rounded-md">
                     <span>(1000 đồng / 1 phút)</span>
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số tin nhắn</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="smsNum" min="0" maxlength="255" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="smsNum" min="0" required class="w-[120px] border border-gray-300 rounded-md">
                     <span>(300 đồng / 1 tin)</span>
                 </div>
             </div>
@@ -276,11 +276,26 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
         // Exercise 1
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let a = parseFloat(document.querySelector('.ex1 input[name="a"]').value);
             let b = parseFloat(document.querySelector('.ex1 input[name="b"]').value);
+            if (!validate('.ex1 input[name="a"]', 'số a', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex1 input[name="b"]', 'số b', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             if (b === 0) {
                 document.querySelector('.ex1 .output').textContent = 'Lỗi chia cho 0';
                 return;
@@ -297,6 +312,9 @@
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let age = parseInt(document.querySelector('.ex2 input[name="age"]').value);
+            if (!validate('.ex2 input[name="age"]', 'số a', 1, 120)) {
+                return;
+            }
             let result = "";
             if (age < 14) {
                 result = "Học sinh chưa đủ tuổi để vào học lớp 10.";
@@ -316,6 +334,9 @@
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
+            if (!validate('.ex3 input[name="num"]', 'số n', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             if (num < 0) {
                 result = `${num} nhỏ hơn 0.`;
             } else if (num === 0) {
@@ -332,6 +353,11 @@
             let numA = parseInt(document.querySelector('.ex4 input[name="numA"]').value);
             let numB = parseInt(document.querySelector('.ex4 input[name="numB"]').value);
             let numC = parseInt(document.querySelector('.ex4 input[name="numC"]').value);
+            if (!validate('.ex4 input[name="numA"]', 'số A', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex4 input[name="numB"]', 'số B', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex4 input[name="numC"]', 'số C', Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) {
+                return;
+            }
             if (numA > numC && numA > numC) {
                 result = `${numA} là số lớn nhất.`;
             } else if (numB > numC) {
@@ -348,6 +374,11 @@
             let numA = parseFloat(document.querySelector('.ex5 input[name="numA"]').value);
             let numB = parseFloat(document.querySelector('.ex5 input[name="numB"]').value);
             let numC = parseFloat(document.querySelector('.ex5 input[name="numC"]').value);
+            if (!validate('.ex5 input[name="numA"]', 'điểm kiểm tra', 0, 10)
+                || !validate('.ex5 input[name="numB"]', 'điểm giữa kì', 0, 10)
+                || !validate('.ex5 input[name="numC"]', 'điểm cuối kì', 0, 10)) {
+                return;
+            }
             let result = numA * 0.2 + numB * 0.3 + numC * 0.5;
             let rank = "";
             if (result >= 8.5) {
@@ -369,6 +400,10 @@
             e.preventDefault();
             let sales = parseInt(document.querySelector('.ex6 input[name="sales"]').value);
             let percent = parseInt(document.querySelector('.ex6 input[name="percent"]').value);
+            if (!validate('.ex6 input[name="sales"]', 'doanh thu', 0, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex6 input[name="percent"]', 'phần trăm hoa hồng', 0, 100)) {
+                return;
+            }
             let result = sales * percent / 100;
             document.querySelector('.ex6 .output').textContent = `Hoa hồng nhận được là ${parseFloat(result.toFixed(2)).toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
@@ -379,6 +414,11 @@
             let internalCall = parseInt(document.querySelector('.ex7 input[name="internalCall"]').value);
             let externalCall = parseInt(document.querySelector('.ex7 input[name="externalCall"]').value);
             let smsNum = parseInt(document.querySelector('.ex7 input[name="smsNum"]').value);
+            if (!validate('.ex7 input[name="internalCall"]', 'gọi nội', 0, 10000)
+                || !validate('.ex7 input[name="externalCall"]', 'gọi ngoại', 0, 10000)
+                || !validate('.ex7 input[name="smsNum"]', 'số lượng sms', 0, 10000)) {
+                return;
+            }
             let result = 50000 + internalCall * 500 + externalCall * 1000 + smsNum * 300;
             document.querySelector('.ex7 .output').textContent = `Tổng cước là ${result.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })
