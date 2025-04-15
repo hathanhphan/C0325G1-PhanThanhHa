@@ -69,11 +69,22 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
         const english = ['apple', 'orange', 'banana', 'mango', 'grape', 'grapefruit'];
         const vietnamese = ['Quả táo', 'Quả cam', 'Quả chuối', 'Quả xoài', 'Quả nho', 'Quả bưởi'];
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let str = document.querySelector('.ex1 input[name="str"]').value.toLowerCase();
+            if (!validateLength('.ex1 input[name="str"]', 'từ', 0, 255)) {
+                return;
+            }
             let output = document.querySelector('.ex1 .output');
             output.innerHTML = '';
             let index = english.indexOf(str);

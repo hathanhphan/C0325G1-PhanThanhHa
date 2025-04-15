@@ -181,6 +181,25 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
@@ -223,6 +242,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex3 .output');
             let str = document.querySelector('.ex3 input[name="str"]').value.toLowerCase();
+            if (!validateLength('.ex3 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             let count = 0;
             let stringArr = str.split("");
             output.innerHTML = '';
@@ -239,6 +261,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex4 .output');
             let str = document.querySelector('.ex4 input[name="str"]').value.toLowerCase();
+            if (!validateLength('.ex4 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             let stringArr = str.trim().split(/\s+/);
             output.innerHTML = '';
             output.innerHTML = `Số lượng từ trong chuỗi là ${stringArr.length}.`;
@@ -251,6 +276,10 @@
             let output = document.querySelector('.ex5 .output');
             let str1 = document.querySelector('.ex5 input[name="str1"]').value.toLowerCase();
             let str2 = document.querySelector('.ex5 input[name="str2"]').value.toLowerCase();
+            if (!validateLength('.ex5 input[name="str1"]', 'chuỗi 1', 1, 255)
+                || !validateLength('.ex5 input[name="str2"]', 'chuỗi 2', 1, 255)) {
+                return;
+            }
             if (str1 === str2) {
                 output.innerHTML = 'Hai chuỗi này giống nhau.';
             } else {
@@ -263,6 +292,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex6 .output');
             let str = document.querySelector('.ex6 input[name="str"]').value.toLowerCase();
+            if (!validateLength('.ex6 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             let stringArr = str.split("");
             output.innerHTML = '';
             for (let i = 0; i < stringArr.length; i++) {

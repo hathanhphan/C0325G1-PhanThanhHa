@@ -83,7 +83,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập số</div>
                 <div class="w-60 flex-auto">
-                    <input type="text" name="num" max="999999999" pattern="\d*" title="Only numbers are allowed" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="text" name="num" maxlength="255" pattern="\d*" title="Only numbers are allowed" required class="w-[240px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[800px]">
@@ -124,6 +124,15 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
+
         // Exercise 1
         {
             let myColor = ["Red", "Green", "White", "Black"];
@@ -135,6 +144,9 @@
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let num = document.querySelector('.ex2 input[name="num"]').value;
+            if (!validateLength('.ex2 input[name="num"]', 'số', 0, 255)) {
+                return;
+            }
             let output = document.querySelector('.ex2 .output');
             let numArr = num.split('');
             output.innerHTML = '';
@@ -152,6 +164,9 @@
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let str = document.querySelector('.ex3 input[name="str"]').value;
+            if (!validateLength('.ex3 input[name="str"]', 'số', 0, 255)) {
+                return;
+            }
             let output = document.querySelector('.ex3 .output');
             let strArr = str.split('');
             output.innerHTML = '';

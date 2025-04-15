@@ -259,6 +259,25 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
@@ -312,6 +331,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex3 .output');
             let num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
+            if (!validate('.ex3 input[name="num"]', 'số lượng', 1, 255)) {
+                return;
+            }
             let arr = [];
             let min = -255;
             let max = 255;
@@ -333,6 +355,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex4 .output');
             let num = parseInt(document.querySelector('.ex4 input[name="num"]').value);
+            if (!validate('.ex4 input[name="num"]', 'số lượng', 1, 255)) {
+                return;
+            }
             let arr = [];
             let min = -255;
             let max = 255;
@@ -350,6 +375,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex5 .output');
             let str = document.querySelector('.ex5 input[name="str"]').value.toLowerCase();
+            if (!validateLength('.ex5 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
             let vowel = ['a', 'e', 'i', 'o', 'u'];
             let count = 0;
             let stringArr = str.split("");
@@ -368,6 +396,10 @@
             let output = document.querySelector('.ex6 .output');
             let num = parseInt(document.querySelector('.ex6 input[name="num"]').value);
             let numV = parseInt(document.querySelector('.ex6 input[name="numV"]').value);
+            if (!validate('.ex6 input[name="num"]', 'số lượng', 1, 255)
+                || !validate('.ex6 input[name="numV"]', 'V', -255, 255)) {
+                return;
+            }
             let arr = [];
             let min = -255;
             let max = 255;
@@ -389,6 +421,10 @@
             let output = document.querySelector('.ex7 .output');
             let num = parseInt(document.querySelector('.ex7 input[name="num"]').value);
             let numV = parseInt(document.querySelector('.ex7 input[name="numV"]').value);
+            if (!validate('.ex7 input[name="num"]', 'số lượng', 1, 255)
+                || !validate('.ex7 input[name="numV"]', 'V', -255, 255)) {
+                return;
+            }
             let arr = [];
             let min = -255;
             let max = 255;
@@ -422,6 +458,9 @@
             e.preventDefault();
             let output = document.querySelector('.ex8 .output');
             let num = parseInt(document.querySelector('.ex8 input[name="num"]').value);
+            if (!validate('.ex6 input[name="num"]', 'số lượng', 1, 255)) {
+                return;
+            }
             let arr = [];
             let min = -255;
             let max = 255;
