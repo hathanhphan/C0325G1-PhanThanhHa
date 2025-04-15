@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funny circles</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+    <script>
+        class Circle {
+            #x;
+            #y;
+            #radius;
+            #color
+            constructor(x, y, radius, color) {
+                this.#x = x;
+                this.#y = y;
+                this.#radius = radius;
+                this.#color = color;
+            }
+            getX() {
+                return this.#x;
+            }
+            getY() {
+                return this.#y;
+            }
+            getRadius() {
+                return this.#radius;
+            }
+            getColor() {
+                return this.#color;
+            }
+        }
+        function getRandomColor() {
+            let red = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            return `rgb(${red}, ${green}, ${blue})`;
+        }
+
+        function createCircle() {
+            let ctx = document.getElementById('myCanvas').getContext('2d');
+            let radius = Math.floor(Math.random() * 80);
+            let color = getRandomColor();
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let circle = new Circle(x, y, radius, color);
+            ctx.beginPath();
+            ctx.arc(circle.getX(), circle.getY(), circle.getRadius(), 0, Math.PI * 2);
+            ctx.fillStyle = circle.getColor();
+            ctx.fill();
+        }
+
+        function createMultipleCircle() {
+            for(let i = 0; i < 30; i++) {
+                createCircle();
+            }
+        }
+        createMultipleCircle();
+    </script>
+</body>
+</html>
