@@ -298,6 +298,9 @@
             while (true) {
                 if (max === "" || max === null) {
                     break;
+                }
+                else if (parseInt(max) < -999 || parseInt(max) > 999) {
+                    max = prompt("Bạn cần nhập số trong khoảng (-999, 999): ");
                 } else if (isNaN(parseInt(max))) {
                     max = prompt("Bạn cần nhập giá trị là số: ");
                 } else {
@@ -310,6 +313,8 @@
                 while(true) {
                     if (playerAnswer === "" || playerAnswer === null) {
                         break;
+                    } else if (parseInt(playerAnswer) < -999 || parseInt(playerAnswer) > 999) {
+                        playerAnswer = prompt("Bạn cần nhập số trong khoảng (-999, 999): ");
                     } else if (isNaN(parseInt(playerAnswer))) {
                         playerAnswer = prompt("Bạn cần nhập giá trị là số: ");
                     } else {

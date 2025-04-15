@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary Search</title>
+</head>
+<body>
+<script>
+    // Thuật toán tìm kiếm nhị phân | O(log(n)) cơ số = 2
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    let target = 15;
+
+    function binarySearch(arr, target) {
+        let left = 0;
+        let right = arr.length - 1;
+        while (left <= right) {
+            let mid = Math.floor(left + (right - left) / 2);
+            if (arr[mid] === target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    function binarySearchRecursive(arr, target, left, right) {
+        if (left > right) {
+            return -1;
+        }
+        let mid = Math.floor(left + (right - left) / 2);
+        if (arr[mid] === target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            return binarySearchRecursive(arr, target, mid + 1, right);
+        } else {
+            return binarySearchRecursive(arr, target, left, mid - 1);
+        }
+    }
+
+    console.log(binarySearch(arr, target));
+    console.log(binarySearchRecursive(arr, target, 0, arr.length - 1));
+</script>
+</body>
+</html>

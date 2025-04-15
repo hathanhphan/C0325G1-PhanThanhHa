@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exponential Search</title>
+</head>
+<body>
+<script>
+    // Thuật toán tìm kiếm theo cấp số nhân | O(log(i)) i là chỉ số của phần tử cần tìm
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    let target = 15;
+
+    function exponentialSearch(arr, target) {
+        let len = arr.length;
+        let bound = 1;
+        while (bound < len && target > arr[bound]) {
+            bound *= 2;
+        }
+        let leftBound = Math.floor(bound / 2);
+        let rightBound = Math.min(bound, len);
+        return binarySearchRecursive(arr, target, leftBound, rightBound);
+    }
+
+    function binarySearchRecursive(arr, target, left, right) {
+        if (left > right) {
+            return -1;
+        }
+        let mid = Math.floor(left + (right - left) / 2);
+        if (arr[mid] === target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            return binarySearchRecursive(arr, target, mid + 1, right);
+        } else {
+            return binarySearchRecursive(arr, target, left, mid - 1);
+        }
+    }
+
+    console.log(exponentialSearch(arr, target));
+</script>
+</body>
+</html>

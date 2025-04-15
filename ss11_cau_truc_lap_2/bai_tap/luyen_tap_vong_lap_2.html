@@ -95,7 +95,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập n</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="num" min="1" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="num" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[800px]">
@@ -138,13 +138,13 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Chiều dài</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="numA" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="numA" min="1" max="80" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Chiều rộng</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="numB" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="numB" min="1" max="80" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 max-w-fit min-w-[800px]">
@@ -166,20 +166,20 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Tiền ban đầu</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="baseMoney" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="baseMoney" min="0"  required class="w-[240px] border border-gray-300 rounded-md">
                     <span>(đồng)</span>
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số tháng</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="month" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="month" min="0" max="999" required class="w-[240px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Lãi suất</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="interestRate" min="0" maxlength="5" step="0.01" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="interestRate" min="0" max="100" step="0.01" required class="w-[240px] border border-gray-300 rounded-md">
                     <span>%</span>
                 </div>
             </div>
@@ -195,10 +195,24 @@
     <div class="h-5 lg:h-10"></div>
 
     <script>
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
         // Exercise 1
         document.querySelector('.ex1 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let num = parseFloat(document.querySelector('.ex1 input[name="num"]').value);
+            if (!validate('.ex1 input[name="num"]', 'n', 0, 100)) {
+                return;
+            }
             let output = document.querySelector('.ex1 .output');
             let num1 = 0;
             let num2 = 1;
@@ -221,6 +235,9 @@
         document.querySelector('.ex2 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let num = parseFloat(document.querySelector('.ex2 input[name="num"]').value);
+            if (!validate('.ex2 input[name="num"]', 'số nguyên', 0, 100)) {
+                return;
+            }
             let output = document.querySelector('.ex2 .output');
             let result = 1;
             output.innerHTML = '';
@@ -234,6 +251,9 @@
         document.querySelector('.ex3 form').addEventListener('submit', function(e) {
             e.preventDefault();
             let num = parseFloat(document.querySelector('.ex3 input[name="num"]').value);
+            if (!validate('.ex3 input[name="num"]', 'chiều cao', 0, 18)) {
+                return;
+            }
             let output = document.querySelector('.ex3 .output');
             output.innerHTML = '';
 
@@ -292,6 +312,10 @@
             e.preventDefault();
             let numA = parseFloat(document.querySelector('.ex4 input[name="numA"]').value);
             let numB = parseFloat(document.querySelector('.ex4 input[name="numB"]').value);
+            if (!validate('.ex4 input[name="numA"]', 'chiều dài', 0, 80)
+                || !validate('.ex4 input[name="numB"]', 'chiều rộng', 0, 80)) {
+                return;
+            }
             let output = document.querySelector('.ex4 .output');
             output.innerHTML = '';
 
@@ -323,6 +347,11 @@
             let baseMoney = parseInt(document.querySelector('.ex5 input[name="baseMoney"]').value);
             let month = parseInt(document.querySelector('.ex5 input[name="month"]').value);
             let interestRate = parseFloat(document.querySelector('.ex5 input[name="interestRate"]').value);
+            if (!validate('.ex5 input[name="baseMoney"]', 'tiền ban đầu', 0, Number.MAX_SAFE_INTEGER)
+                || !validate('.ex5 input[name="month"]', 'số tháng', 0, 1000)
+                || !validate('.ex5 input[name="interestRate"]', '% lãi suất', 0, 100)) {
+                return;
+            }
             let interest = baseMoney * ((interestRate / 100 ) / 12) * month;
             document.querySelector('.ex5 .output').textContent = `Tổng lãi là ${interest.toLocaleString('vi', {sytle: 'currency'})} đồng.`;
         })

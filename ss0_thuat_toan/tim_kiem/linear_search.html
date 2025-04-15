@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linear Search</title>
+</head>
+<body>
+<script>
+    // Thuật toán tìm kiếm tuyến tính | O(n)
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    let target = 15;
+
+    function linearSearch(arr, target) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    console.log(linearSearch(arr, target));
+</script>
+</body>
+</html>
