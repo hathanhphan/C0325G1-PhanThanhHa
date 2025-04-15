@@ -25,6 +25,13 @@
             writeMessage(message) {
 
             }
+            charging() {
+                console.log("Đang sạc pin.");
+                setTimeout(() => {
+                    this.#pinStatus += 1;
+                    console.log("Đang sạc pin.");
+                }, 2000)
+            }
 
 
         }

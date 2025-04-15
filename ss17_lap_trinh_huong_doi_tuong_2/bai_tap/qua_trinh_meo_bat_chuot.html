@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột</title>
+</head>
+<body>
+    <h1>Luyện tập định nghĩa lớp, khởi tạo đối tượng, sử dụng phương thức và thuộc tính của đối tượng.</h1>
+    <h2>Xem kết quả ở màn hình console</h2>
+    <script>
+        class Rat {
+            #name;
+            #weight;
+            #speed;
+            #status;
+            constructor(name, weight, speed, status) {
+                this.#name = name;
+                this.#weight = weight;
+                this.#speed = speed;
+                this.#status = status;
+            }
+            getSpeed() {
+                return this.#speed;
+            }
+            getName() {
+                return this.#name;
+            }
+            getStatus() {
+                return this.#status;
+            }
+            getWeight() {
+                return this.#weight;
+            }
+            sound() {
+                console.log("Chít chít");
+            }
+        }
+        class Cat {
+            #name;
+            #weight;
+            #maxSpeed;
+            #isCatchedRat = false;
+            constructor(name, weight, maxSpeed) {
+                this.#name = name;
+                this.#weight = weight;
+                this.#maxSpeed = maxSpeed;
+            }
+            sound() {
+                console.log("Meo meo");
+            }
+            catchRat(rat) {
+                if (this.#maxSpeed > rat.getSpeed()) {
+                    console.log("Đã bắt được " + rat.getName());
+                    this.#isCatchedRat =  true;
+                } else {
+                    console.log("Không bắt được " + rat.getName());
+                    this.#isCatchedRat = false;
+                }
+            }
+            eatRat(rat) {
+                if (!this.#isCatchedRat) {
+                    console.log("Chưa bắt được " + rat.getName() + " nên chưa thể ăn");
+                    return;
+                }
+                if (rat.getStatus()) {
+                    this.#weight += rat.getWeight();
+                    console.log("Đã ăn " + rat.getName() + " và khối lượng hiện tại là " + this.#weight);
+                } else {
+                    console.log(rat.getName() + "đã chết, hem ăn được");
+                }
+            }
+            getName() {
+                return this.#name;
+            }
+            getWeight() {
+                return this.#weight;
+            }
+            getMaxSpeed() {
+                return this.#maxSpeed;
+            }
+        }
+        const jerry = new Rat("Jerry", 1, 30, true);
+        const nibbles = new Rat("Nibbles", 0.5, 20, true);
+        const tom = new Cat("Tom", 5, 30);
+        jerry.sound();
+        tom.sound();
+        tom.catchRat(jerry);
+        tom.eatRat(jerry);
+        tom.catchRat(nibbles);
+        tom.eatRat(nibbles);
+    </script>
+</body>
+</html>
