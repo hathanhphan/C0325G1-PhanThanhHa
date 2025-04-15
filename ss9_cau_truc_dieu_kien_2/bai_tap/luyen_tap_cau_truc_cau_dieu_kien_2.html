@@ -255,7 +255,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập tuổi</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="age" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="age" min="-999" max="999" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -276,19 +276,19 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập cạnh a</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="aVal" min="0.01" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="aVal" min="0" max="999" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập cạnh b</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="bVal" min="0.01" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="bVal" min="0" max="999" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập cạnh c</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="cVal" min="0.01" maxlength="5" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="cVal" min="0" max="999" step="0.01" required class="w-[120px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="bg-blue-200 w-[400px]">
@@ -317,7 +317,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập số điện</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="eVal" min="0" maxlength="5" required class="w-[120px] border border-gray-300 rounded-md">
+                    <input type="number" name="eVal" min="0" max="999" required class="w-[120px] border border-gray-300 rounded-md">
                     <span>(kWh)</span>
                 </div>
             </div>
@@ -351,7 +351,7 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Thu nhập</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="income" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="income" min="0" required class="w-[240px] border border-gray-300 rounded-md">
                     <span>(đồng)</span>
                 </div>
             </div>
@@ -373,20 +373,20 @@
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Tiền ban đầu</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="baseMoney" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="baseMoney" min="0" required class="w-[240px] border border-gray-300 rounded-md">
                     <span>(đồng)</span>
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Số tháng</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="month" min="0" maxlength="5" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="month" min="0" required class="w-[240px] border border-gray-300 rounded-md">
                 </div>
             </div>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Lãi suất</div>
                 <div class="w-60 flex-auto">
-                    <input type="number" name="interestRate" min="0" maxlength="5" step="0.01" required class="w-[240px] border border-gray-300 rounded-md">
+                    <input type="number" name="interestRate" min="0" step="0.01" required class="w-[240px] border border-gray-300 rounded-md">
                     <span>%</span>
                 </div>
             </div>
