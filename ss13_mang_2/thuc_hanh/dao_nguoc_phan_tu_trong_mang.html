@@ -67,8 +67,9 @@
             output.innerHTML = '';
             let first = 0;
             let last = arr.length - 1;
+            let temp;
             while (first < last) {
-                let temp = arr[first];
+                temp = arr[first];
                 arr[first] = arr[last];
                 arr[last] = temp;
                 last--;

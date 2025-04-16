@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập vòng lặp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập vòng lặp.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex9" class="btn btn-blue">Bài 9</a>
+            </li>
+            <li>
+                <a href="#ex10" class="btn btn-blue">Bài 10</a>
+            </li>
+            <li>
+                <a href="#ex11" class="btn btn-blue">Bài 11</a>
+            </li>
+            <li>
+                <a href="#ex12" class="btn btn-blue">Bài 12</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 9 -->
+    <div id="ex9" class="ex9 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 9: Nhập vào một chuỗi ký tự  thực hiện công việc sau:</h2>
+        <ul>
+            <li>In ra chuỗi đảo ngược của chuỗi đã cho</li>
+            <li>Đổi chuổi đã cho sang chữ hoa</li>
+            <li>Đổi chuỗi đã cho sang chữ thường</li>
+            <li>Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)</li>
+        </ul>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[360px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 10 -->
+    <div id="ex10" class="ex10 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 10: Nhập một chuổi ký tự tuỳ ý, sau đó thực hiện công việc sau:</h2>
+        <ul>
+            <li>In mỗi từ trên mỗi dòng</li>
+            <li>Đếm số từ có trong chuổi đã cho</li>
+            <li>Đưa ra bảng tần số xuất hiện của các từ</li>
+        </ul>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[480px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 11 -->
+    <div id="ex11" class="ex11 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 11: Viết chương trình thực hiện các công việc như sau:</h2>
+        <ul>
+            <li>Nhập một mảng a gồm n phần tử kiểu nguyên int</li>
+            <li>Tính tổng số dương lẻ mảng a</li>
+            <li>Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở vị trí đầu tiên</li>
+            <li>Sắp sếp mảng a theo thứ tự tăng dần</li>
+            <li>Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a</li>
+        </ul>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Mảng số</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" pattern="^[0-9\,\-]*$" title="Chỉ chấp nhận kí tự số, dấu - và dấu ," required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 1,2,-4,5,-6,23)</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Phần thử k</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numberK" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Phần thử p</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numberP" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 12 -->
+    <div id="ex12" class="ex12 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 12: Viết chương trình thực hiện công việc sau:</h2>
+        <ul>
+            <li>Nhập ma trận a (m dòng, n cột) gồm các phần tử kiểu int</li>
+            <li>Tính tích các số là bội số của 3 nằm trên dòng đầu tiên của ma trận a</li>
+            <li>Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a</li>
+            <li>Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i]</li>
+        </ul>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập số dòng</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="m" min="1" max="50" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập số cột</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="n" min="1" max="50" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="mb-4 w-full max-h-[400px] overflow-auto">
+                <table>
+                    <tbody class="matrix">
+                    </tbody>
+                </table>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <button class="btn-random hover:cursor-pointer w-full mr-2 lg:w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Ngẫu nhiên PT mảng</button>
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
+        function validateRegex(str, regex, errorMessage) {
+            if (!str.match(regex)) {
+                alert(errorMessage);
+                return false;
+            }
+            return true;
+        }
+
+        // Exercise 9
+        document.querySelector('.ex9 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex9 .output');
+            let str = document.querySelector('.ex9 input[name="str"]').value;
+            if (!validateLength('.ex9 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
+            output.innerHTML = "";
+            let stringArr = str.split("");
+            let newStringReverse = str.split("").reverse().join("");
+            let newStringUpperCase = str.toUpperCase();
+            let newStringLowerCase = str.toLowerCase();
+            let newStringConvertCharArr = stringArr;
+            for (let i = 0; i <= newStringConvertCharArr.length - 1; i++) {
+                newStringConvertCharArr[i] = isLowerCase(newStringConvertCharArr[i]) ? newStringConvertCharArr[i].toUpperCase() : newStringConvertCharArr[i].toLowerCase();
+            }
+            output.innerHTML = `Chuỗi đảo ngược là ${newStringReverse}.<br>`;
+            output.innerHTML += `Chuỗi chữ hoa là ${newStringUpperCase}.<br>`;
+            output.innerHTML += `Chuỗi chữ thường là ${newStringLowerCase}.<br>`;
+            output.innerHTML += `Chuỗi đổi ngược hoa thường là ${newStringConvertCharArr.join("")}.<br>`;
+
+        })
+        function isLowerCase(str) {
+            return str === str.toLowerCase();
+        }
+
+        // Exercise 10
+        document.querySelector('.ex10 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex10 .output');
+            let str = document.querySelector('.ex10 input[name="str"]').value;
+            if (!validateLength('.ex10 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
+            output.innerHTML = "";
+            let stringArr = str.trim().split(/\s+/);
+            stringArr.forEach(item => {
+                output.innerHTML += `${item}<br>`;
+            });
+            output.innerHTML += `<br>Số lượng từ trong chuỗi là ${stringArr.length}.<br>`;
+            output.innerHTML += `<br>Bảng tần suất xuất hiện của các từ:<br>`;
+            let counter = [];
+            stringArr.forEach(item => {
+                let index = counter.findIndex(x => x.id === item)
+                if (index > -1) {
+                    counter[index].count += 1;
+                } else {
+                    counter.push({
+                        id: item,
+                        count: 1
+                    });
+                }
+            });
+            let tableContent = `<table class="w-1/2"><tbody>`;
+            counter.forEach(item => {
+                tableContent += `<tr><td>${item.id}</td><td>${item.count}</td></tr>`;
+            });
+            tableContent += `</tbody></table>`;
+            output.innerHTML += tableContent;
+        })
+
+        // Exercise 11
+        document.querySelector('.ex11 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex11 .output');
+            let str = document.querySelector('.ex11 input[name="str"]').value;
+            let numberK = +document.querySelector('.ex11 input[name="numberK"]').value;
+            let numberP = +document.querySelector('.ex11 input[name="numberP"]').value;
+            const regex = /^[0-9\\,\-]*$/;
+            if (!validateLength('.ex11 input[name="str"]', 'chuỗi', 1, 255)
+                || !validateRegex(str, regex, "Chỉ chấp nhận kí tự số, dấu - và dấu ,")
+                || !validate('.ex11 input[name="numberK"]', 'phần tử k', Math.floor(Number.MIN_SAFE_INTEGER / 100), Math.floor(Number.MAX_SAFE_INTEGER / 100))
+                || !validate('.ex11 input[name="numberP"]', 'phần tử p', Math.floor(Number.MIN_SAFE_INTEGER / 100), Math.floor(Number.MAX_SAFE_INTEGER / 100))) {
+                return;
+            }
+            output.innerHTML = "";
+            let arr = str.split(',').map(item => +item);
+            let sum = 0;
+            arr.forEach(item => {
+                if (item > 0 && item % 2 !== 0) {
+                    sum += item;
+                }
+            })
+            output.innerHTML += `Tổng số dương lẻ là ${sum}<br>`;
+            let indexK = arr.indexOf(numberK);
+            if (indexK > -1) {
+                output.innerHTML += `Tìm thấy phần tử ${numberK} đầu tiên ở vị trí ${indexK}<br>`;
+            } else {
+                output.innerHTML += `Không tìm thấy phần tử ${numberK} trong mảng<br>`;
+            }
+            output.innerHTML += `Mảng theo thứ tự tăng dần là ${arr.sort((a, b) => a - b).join(", ")}<br>`;
+            let indexP = findIndexBeforeInserting(arr, numberP);
+            if (indexP === 0) {
+                arr.unshift(numberP);
+            } else if (indexP === arr.length) {
+                arr.push(numberP);
+            } else {
+                for (let i = arr.length; i > indexP; i--) {
+                    arr[i] = arr[i - 1];
+                }
+                arr[indexP + 1] = numberP;
+            }
+            output.innerHTML += `Mảng mới sau khi chèn ${numberP} là ${arr.join(", ")}<br>`;
+        })
+        function findIndexBeforeInserting(array, element) {
+            if (element <= array[0]) {
+                return 0;
+            } else if (element >= array[array.length - 1]) {
+                return array.length;
+            }
+            for (let i = 0; i < array.length - 1; i++) {
+                if (element >= array[i] && element <= array[i + 1]) {
+                    return i;
+                }
+            }
+        }
+
+        // Exercise 11
+        const inputM = document.querySelector('.ex12 input[name="m"]');
+        const inputN = document.querySelector('.ex12 input[name="n"]');
+        const matrix = document.querySelector('.ex12 .matrix');
+        inputM.addEventListener('input', function (e) {
+            let mValue = +e.target.value;
+            let nValue = +inputN.value;
+            if (Number.isInteger(mValue) && mValue > 0 && mValue < 51 && Number.isInteger(nValue) && nValue > 0 && nValue < 51) {
+                displayMatrix(mValue, nValue);
+            } else {
+                hideMatrix();
+            }
+        })
+        inputN.addEventListener('input', function (e) {
+            let nValue = +e.target.value;
+            let mValue = +inputM.value;
+            if (Number.isInteger(nValue) && nValue > 0 && nValue < 51 && Number.isInteger(mValue) && mValue > 0 && mValue < 51) {
+                displayMatrix(mValue, nValue);
+            } else {
+                hideMatrix();
+            }
+        })
+        document.querySelector('.ex12 .btn-random').addEventListener('click', function (e) {
+            e.preventDefault();
+            let rows = matrix.querySelectorAll('tr');
+            if (rows) {
+                for (let i = 0; i < rows.length; i++) {
+                    let cols = rows[i].querySelectorAll('td input');
+                    for (let j = 0; j < cols.length; j++) {
+                        cols[j].value = getRandomInt(-255, 255);
+                    }
+                }
+            }
+        })
+        document.querySelector('.ex12 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex12 .output');
+            if (!validate('.ex12 input[name="m"]', 'số dòng', 1, 50)
+                || !validate('.ex12 input[name="n"]', 'số cột', 1, 50)) {
+                return;
+            }
+            output.innerHTML = "";
+            const matrixArr = [];
+            let rows = matrix.querySelectorAll('tr');
+            if (rows) {
+                for (let i = 0; i < rows.length; i++) {
+                    let cols = rows[i].querySelectorAll('td input');
+                    matrixArr[i] = [];
+                    for (let j = 0; j < cols.length; j++) {
+                        matrixArr[i][j] = +cols[j].value;
+                    }
+                }
+            }
+            let product = 1;
+            for (let i = 0; i < matrixArr[0].length; i++) {
+                if (matrixArr[0][i] % 3 === 0) {
+                    product *= matrixArr[0][i];
+                }
+            }
+            let maxOfRowArr = [];
+            for (let i = 0; i < rows.length; i++) {
+                maxOfRowArr.push(Math.max.apply(null, matrixArr[i]));
+            }
+            output.innerHTML += `Tích các số là bội số của 3 nằm trên dòng đầu tiên là ${product}<br>`;
+            output.innerHTML += `Mảng X[i] là ${maxOfRowArr.join(", ")}<br>`;
+            let itemNeedRemove = maxOfRowArr.shift();
+            output.innerHTML += `Mảng X[i] sau khi xoá ${itemNeedRemove} là ${maxOfRowArr.join(", ")}<br>`;
+        })
+        function displayMatrix(mValue, nValue) {
+            matrix.innerHTML = "";
+            let htmlString = "";
+            for (let i = 0; i < mValue; i++) {
+                htmlString += "<tr>";
+                for (let j = 0; j < nValue; j++) {
+                    htmlString += `<td><input type="number" min="-255" max="255" required class="w-[80px] border border-gray-300 rounded-md"></td>`;
+                }
+                htmlString += "</tr>";
+            }
+            matrix.innerHTML = htmlString;
+        }
+        function hideMatrix() {
+            matrix.innerHTML = "";
+        }
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+</html>

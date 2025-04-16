@@ -150,14 +150,12 @@
             let output = document.querySelector('.ex2 .output');
             let numArr = num.split('');
             output.innerHTML = '';
-            if (numArr.length > 0) {
-                for (let i = 0; i <= numArr.length -1; i++) {
-                    if (parseInt(numArr[i]) % 2 === 0 && parseInt(numArr[i + 1]) % 2 === 0) {
-                        numArr[i + 1] = '-' + numArr[i + 1];
-                    }
+            for (let i = 0; i <= numArr.length -1; i++) {
+                if (parseInt(numArr[i]) % 2 === 0 && parseInt(numArr[i + 1]) % 2 === 0) {
+                    numArr[i + 1] = '-' + numArr[i + 1];
                 }
-                output.innerHTML = numArr.join("");
             }
+            output.innerHTML = numArr.join("");
         })
 
         // Exercise 3
@@ -170,16 +168,13 @@
             let output = document.querySelector('.ex3 .output');
             let strArr = str.split('');
             output.innerHTML = '';
-            if (strArr.length > 0) {
-                for (let i = 0; i <= strArr.length - 1; i++) {
-                    strArr[i] = isLowerCase(strArr[i]) ? strArr[i].toUpperCase() : strArr[i].toLowerCase();
-                }
-                output.innerHTML = strArr.join("");
+            for (let i = 0; i <= strArr.length - 1; i++) {
+                strArr[i] = isLowerCase(strArr[i]) ? strArr[i].toUpperCase() : strArr[i].toLowerCase();
             }
+            output.innerHTML = strArr.join("");
         })
         function isLowerCase(str) {
-            return str === str.toLowerCase() &&
-                str !== str.toUpperCase();
+            return str === str.toLowerCase();
         }
     </script>
 </body>

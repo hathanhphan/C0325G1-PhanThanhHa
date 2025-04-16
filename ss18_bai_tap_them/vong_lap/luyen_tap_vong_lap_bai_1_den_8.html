@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập vòng lặp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập vòng lặp.</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex1" class="btn btn-blue">Bài 1</a>
+            </li>
+            <li>
+                <a href="#ex2" class="btn btn-blue">Bài 2</a>
+            </li>
+            <li>
+                <a href="#ex3" class="btn btn-blue">Bài 3</a>
+            </li>
+            <li>
+                <a href="#ex4" class="btn btn-blue">Bài 4</a>
+            </li>
+            <li>
+                <a href="#ex5" class="btn btn-blue">Bài 5</a>
+            </li>
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+            <li>
+                <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+            <li>
+                <a href="#ex8" class="btn btn-blue">Bài 8</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div id="ex1" class="ex1 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Viết chương trình in ra các dấu * theo cấu trúc như sau (cho n là chiều cao của tháp, cần in ra n dòng):</h2>
+        <code>
+            *****<br>
+            *****<br>
+            *****<br>
+            (n = 3)
+        </code>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <code class="output block text-center"></code>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 2 -->
+    <div id="ex2" class="ex2 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 2: Nhập vào tháng, năm bất kỳ. In ra số ngày tương ứng với tháng, năm đó.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập tháng</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="month" min="1" max="12" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập năm</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="year" min="1" max="10000" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 3 -->
+    <div id="ex3" class="ex3 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 3: Viết chương trình tính: <code>S=1+1/2+1/3+....+1/n</code></h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="10000" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 4 -->
+    <div id="ex4" class="ex4 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 4: Viết chương trình tính: <code>S=15-1+1/2-1/3!+....+(-1)n  1/n!</code></h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="10000" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 5 -->
+    <div id="ex5" class="ex5 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 5: Viết chương trình tính: <code>S=1+1/3!+1/5!+.....+1/(2n-1)!</code></h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="10000" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 6 -->
+    <div id="ex6" class="ex6 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 6: Tính n!!</h2>
+        <p><code>= 1*3*5*.....*n(n lẽ)</code></p>
+        <p><code>= 2*4*6*....*n(n chẵn)</code></p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập n</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="100" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 7 -->
+    <div id="ex7" class="ex7 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 7: Tính tổng và tích các chữ số của một số nguyên dương m cho trước</h2>
+        <p><code>(Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24)</code></p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập m</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 8 -->
+    <div id="ex8" class="ex8 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 8: Nhập 2 số nguyên dương a và b. Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất của 2 số nguyên dương a và b đó.</h2>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập A</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numberA" min="0" max="100000" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập B</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numberB" min="0" max="100000" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả:</p>
+                <div class="output"></div>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
+        // Exercise 1
+        document.querySelector('.ex1 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseInt(document.querySelector('.ex1 input[name="num"]').value);
+            if (!validate('.ex1 input[name="num"]', 'n', 0, 100)) {
+                return;
+            }
+            let output = document.querySelector('.ex1 .output');
+            output.innerHTML = "";
+            for (let i = 1; i <= num; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    output.innerHTML += `*`;
+                }
+                output.innerHTML += `<br>`;
+            }
+        })
+
+        // Exercise 2
+        function isLeapYear(year) {
+            let result = false;
+            let isDivisibleBy4 = year % 4 === 0;
+            if (isDivisibleBy4) {
+                let isDivisibleBy100 = year % 100 === 0;
+                if (isDivisibleBy100) {
+                    let isDivisibleBy400 = year % 400 === 0;
+                    if (isDivisibleBy400) {
+                        result = true;
+                    }
+                } else {
+                    result = true;
+                }
+            }
+            return result;
+        }
+        document.querySelector('.ex2 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let month = parseInt(document.querySelector('.ex2 input[name="month"]').value);
+            let year = parseInt(document.querySelector('.ex2 input[name="year"]').value);
+            if (!validate('.ex2 input[name="month"]', 'tháng', 1, 12)
+                || !validate('.ex2 input[name="year"]', 'năm', 1, 10000)) {
+                return;
+            }
+            let result = "";
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    result = `Tháng ${month} năm ${year} có 31 ngày`;
+                    break;
+                case 2:
+                    result = isLeapYear(year) ? `Tháng ${month} năm ${year} có 29 ngày` : `Tháng ${month} năm ${year} có 28 ngày`;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    result = `Tháng ${month} năm ${year} có 30 ngày`;
+                    break;
+                default:
+                    result = "Tháng không hợp lệ";
+            }
+            let output = document.querySelector('.ex2 .output');
+            output.innerHTML = result.toString();
+        })
+
+        // Exercise 3
+        document.querySelector('.ex3 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseInt(document.querySelector('.ex3 input[name="num"]').value);
+            if (!validate('.ex3 input[name="num"]', 'n', 1, 10000)) {
+                return;
+            }
+            let output = document.querySelector('.ex3 .output');
+            let result = 0;
+            for (let i = 1; i <= num; i++) {
+                result += 1 / i;
+            }
+            output.innerHTML = parseFloat(result.toFixed(6)).toString();
+        })
+
+        // Exercise 4
+        document.querySelector('.ex4 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseInt(document.querySelector('.ex4 input[name="num"]').value);
+            if (!validate('.ex4 input[name="num"]', 'n', 1, 10000)) {
+                return;
+            }
+            let output = document.querySelector('.ex4 .output');
+            let result = 15;
+            let factorial;
+            for (let i = 1; i <= num; i++) {
+                factorial = 1;
+                for (let j = 1; j <= i; j++) {
+                    factorial *= j;
+                }
+                if (i % 2 === 0) {
+                    result += 1 / factorial;
+                } else {
+                    result -= 1 / factorial;
+                }
+            }
+            output.innerHTML = parseFloat(result.toFixed(6)).toString();
+        })
+
+        // Exercise 5
+        document.querySelector('.ex5 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseInt(document.querySelector('.ex5 input[name="num"]').value);
+            if (!validate('.ex5 input[name="num"]', 'n', 1, 10000)) {
+                return;
+            }
+            let output = document.querySelector('.ex5 .output');
+            let result = 1;
+            let factorial;
+            for (let i = 1; i <= num; i++) {
+                if (i % 2 !== 0) {
+                    factorial = 1;
+                    for (let j = 1; j <= i; j++) {
+                        factorial *= j;
+                    }
+                    result += 1 / factorial;
+                }
+            }
+            output.innerHTML = parseFloat(result.toFixed(6)).toString();
+        })
+
+        // Exercise 6
+        document.querySelector('.ex6 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseInt(document.querySelector('.ex6 input[name="num"]').value);
+            if (!validate('.ex6 input[name="num"]', 'n', 1, 100)) {
+                return;
+            }
+            let output = document.querySelector('.ex6 .output');
+            let factorial = 1;
+            let i = 1;
+            if (num % 2 === 0) {
+                i = 2;
+            }
+            for (; i <= num; i += 2) {
+                factorial *= i;
+            }
+            output.innerHTML = parseFloat(factorial.toFixed(6)).toString();
+        })
+
+        // Exercise 7
+        document.querySelector('.ex7 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let num = parseInt(document.querySelector('.ex7 input[name="num"]').value);
+            if (!validate('.ex7 input[name="num"]', 'm', 1, (Math.floor(Number.MAX_SAFE_INTEGER / 100)))) {
+                return;
+            }
+            let output = document.querySelector('.ex7 .output');
+            let sum = 0;
+            let product = 1;
+            let margin;
+            while (num > 0) {
+                margin = num % 10;
+                sum += margin;
+                product *= margin;
+                num = Math.floor(num / 10);
+            }
+            output.innerHTML = "Tổng là " + sum.toString() + "<br>";
+            output.innerHTML += "Tích là " + product.toString();
+        })
+
+        // Exercise 8
+        document.querySelector('.ex8 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let numberA = parseInt(document.querySelector('.ex8 input[name="numberA"]').value);
+            let numberB = parseInt(document.querySelector('.ex8 input[name="numberB"]').value);
+            if (!validate('.ex8 input[name="numberA"]', 'số A', 0, 100000)
+                || !validate('.ex8 input[name="numberB"]', 'số A', 0, 100000)) {
+                return;
+            }
+            let output = document.querySelector('.ex8 .output');
+            output.innerHTML = "Ước chung lớn nhất là " + greatestCommonDivisor(numberA, numberB).toString() + "<br>";
+            output.innerHTML += "Bội chung nhỏ nhất là " + leastCommonMultiple(numberA, numberB).toString();
+        })
+        // greatestCommonDivisor của hai số nguyên không thay đổi khi thay 1 trong 2 số thành số dư của nó với số còn lại.
+        // Có nghĩa là greatestCommonDivisor(a, b) = greatestCommonDivisor(b, a % b)
+        function greatestCommonDivisor(numberA, numberB) {
+            let margin;
+            while (numberB !== 0) {
+                margin = numberA % numberB;
+                numberA = numberB;
+                numberB = margin;
+            }
+            return numberA;
+        }
+        function leastCommonMultiple(numberA, numberB) {
+            return (numberA * numberB) / greatestCommonDivisor(numberA, numberB);
+        }
+    </script>
+</body>
+</html>
