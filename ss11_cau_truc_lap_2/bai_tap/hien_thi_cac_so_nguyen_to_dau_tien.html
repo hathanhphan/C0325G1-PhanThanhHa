@@ -78,24 +78,22 @@
                     break;
                 }
             }
-            if (num) {
-                while (count < parseInt(num)) {
+            while (count < parseInt(num)) {
 
-                    if (checkPrimeNumber(i)) {
-                        result.push(i);
-                        count++;
-                    }
-                    i++;
+                if (checkPrimeNumber(i)) {
+                    result.push(i);
+                    count++;
                 }
-                output.innerHTML = num + " số nguyên tố đầu tiên là:\<br\>" + result.join("&emsp;");
+                i++;
             }
+            output.innerHTML = num + " số nguyên tố đầu tiên là:\<br\>" + result.join("&emsp;");
         })
 
         function checkPrimeNumber(num) {
             if (num < 2) {
                 return false;
             }
-            for (let i = 2; i < num / 2; i++) {
+            for (let i = 2; i <= num / 2; i++) {
                 if (num % i === 0) {
                     return false;
                 }
