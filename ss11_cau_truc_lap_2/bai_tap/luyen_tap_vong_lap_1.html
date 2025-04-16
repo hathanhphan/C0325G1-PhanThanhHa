@@ -256,6 +256,7 @@
 
         // Exercise 6
         {
+            // Số đầu tiên chia hết cho n là chính nó, các số tiếp theo là bội số của nó
             let output = document.querySelector('.ex6 .output');
             let number = 30;
             let count = 0;
@@ -263,12 +264,10 @@
             let i = 7;
             let result = [];
             while (count < number) {
-                if (i % 7 === 0) {
-                    sum += i;
-                    count++;
-                    result.push(i);
-                }
-                i++;
+                result.push(i);
+                sum += i;
+                count++;
+                i += 7;
             }
             output.innerHTML = "<p>" + `Dãy 30 số đầu tiên chia hết cho 7 là ${result.join(" ")}.` + "</p><p>" + `Tổng 30 số này là ${sum}.` + "</p>";
         }
@@ -282,7 +281,7 @@
                     output.innerHTML += " FizzBuzz";
                 } else if (i % 3 === 0) {
                     output.innerHTML += " Fizz";
-                } else if (i % 3 === 0) {
+                } else if (i % 5 === 0) {
                     output.innerHTML += " Buzz";
                 } else {
                     output.innerHTML += " " + i;
