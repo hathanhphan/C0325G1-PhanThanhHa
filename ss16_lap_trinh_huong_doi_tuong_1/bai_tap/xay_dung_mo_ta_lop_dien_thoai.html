@@ -10,41 +10,141 @@
 <body>
     <script>
         class Mobile {
-            #pinStatus;
+            #id;
+            #pinStatus = 75;
             #status;
-            #memory;
+            #memory = new Memory();
+            constructor(id) {
+                this.#id = id;
+            }
             getStatus() {
                 return this.#status;
             }
             turnOnPhone() {
-                this.#status = true;
+                if (this.#pinStatus === 0) {
+                    console.log("Điện thoại đã hết pin, không thể mở máy");
+                    this.#status = false;
+                } else {
+                    console.log("Đã bật điện thoại");
+                    this.#status = true;
+                }
             }
             turnOffPhone() {
+                console.log("Đã tắt điện thoại");
                 this.#status = false;
             }
             writeMessage(message) {
-
+                if (!this.canUsing()) return;
+                this.#memory.setDraftMessage(message);
+                this.decreasePinStatus();
+            }
+            sendMessage(message, mobile) {
+                if (!this.canUsing()) return;
+                this.#memory.setSentMessage(message, mobile.getId());
+                mobile.#receiveMessage(message, this);
+                this.decreasePinStatus();
+            }
+            #receiveMessage(inbox, mobile) {
+                this.#memory.setInbox(inbox, mobile.getId());
+            }
+            decreasePinStatus() {
+                if (this.#pinStatus !== 0) {
+                    this.#pinStatus -= 1;
+                } else {
+                    this.#pinStatus = 0;
+                }
             }
             charging() {
-                console.log("Đang sạc pin.");
-                setTimeout(() => {
+                if (this.#pinStatus === 100) {
+                    this.#pinStatus = 100;
+                    console.log("Điện thoại đã đầy pin");
+                } else {
                     this.#pinStatus += 1;
-                    console.log("Đang sạc pin.");
-                }, 2000)
+                    console.log("Đang sạc, pin hiện tại là " + this.#pinStatus);
+                }
             }
-
-
+            canUsing() {
+                if (!this.getStatus()) {
+                    console.log("Điện thoại chưa mở");
+                    return false;
+                }
+                if (!this.#pinStatus) {
+                    console.log("Điện thoại đang hết pin");
+                    return false;
+                }
+                return true;
+            }
+            getId() {
+                return this.#id;
+            }
+            getPinStatus() {
+                return this.#pinStatus;
+            }
+            getInbox() {
+                if (!this.canUsing()) return;
+                return this.#memory.getInbox();
+            }
+            getDraftMessage() {
+                if (!this.canUsing()) return;
+                return this.#memory.getDraftMessage();
+            }
+            getSentMessage() {
+                if (!this.canUsing()) return;
+                return this.#memory.getSentMessage();
+            }
         }
         class Memory {
-            #draftMessage;
-            #inbox;
-            #sentMessage;
-            constructor(draftMessage, inbox, sentMessage) {
-                this.#draftMessage = draftMessage;
-                this.#inbox = inbox;
-                this.#sentMessage = sentMessage;
+            #draftMessage = [];
+            #inbox = [];
+            #sentMessage = [];
+            getDraftMessage() {
+                return this.#draftMessage;
+            }
+            setDraftMessage(message) {
+                this.#draftMessage.push(message);
+            }
+            getInbox() {
+                return this.#inbox;
+            }
+            setInbox(inbox, id) {
+                this.#inbox.push({message: inbox, senderId: id});
+            }
+            getSentMessage() {
+                return this.#sentMessage;
+            }
+            setSentMessage(sentMessage, id) {
+                this.#sentMessage.push({message: sentMessage, receiverId: id});
             }
         }
+        let samsung = new Mobile("samsung");
+        let iphone = new Mobile("iphone");
+        samsung.turnOnPhone();
+        samsung.writeMessage("Đây là tin nhắn đầu tiên của samsung");
+        samsung.charging();
+        samsung.charging();
+        samsung.charging();
+        samsung.sendMessage("Hello iphone nha", iphone);
+        console.log("Tin nhắn nháp của samsung: ", samsung.getDraftMessage());
+        console.log("Tin nhắn đã gửi của samsung: ", samsung.getSentMessage());
+        console.log("Tin nhắn đến của samsung: ", samsung.getInbox());
+
+        iphone.turnOnPhone();
+        console.log("Tin nhắn đến của iphone: ", iphone.getInbox());
+        console.log("Pin hiện tại iphone: ", iphone.getPinStatus());
+        iphone.turnOffPhone();
+        iphone.writeMessage("Đây là tin nhắn đầu tiên của iphone");
+        iphone.turnOnPhone();
+        iphone.writeMessage("Đây là tin nhắn đầu tiên của iphone");
+        let draftMessage = iphone.getDraftMessage();
+        if (draftMessage.length > 0) {
+            console.log("Tin nhắn nháp của iphone: ", draftMessage);
+            iphone.sendMessage(draftMessage[0], samsung);
+        }
+        console.log("Tin nhắn đã gửi của iphone: ", iphone.getSentMessage());
+
+        console.log("Tin nhắn đến của samsung: ", samsung.getInbox());
+        iphone.turnOffPhone();
+        samsung.turnOffPhone();
     </script>
 </body>
 </html>
