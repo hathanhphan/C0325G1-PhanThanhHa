@@ -263,8 +263,8 @@
             e.preventDefault();
             e.preventDefault();
             let output = document.querySelector('.ex5 .output');
-            let str1 = document.querySelector('.ex5 input[name="str1"]').value.toLowerCase();
-            let str2 = document.querySelector('.ex5 input[name="str2"]').value.toLowerCase();
+            let str1 = document.querySelector('.ex5 input[name="str1"]').value;
+            let str2 = document.querySelector('.ex5 input[name="str2"]').value;
             if (!validateLength('.ex5 input[name="str1"]', 'chuỗi 1', 1, 255)
                 || !validateLength('.ex5 input[name="str2"]', 'chuỗi 2', 1, 255)) {
                 return;

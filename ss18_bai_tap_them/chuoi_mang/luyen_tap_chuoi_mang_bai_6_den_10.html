@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập chuỗi - mảng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập chuỗi - mảng</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex6" class="btn btn-blue">Bài 6</a>
+            </li>
+            <li>
+                <a href="#ex7" class="btn btn-blue">Bài 7</a>
+            </li>
+            <li>
+                <a href="#ex8" class="btn btn-blue">Bài 8</a>
+            </li>
+            <li>
+                <a href="#ex9" class="btn btn-blue">Bài 9</a>
+            </li>
+            <li>
+                <a href="#ex10" class="btn btn-blue">Bài 10</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 6 -->
+    <div id="ex6" class="ex6 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 6: Viết hàm truyền vào một chuỗi findChar(string)</h2>
+        <p class="mb-4">Hàm trả về 1 mảng chứa các ký tự xuất hiện nhiều hơn 1 lần trong chuỗi. Nếu không có ký tự nào xuất hiện nhiều hơn 1 lần thì trả về mảng rỗng</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 7 -->
+    <div id="ex7" class="ex7 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 7: Viết hàm truyền vào một mảng 2 chiều (n x n) chứa các số nguyên bất kỳ</h2>
+        <p class="mb-4">Hàm sẽ trả về 1 mảng (1 chiều) các số nguyên tố đã được sắp xếp tăng dần. Với các phần tử là các số nguyên tố xuất hiện trong mảng 2 chiều.</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập mảng 2c</div>
+                <div class="w-60 flex-auto">
+                    <textarea name="str" required class="w-[480px] min-h-[300px] border border-gray-300 rounded-md" placeholder="Ví dụ:
+                    [
+                     [1,2,8,43],
+                     [9,4,11,7],
+                     [11,6,4,0],
+                     [1,2,6,51]
+                    ]">[
+                     [1,2,8,43],
+                     [9,4,11,7],
+                     [11,6,4,0],
+                     [1,2,6,51]
+                    ]</textarea>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 8 -->
+    <div id="ex8" class="ex8 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 8: Tìm số lần xuất hiện mảng con trong mảng cha</h2>
+        <p class="mb-4">Điều kiện child là con của parent (các phần tử trong mảng child xuất hiện ít nhất 1 lần trong mảng parent)</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Mảng cha</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="parentStr" minlength="1" maxlength="255" pattern="^[0-9\,\-\s+]*$" title="Chỉ chấp nhận kí tự số, dấu trừ,dấu phẩy và dấu cách" required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 1,2,-4,5,-6,23)</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Mảng con</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="childStr" minlength="1" maxlength="255" pattern="^[0-9\,\-\s+]*$" title="Chỉ chấp nhận kí tự số, dấu trừ,dấu phẩy và dấu cách" required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 1,2,-4,5,-6,23)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 9 -->
+    <div id="ex9" class="ex9 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 9: Người ta định nghĩa số vòng là một số tự nhiên mà mà chữ số đầu trùng với chữ số cuối của nó. Ví dụ 303, 101, 8, 88 là những số vòng</h2>
+        <p class="mb-4">Yêu cầu: Cho 2 số nguyên dương L, R, hãy đếm số lượng số vòng trong đoạn [L; R]</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập L</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numberL" min="1" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập R</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="numberR" min="1" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 10 -->
+    <div id="ex10" class="ex10 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 10: Bình đang có n VNĐ và bằng cách nào đó Bình biết trước được
+            giá mua và giá bán của 1 đô-la của các ngày tiếp theo. Biết giá
+            mua và giá bán đô-la tại 1 ngày là như nhau. Bình muốn tìm cách
+            mua và bán đô-la hợp lý nhất để vào ngày cuối cùng số VNĐ Bình
+            có là lớn nhất biết Bình chỉ có thể mua đô-la tại đúng 1 ngày
+            và bán cũng vậy.</h2>
+        <p class="mb-4">Hãy viết hàm trả về số đô-la tối đa có thể thu được vào ngày cuối cùng</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Giá mua & bán</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" pattern="^[0-9\,\s+]*$" title="Chỉ chấp nhận kí tự số, dấu phẩy và dấu cách" required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 3, 5, 2, 7, 1)</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Tiền của Bình</div>
+                <div class="w-60 flex-auto">
+                    <input type="number" name="num" min="1" max="99999" required class="w-[120px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
+        function validateRegex(str, regex, errorMessage) {
+            if (!str.match(regex)) {
+                alert(errorMessage);
+                return false;
+            }
+            return true;
+        }
+
+        // Exercise 6
+        document.querySelector('.ex6 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex6 .output');
+            let str = document.querySelector('.ex6 input[name="str"]').value;
+            if (!validateLength('.ex6 input[name="str"]', 'chuỗi', 1, 255)) {
+                return;
+            }
+            output.innerHTML = `[${findChar(str).join(', ')}]`;
+        })
+        function findChar(str) {
+            const arr = str.split('');
+            const counter = [];
+            const answer = [];
+            let indexInCounter;
+            let indexInAnswer;
+            if (arr.length < 2) {
+                return answer;
+            }
+            arr.forEach((item) => {
+                indexInCounter = counter.indexOf(item);
+                indexInAnswer = answer.indexOf(item);
+                if (indexInCounter > -1 && indexInAnswer < 0) {
+                    counter.splice(indexInCounter, 1);
+                    answer.push(item);
+                } else {
+                    counter.push(item);
+                }
+            })
+            return answer.sort();
+        }
+
+        // Exercise 7
+        document.querySelector('.ex7 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex7 .output');
+            let str = document.querySelector('.ex7 textarea[name="str"]').value;
+            let arr;
+            try {
+                arr = JSON.parse(str);
+            } catch {
+                alert("Lỗi nhập liệu không đúng cú pháp");
+                return;
+            }
+            output.innerHTML = `[${findPrimeNumberInMatrix(arr).join(', ')}]`;
+        })
+        function findPrimeNumberInMatrix(arr) {
+            let answer = [];
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (isPrimeNumber(arr[i][j]) && answer.indexOf(arr[i][j]) < 0) {
+                        answer.push(arr[i][j]);
+                    }
+                }
+            }
+            return answer.sort((a, b) => a - b);
+        }
+        function isPrimeNumber(num) {
+            if (num < 2) {
+                return false;
+            }
+            for (let i = 2; i <= num / 2; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Exercise 8
+        document.querySelector('.ex8 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex8 .output');
+            let parentStr = document.querySelector('.ex8 input[name="parentStr"]').value;
+            let childStr = document.querySelector('.ex8 input[name="childStr"]').value;
+            const regex = /^[0-9\\,\-\s+]*$/;
+            if (!validateLength('.ex8 input[name="parentStr"]', 'mảng cha', 1, 255)
+                || !validateLength('.ex8 input[name="childStr"]', 'mảng con', 1, 255)
+                || !validateRegex(parentStr, regex, "Chỉ chấp nhận kí tự số, dấu trừ, dấu phẩy và khoảng trắng")
+                || !validateRegex(childStr, regex, "Chỉ chấp nhận kí tự số, dấu trừ, dấu phẩy và khoảng trắng")) {
+                return;
+            }
+            output.innerHTML = "";
+            parentStr = parentStr.replace(/\s+/, '');
+            childStr = childStr.replace(/\s+/, '');
+            output.innerHTML = countOccurrencesInParent(parentStr, childStr).toString();
+        })
+        function countOccurrences(counterArr, counterKey, arr, key) {
+            arr.forEach(item => {
+                let index = counterArr.findIndex(x => x[key] === item)
+                if (index > -1) {
+                    if (counterArr[index][counterKey] === undefined) {
+                        counterArr[index][counterKey] = 1;
+                    } else {
+                        counterArr[index][counterKey] += 1;
+                    }
+                } else {
+                    counterArr.push({
+                        [key]: item,
+                        [counterKey]: 1
+                    });
+                }
+            });
+            return counterArr;
+        }
+        function countOccurrencesInParent(parentStr, childStr) {
+            let arr1 = parentStr.split(',');
+            let arr2 = childStr.split(',');
+            if (arr1.length === 1 && arr2.length === 1) {
+                if (arr1[0] === arr2[0]) return 1;
+                return 0;
+            }
+            let counter = [];
+            counter = countOccurrences(counter, "countArr1", arr1, "id");
+            counter = countOccurrences(counter, "countArr2", arr2, "id");
+            let arr = [];
+            for (let i = 0; i < counter.length; i++) {
+                if (counter[i]["countArr1"] === undefined && counter[i]["countArr2"] !== undefined) {
+                    return 0;
+                }
+                if (counter[i]["countArr1"] !== undefined && counter[i]["countArr2"] !== undefined) {
+                    arr.push(counter[i]["countArr1"]);
+                }
+            }
+            return Math.min.apply(null, arr);
+        }
+
+        // Exercise 9
+        document.querySelector('.ex9 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let numL = parseInt(document.querySelector('.ex9 input[name="numberL"]').value);
+            let numR = parseInt(document.querySelector('.ex9 input[name="numberR"]').value);
+            if (!validate('.ex9 input[name="numberL"]', 'L', 0, 100000)
+                || !validate('.ex9 input[name="numberR"]', 'R', 0, 100000)) {
+                return;
+            }
+            let count = 0;
+            for (let i = numL; i <= numR; i++) {
+                let numberString = i.toString();
+                if (numberString[0] === numberString[numberString.length - 1]) {
+                    count++;
+                }
+            }
+            let output = document.querySelector('.ex9 .output');
+            output.innerHTML = count.toString();
+        })
+
+
+        // Exercise 10
+        document.querySelector('.ex10 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex10 .output');
+            let str = document.querySelector('.ex10 input[name="str"]').value;
+            let num = parseInt(document.querySelector('.ex10 input[name="num"]').value);
+            const regex = /^[0-9\\,\s+]*$/;
+            if (!validateLength('.ex10 input[name="str"]', 'mảng cha', 1, 255)
+                || !validateRegex(str, regex, "Chỉ chấp nhận kí tự số, dấu phẩy và khoảng trắng")
+                || !validate('.ex10 input[name="num"]', 'n', 0, 99999)) {
+                return;
+            }
+            let arr = str.replace(/\s+/, '').split(",").map(i => +i);
+            let result = exchangeMoney(arr, num);
+            if (result === -1) {
+                output.innerHTML = "Bình không đủ tiền mua";
+            } else {
+                output.innerHTML = result.toString();
+            }
+        })
+        function exchangeMoney(arr, n) {
+            let max = 0;
+            let min = 0;
+            let indexMax;
+            let indexMin;
+            if (arr.length < 2) return n;
+            for (let i = arr.length - 1; i >= 0; i--) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                    indexMax = i;
+                }
+                if ((min === 0 && i < indexMax) || (arr[i] <= min && i < indexMax)) {
+                    min = arr[i];
+                    indexMin = i;
+                }
+            }
+            console.log(min, max);
+            // Trường hợp Bình không đủ tiền mua
+            if (n < min) {
+                return -1;
+            }
+            if (min === 0) {
+                return n;
+            } else {
+                return n - min + max;
+            }
+        }
+    </script>
+</body>
+</html>
