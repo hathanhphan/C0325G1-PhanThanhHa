@@ -262,7 +262,6 @@
                 indexInCounter = counter.indexOf(item);
                 indexInAnswer = answer.indexOf(item);
                 if (indexInCounter > -1 && indexInAnswer < 0) {
-                    counter.splice(indexInCounter, 1);
                     answer.push(item);
                 } else {
                     counter.push(item);
