@@ -152,7 +152,7 @@
     <!-- Exercise 9 -->
     <div id="ex9" class="ex9 p-4 container font-secondary text-xl">
         <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 9: Người ta định nghĩa số vòng là một số tự nhiên mà mà chữ số đầu trùng với chữ số cuối của nó. Ví dụ 303, 101, 8, 88 là những số vòng</h2>
-        <p class="mb-4">Yêu cầu: Cho 2 số nguyên dương L, R, hãy đếm số lượng số vòng trong đoạn [L; R]</p>
+        <p class="mb-4"><u>Yêu cầu:</u> Cho 2 số nguyên dương L, R, hãy đếm số lượng số vòng trong đoạn [L; R]</p>
         <form>
             <div class="flex flex-wrap my-5 lg:justify-center">
                 <div class="w-40">Nhập L</div>
@@ -412,26 +412,38 @@
             let min = 0;
             let indexMax;
             let indexMin;
+            let pairMinMax = [];
             if (arr.length < 2) return n;
             for (let i = arr.length - 1; i >= 0; i--) {
-                if (arr[i] > max) {
+                if (arr[i] > max && i !== 0) {
                     max = arr[i];
                     indexMax = i;
                 }
-                if ((min === 0 && i < indexMax) || (arr[i] <= min && i < indexMax)) {
+                if ((min === 0 && i < indexMax && arr[i] !== 0) || (arr[i] <= min && i < indexMax && arr[i] !== 0)) {
                     min = arr[i];
                     indexMin = i;
+                    pairMinMax.push({
+                        min: min,
+                        max: max,
+                        range: max - min
+                    });
+                }
+                if (indexMin > indexMax) {
+                    min = 0;
                 }
             }
-            console.log(min, max);
-            // Trường hợp Bình không đủ tiền mua
-            if (n < min) {
-                return -1;
-            }
-            if (min === 0) {
-                return n;
+            pairMinMax.sort(function (a, b) {
+                return b.range - a.range;
+            });
+            console.log(pairMinMax);
+            if (pairMinMax.length > 0 && pairMinMax[0].range > 0 && pairMinMax[0].min > 0) {
+                // Trường hợp Bình không đủ tiền mua
+                if (n < pairMinMax[0].min) {
+                    return -1;
+                }
+                return n + pairMinMax[0].range;
             } else {
-                return n - min + max;
+                return n;
             }
         }
     </script>

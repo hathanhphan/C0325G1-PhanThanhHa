@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập chuỗi - mảng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Paytone+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-primary {
+            font-family: "Paytone One", sans-serif;
+        }
+        .font-secondary {
+            font-family: "Lexend", sans-serif;
+        }
+        .btn {
+            display: block;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .btn-blue {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #2139d6;
+            transition: all 0.3s linear;
+        }
+        .anchor-list li {
+            text-align: center;
+            margin-bottom: 16px;
+            min-width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 container">
+        <h1 class="font-primary text-2xl mb-2 mt-2 text-blue-800">Luyện tập chuỗi - mảng</h1>
+        <ul class="anchor-list my-8 flex gap-4 w-full font-secondary">
+            <li>
+                <a href="#ex16" class="btn btn-blue">Bài 16</a>
+            </li>
+            <li>
+                <a href="#ex17" class="btn btn-blue">Bài 17</a>
+            </li>
+            <li>
+                <a href="#ex18" class="btn btn-blue">Bài 18</a>
+            </li>
+            <li>
+                <a href="#ex19" class="btn btn-blue">Bài 19</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Exercise 16 -->
+    <div id="ex16" class="ex16 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 16:</h2>
+        <p><u>Yêu cầu:</u> Cho mảng a chứa các số nguyên. Xây dựng mảng b là prefix của mảng a cụ thể theo công thức:</p>
+        <div>
+            <code>
+                b[0]   = a[0]<br>
+                b[1]   = a[0] + a[1]<br>
+                b[2]   = a[0] + a[1] + a[2]<br>
+                ...<br>
+                b[n - 1] = a[0] + a[1] + ... + a[n - 1]<br>
+                với n là độ dài của mảng a.<br>
+            </code>
+        </div>
+        <p><u>Input:</u> 1 chuỗi chứa dãy số nguyên, mỗi số cách nhau bởi 1 dấu “,”</p>
+        <p class="mb-4"><u>Output:</u> 1 mảng số nguyên</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi số</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" pattern="^[0-9\,\-\s+]*$" title="Chỉ chấp nhận kí tự số, dấu phẩy và dấu cách" required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 2, 1, 6)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 17 -->
+    <div id="ex17" class="ex17 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 17:</h2>
+        <p><u>Yêu cầu:</u> Cho hai xâu ký tự, hãy kiểm tra xem có tồn tại phương án đổi chỗ
+            các kí tự ở trong xâu thứ nhất để trở thành xâu thứ hai được hay không?</p>
+        <p><u>Input:</u> Dòng đầu tiên là xâu ký tự thứ nhất. Dòng thứ 2 là xâu ký tự thứ hai</p>
+        <p class="mb-4"><u>Output:</u> boolean</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi 1</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str1" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi 2</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str2" maxlength="255" required class="w-[240px] border border-gray-300 rounded-md">
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Tính toán" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 18 -->
+    <div id="ex18" class="ex18 p-4 container font-secondary text-xl">
+        <h2 class="font-primary text-xl mb-4 text-blue-600">Bài 18: Cho một mảng số nguyên</h2>
+        <p><u>Yêu cầu:</u> Hãy viết chương trình tìm ra một mảng mới, sao cho các phần tử
+            trong 2 mảng này chứa đủ các số nguyên liên tiếp của một
+            khoảng nào đó:</p>
+        <p><u>Input:</u> 1 chuỗi chứa dãy số nguyên, mỗi số cách nhau bởi 1 dấu “,”</p>
+        <p class="mb-4"><u>Output:</u> 1 mảng số nguyên</p>
+        <form>
+            <div class="flex flex-wrap my-5 lg:justify-center">
+                <div class="w-40">Nhập chuỗi số</div>
+                <div class="w-60 flex-auto">
+                    <input type="text" name="str" minlength="1" maxlength="255" pattern="^[0-9\,\-\s+]*$" title="Chỉ chấp nhận kí tự số, dấu phẩy và dấu cách" required class="w-[360px] border border-gray-300 rounded-md">
+                    <span class="italic">(Ví dụ: 2, 1, 6)</span>
+                </div>
+            </div>
+            <div class="bg-blue-200 w-[800px]">
+                <p>Kết quả: <span class="output"></span></p>
+            </div>
+            <div class="flex flex-wrap my-5 justify-left">
+                <input type="submit" value="Kiểm tra" class="btnCal hover:cursor-pointer w-full mb-2 lg:mb-0 lg:w-[200px] mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                <input type="reset" value="Nhập lại" class="hover:cursor-pointer w-full mr-2 lg:w-[200px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            </div>
+        </form>
+    </div>
+    <div class="h-5 lg:h-10"></div>
+
+    <!-- Exercise 19: Trùng exercise 1-->
+
+    <script>
+        function validateLength(selector, displayName, min = 0, max) {
+            let input = document.querySelector(selector);
+            if (input.value.length < min || input.value.length > max) {
+                alert(`Bạn cần nhập ${displayName} có độ dài trong khoảng từ ${min} đến ${max} kí tự!`);
+                return false;
+            }
+            return true;
+        }
+        function validate(selector, displayName, min, max) {
+            let input = document.querySelector(selector);
+            if (isNaN(parseFloat(input.value))) {
+                alert(`Bạn cần nhập ${displayName} là số!`);
+                return false;
+            } else if (parseFloat(input.value) < min || parseFloat(input.value) > max) {
+                alert(`Bạn cần nhập ${displayName} trong khoảng từ ${min} đến ${max}!`);
+                return false;
+            }
+            return true;
+        }
+        function validateRegex(str, regex, errorMessage) {
+            if (!str.match(regex)) {
+                alert(errorMessage);
+                return false;
+            }
+            return true;
+        }
+
+        // Exercise 16
+        document.querySelector('.ex16 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex16 .output');
+            let str = document.querySelector('.ex16 input[name="str"]').value;
+            const regex = /^[0-9\\,\-\s+]*$/;
+            if (!validateLength('.ex16 input[name="str"]', 'chuỗi số', 1, 255)
+                || !validateRegex(str, regex, "Chỉ chấp nhận kí tự số, dấu trừ, dấu phẩy và khoảng trắng")) {
+                return;
+            }
+            output.innerHTML = "";
+            str = str.replace(/\s+/, '');
+            let arr = str.split(',').map(x => +x);
+            if (!arr.every(item => item > -999999 && item < 999999)) {
+                alert("Vui lòng nhập giá trị của 3 phần tử trong khoảng -999999 < x,y,s < 999999!");
+                return;
+            }
+            let prefixArr = arr.map((item, index) => [...arr].splice(0, index + 1).reduce((sum, newItem) => sum + newItem, 0));
+            output.innerHTML = prefixArr.join(", ");
+        })
+
+        // Exercise 17
+        document.querySelector('.ex17 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex17 .output');
+            let str1 = document.querySelector('.ex17 input[name="str1"]').value;
+            let str2 = document.querySelector('.ex17 input[name="str2"]').value;
+            if (!validateLength('.ex17 input[name="str1"]', 'chuỗi 1', 1, 255)
+                || !validateLength('.ex17 input[name="str2"]', 'chuỗi 2', 1, 255)) {
+                return;
+            }
+            output.innerHTML = "";
+            output.innerHTML = charactersRearrangement(str1, str2).toString();
+        })
+        function charactersRearrangement(str1, str2) {
+            let arr1 = str1.split('');
+            let arr2 = str2.split('');
+            if (arr1.length === 1 && arr2.length === 1) {
+                return arr1[0] === arr2[0];
+            }
+            let counter = [];
+            counter = countOccurrences(counter, "countArr1", arr1, "id");
+            counter = countOccurrences(counter, "countArr2", arr2, "id");
+            for (let i = 0; i < counter.length; i++) {
+                if (counter[i]["countArr1"] === undefined || counter[i]["countArr2"] === undefined) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function countOccurrences(counterArr, counterKey, arr, key) {
+            arr.forEach(item => {
+                let index = counterArr.findIndex(x => x[key] === item)
+                if (index > -1) {
+                    if (counterArr[index][counterKey] === undefined) {
+                        counterArr[index][counterKey] = 1;
+                    } else {
+                        counterArr[index][counterKey] += 1;
+                    }
+                } else {
+                    counterArr.push({
+                        [key]: item,
+                        [counterKey]: 1
+                    });
+                }
+            });
+            return counterArr;
+        }
+
+        // Exercise 18
+        document.querySelector('.ex18 form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let output = document.querySelector('.ex18 .output');
+            let str = document.querySelector('.ex18 input[name="str"]').value;
+            const regex = /^[0-9\\,\-\s+]*$/;
+            if (!validateLength('.ex18 input[name="str"]', 'chuỗi số', 1, 255)
+                || !validateRegex(str, regex, "Chỉ chấp nhận kí tự số, dấu trừ, dấu phẩy và khoảng trắng")) {
+                return;
+            }
+            output.innerHTML = "";
+            str = str.replace(/\s+/, '');
+            let arr = str.split(',').map(x => +x);
+            if (!arr.every(item => item > -999999 && item < 999999)) {
+                alert("Vui lòng nhập giá trị của 3 phần tử trong khoảng -999999 < x,y,s < 999999!");
+                return;
+            }
+            output.innerHTML = makeArrayConsecutive(arr).join(', ');
+        })
+        function makeArrayConsecutive(sequence) {
+            sequence.sort((a, b) => a - b);
+            let arr = [];
+            for (let i = 0; i < sequence.length - 1; i++) {
+                for (let j = sequence[i] + 1; j < sequence[i + 1]; j++) {
+                    arr.push(j);
+                }
+            }
+            return arr;
+        }
+
+        // Exercise 19: Trùng exercise 1
+    </script>
+</body>
+</html>
