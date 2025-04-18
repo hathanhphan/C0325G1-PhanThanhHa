@@ -224,22 +224,36 @@
         })
         function promotion(x, y, s) {
             let numNeedToBuy = 0;
-            let count = 0;
-            let i = 1;
-            while (count !== s) {
-                if (x * i + y * i === s) {
-                    numNeedToBuy = x * i;
-                } else if (s - (x * i + y * i) < x) {
-                    let needBuyMore = s - (x * i + y * i);
-                    if (needBuyMore > 0) {
-                        numNeedToBuy = x * i + needBuyMore;
-                    } else {
-                        numNeedToBuy = x * i;
-                    }
-                    break;
+            // let count = 0;
+            // let i = 1;
+            // while (count !== s) {
+            //     if (x * i + y * i === s) {
+            //         numNeedToBuy = x * i;
+            //     } else if (s - (x * i + y * i) < x) {
+            //         let needBuyMore = s - (x * i + y * i);
+            //         if (needBuyMore > 0) {
+            //             numNeedToBuy = x * i + needBuyMore;
+            //         } else {
+            //             numNeedToBuy = x * i;
+            //         }
+            //         break;
+            //     }
+            //     count = x * i + y * i;
+            //     i++;
+            // }
+            if (x >= s) {
+                return s;
+            }
+            let timesBuyWithBonus = Math.ceil(s / (x + y));
+            let numBuyWithoutBonus = s - (x * timesBuyWithBonus + y * timesBuyWithBonus);
+            if (numBuyWithoutBonus > 0) {
+                numNeedToBuy = numBuyWithoutBonus + x * timesBuyWithBonus;
+            } else {
+                if (y - x > numBuyWithoutBonus && x < s) {
+                    numNeedToBuy = x * (timesBuyWithBonus - 1) + (x - y);
+                } else {
+                    numNeedToBuy = x * timesBuyWithBonus;
                 }
-                count = x * i + y * i;
-                i++;
             }
             return numNeedToBuy;
         }
@@ -365,6 +379,9 @@
                 secondMaxIndex = arr[0];
             }
             if (arr.length === 2) {
+                if (secondMax === max) {
+                    return -1;
+                }
                 return secondMaxIndex;
             }
             for (let i = 2; i < arr.length; i++) {

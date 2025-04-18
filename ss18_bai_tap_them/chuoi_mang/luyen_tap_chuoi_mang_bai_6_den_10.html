@@ -435,9 +435,9 @@
             pairMinMax.sort(function (a, b) {
                 return b.range - a.range;
             });
-            console.log(pairMinMax);
+            //console.log(pairMinMax);
             if (pairMinMax.length > 0 && pairMinMax[0].range > 0 && pairMinMax[0].min > 0) {
-                // Trường hợp Bình không đủ tiền mua
+                // Trường hợp Bình không đủ tiền mua.
                 if (n < pairMinMax[0].min) {
                     return -1;
                 }
